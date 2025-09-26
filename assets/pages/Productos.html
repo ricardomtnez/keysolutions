@@ -1,261 +1,408 @@
 <!DOCTYPE html>
 <html lang="es">
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport"
-                        content="width=device-width, initial-scale=1.0">
-                <title>Productos</title>
-                <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-                <!-- Tus estilos personalizados -->
-                <link rel="stylesheet" href="../css/style.css">
-                <!-- Bootstrap Icons -->
-                <link rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Productos</title>
+        <!-- Favicon en PNG (opcional, mejor calidad) -->
+        <link rel="icon" href="../img/faticon.png" type="image/svg+xml">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-        </head>
-        <body>
-                <nav
-                        class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
-                        <div class="container-fluid">
-                                <!-- LOGO -->
-                                <a class="navbar-brand" href="../../index.html">
-                                        <img src="../img/icono.svg"
-                                                alt="Icono Key Solutions"
-                                                height="65">
-                                </a>
+        <!-- Tus estilos personalizados -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-                                <!-- Botón hamburguesa -->
-                                <button class="navbar-toggler" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#navbarSupportedContent"
-                                        aria-controls="navbarSupportedContent"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <span
-                                                class="navbar-toggler-icon"></span>
-                                </button>
+</head>
 
-                                <!-- Menú -->
-                                <div class="collapse navbar-collapse"
-                                        id="navbarSupportedContent">
-                                        <ul
-                                                class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                                <li class="nav-item"><a
-                                                                class="nav-link"
-                                                                href="../../index.html">Inicio</a></li>
-                                                <li class="nav-item dropdown">
-                                                        <a
-                                                                class="nav-link dropdown-toggle"
-                                                                href="#"
-                                                                role="button"
-                                                                data-bs-toggle="dropdown"
-                                                                aria-expanded="false">Servicios</a>
-                                                        <ul
-                                                                class="dropdown-menu">
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Consultoría
-                                                                                Tecnológica</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Desarrollo
-                                                                                de
-                                                                                Software</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Automatización
-                                                                                de
-                                                                                Procesos
-                                                                                con
-                                                                                IA</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Páginas
-                                                                                y
-                                                                                Sitios
-                                                                                Web</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Recuperación
-                                                                                de
-                                                                                datos</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Soporte
-                                                                                Técnico</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Mantenimiento
-                                                                                Preventivo
-                                                                                y
-                                                                                Correctivo</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Infraestructura
-                                                                                de
-                                                                                Red</a></li>
-                                                                <li><hr
-                                                                                class="dropdown-divider"></li>
-                                                                <li><a
-                                                                                class="dropdown-item"
-                                                                                href="#">Instalación
-                                                                                de
-                                                                                Cámaras
-                                                                                de
-                                                                                Videovigilancia</a></li>
-                                                        </ul>
-                                                </li>
-                                                <li class="nav-item"><a
-                                                                class="nav-link active"
-                                                                href="#">Productos</a></li>
-                                                <li class="nav-item"><a
-                                                                class="nav-link"
-                                                                href="Nosotros.html">Nosotros</a></li>
-                                                <li class="nav-item"><a
-                                                                class="nav-link"
-                                                                href="Contacto.html">Contacto</a></li>
-                                        </ul>
+<body>
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+                <div class="container-fluid">
+                        <!-- LOGO -->
+                        <a class="navbar-brand" href="../../index.html">
+                                <img src="../img/icono.svg" alt="Icono Key Solutions" height="65">
+                        </a>
+
+                        <!-- Botón hamburguesa -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Menú -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                        <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="Services/ConsultoriaTecnologica.html">Consultoría
+                                                                        Tecnológica</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Desarrollo
+                                                                        de
+                                                                        Software</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Automatización
+                                                                        de
+                                                                        Procesos
+                                                                        con
+                                                                        IA</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Páginas
+                                                                        y
+                                                                        Sitios
+                                                                        Web</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Recuperación
+                                                                        de
+                                                                        datos</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Soporte
+                                                                        Técnico</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Mantenimiento
+                                                                        Preventivo
+                                                                        y
+                                                                        Correctivo</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Infraestructura
+                                                                        de
+                                                                        Red</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Instalación
+                                                                        de
+                                                                        Cámaras
+                                                                        de
+                                                                        Videovigilancia</a></li>
+                                                </ul>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link active" href="#">Productos</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+                                </ul>
+                        </div>
+                </div>
+        </nav>
+        <!-- HERO -->
+        <section class="hero-section text-center">
+                <div class="container">
+                        <h1 class="animate__animated animate__fadeInDown">Catálogo de Productos</h1>
+                        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+                                Tecnología nueva, semi-nueva y reacondicionada a precios accesibles. Garantía directa de
+                                3 meses.
+                        </p>
+                        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20un%20producto"
+                                target="_blank" class="btn btn-info btn-lg mt-3">Cotiza ahora</a>
+                </div>
+        </section>
+
+        <!-- POR QUÉ NOSOTROS -->
+        <section class="section-light text-center py-5">
+                <div class="container">
+                        <h2 class="text-info mb-4">¿Por qué comprar con nosotros?</h2>
+                        <p>En <strong>Key Solutions</strong> trabajamos con un modelo <b>Just in Time</b>: no
+                                almacenamos productos,
+                                conseguimos lo que necesitas justo cuando lo pides, garantizando <b>precios más
+                                        bajos</b> y máxima
+                                <b>calidad</b>.
+                        </p>
+                        <p>Contamos con proveedores confiables en CDMX y Puebla. Equipos <b>nuevos, semi-nuevos o
+                                        reacondicionados</b>
+                                siempre con <span class="text-info">3 meses de garantía directa</span>.</p>
+                </div>
+        </section>
+
+        <!-- CATÁLOGO -->
+        <section class="section-dark py-5">
+                <div class="container">
+                        <h2 class="text-center text-info mb-5">Nuestras Categorías</h2>
+                        <div class="row g-4">
+                                <!-- Refacciones -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Refacciones y Componentes</h4>
+                                                <ul class="text-start">
+                                                        <li>Discos duros (HDD / SSD)</li>
+                                                        <li>Memorias RAM</li>
+                                                        <li>Tarjetas gráficas (GPU)</li>
+                                                        <li>Motherboards</li>
+                                                        <li>Fuentes de poder</li>
+                                                        <li>Procesadores y Chips</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20refacciones"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+
+                                <!-- Equipos -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Equipos y Periféricos</h4>
+                                                <ul class="text-start">
+                                                        <li>Laptops nuevas y reacondicionadas</li>
+                                                        <li>PCs a la medida</li>
+                                                        <li>Monitores y pantallas</li>
+                                                        <li>Teclados y mouse</li>
+                                                        <li>Impresoras</li>
+                                                        <li>Servidores y estaciones de trabajo</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20equipos"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+
+                                <!-- Redes y accesorios -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Accesorios y Redes</h4>
+                                                <ul class="text-start">
+                                                        <li>Routers y repetidores WiFi</li>
+                                                        <li>Cables de red</li>
+                                                        <li>Bluetooth y adaptadores WiFi</li>
+                                                        <li>Hubs y convertidores</li>
+                                                        <li>Webcams y accesorios</li>
+                                                        <li>Switches y Patch Panels</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20accesorios"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+
+                                <!-- Software -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Software y Licencias</h4>
+                                                <ul class="text-start">
+                                                        <li>Sistemas operativos Windows / Linux</li>
+                                                        <li>Office y Suites de productividad</li>
+                                                        <li>Software de diseño y edición</li>
+                                                        <li>Antivirus y Seguridad</li>
+                                                        <li>ERP y CRM</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20software"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+
+                                <!-- Soluciones IoT -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Soluciones IoT</h4>
+                                                <ul class="text-start">
+                                                        <li>Domótica y automatización</li>
+                                                        <li>Sensores de monitoreo</li>
+                                                        <li>Cámaras inteligentes</li>
+                                                        <li>Rastreo y GPS</li>
+                                                        <li>Dispositivos conectados</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20IoT"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+                                <!-- Dispositivos Móviles y Accesorios -->
+                                <div class="col-md-4">
+                                        <div class="values-card">
+                                                <h4>Dispositivos Móviles y Accesorios</h4>
+                                                <ul class="text-start">
+                                                        <li>Celulares nuevos y reacondicionados</li>
+                                                        <li>Tablets y e-readers</li>
+                                                        <li>Smartwatches y wearables</li>
+                                                        <li>Cargadores, fundas y accesorios</li>
+                                                        <li>Auriculares y altavoces Bluetooth</li>
+                                                </ul>
+                                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20dispositivos%20móviles"
+                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="hero-section text-center py-5">
+                <div class="container">
+                        <h2 class="mb-3">¿Listo para dar el siguiente paso?</h2>
+                        <p class="mb-4">Contáctanos hoy mismo y equipa tu negocio con la mejor tecnología a costos
+                                accesibles.</p>
+                        <a href="https://wa.me/5212761276329?text=Hola!%20Estoy%20interesado%20en%20sus%20productos"
+                                target="_blank" class="btn btn-info btn-lg">Hablar por WhatsApp</a>
+                </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+                <div class="container text-md-left">
+                        <div class="row text-md-left">
+
+                                <!-- Logo y descripción -->
+                                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                        <a class="navbar-brand" href="#">
+                                                <img src="../img/logotipo.svg" alt="Key Solutions" height="80">
+                                        </a>
+                                        <p class="mt-3">
+                                                La clave de tus
+                                                soluciones tecnológicas.
+                                                Innovación, confianza y
+                                                soporte para el
+                                                crecimiento de tu
+                                                negocio.
+                                        </p>
+                                </div>
+
+                                <!-- Enlaces rápidos -->
+                                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                        <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                                        <p><a href="index.html" class="text-light text-decoration-none">Inicio</a></p>
+                                        <p><a href="pages/Servicios.html"
+                                                        class="text-light text-decoration-none">Servicios</a></p>
+                                        <p><a href="pages/Productos.html"
+                                                        class="text-light text-decoration-none">Productos</a></p>
+                                        <p><a href="pages/Nosotros.html"
+                                                        class="text-light text-decoration-none">Nosotros</a></p>
+                                        <p><a href="pages/Contacto.html"
+                                                        class="text-light text-decoration-none">Contacto</a></p>
+                                </div>
+
+                                <!-- Contacto -->
+                                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                                        <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                                        <p><i class="bi bi-geo-alt-fill text-info"></i>
+                                                El Carmen Tequexquitla,
+                                                Tlaxcala</p>
+                                        <p><i class="bi bi-envelope-fill text-info"></i>
+                                                ventas@keysolutions.com</p>
+                                        <p><i class="bi bi-phone-fill text-info"></i>
+                                                +52 276 127 63 29</p>
+                                </div>
+
+                                <!-- Redes sociales -->
+                                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                                        <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                                        <a href="https://www.facebook.com/profile.php?id=100092268075207"
+                                                target="_blank" class="btn btn-outline-light btn-floating m-1"
+                                                style="border-radius:50%;">
+                                                <i class="bi bi-facebook"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-outline-light btn-floating m-1"
+                                                style="border-radius:50%;">
+                                                <i class="bi bi-tiktok"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-outline-light btn-floating m-1"
+                                                style="border-radius:50%;">
+                                                <i class="bi bi-instagram"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-outline-light btn-floating m-1"
+                                                style="border-radius:50%;">
+                                                <i class="bi bi-linkedin"></i>
+                                        </a>
                                 </div>
                         </div>
-                </nav>
 
-                <!-- FOOTER -->
-                <footer class="text-light pt-5 pb-4"
-                        style="background-color: #0a0f1c;">
-                        <div class="container text-md-left">
-                                <div class="row text-md-left">
+                        <hr class="my-4 text-light">
 
-                                        <!-- Logo y descripción -->
-                                        <div
-                                                class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                                                <a class="navbar-brand"
-                                                        href="#">
-                                                        <img
-                                                                src="../img/logotipo.svg"
-                                                                alt="Key Solutions"
-                                                                height="80">
-                                                </a>
-                                                <p class="mt-3">
-                                                        La clave de tus
-                                                        soluciones tecnológicas.
-                                                        Innovación, confianza y
-                                                        soporte para el
-                                                        crecimiento de tu
-                                                        negocio.
-                                                </p>
-                                        </div>
-
-                                        <!-- Enlaces rápidos -->
-                                        <div
-                                                class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                                                <h5
-                                                        class="mb-4 fw-bold text-info">Enlaces</h5>
-                                                <p><a href="index.html"
-                                                                class="text-light text-decoration-none">Inicio</a></p>
-                                                <p><a
-                                                                href="pages/Servicios.html"
-                                                                class="text-light text-decoration-none">Servicios</a></p>
-                                                <p><a
-                                                                href="pages/Productos.html"
-                                                                class="text-light text-decoration-none">Productos</a></p>
-                                                <p><a href="pages/Nosotros.html"
-                                                                class="text-light text-decoration-none">Nosotros</a></p>
-                                                <p><a href="pages/Contacto.html"
-                                                                class="text-light text-decoration-none">Contacto</a></p>
-                                        </div>
-
-                                        <!-- Contacto -->
-                                        <div
-                                                class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                                                <h5
-                                                        class="mb-4 fw-bold text-info">Contáctanos</h5>
-                                                <p><i
-                                                                class="bi bi-geo-alt-fill text-info"></i>
-                                                        El Carmen Tequexquitla,
-                                                        Tlaxcala</p>
-                                                <p><i
-                                                                class="bi bi-envelope-fill text-info"></i>
-                                                        ventas@keysolutions.com</p>
-                                                <p><i
-                                                                class="bi bi-phone-fill text-info"></i>
-                                                        +52 276 127 63 29</p>
-                                        </div>
-
-                                        <!-- Redes sociales -->
-                                        <div
-                                                class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
-                                                <h5
-                                                        class="mb-4 fw-bold text-info">Síguenos</h5>
-                                                <a
-                                                        href="https://www.facebook.com/profile.php?id=100092268075207"
-                                                        target="_blank"
-                                                        class="btn btn-outline-light btn-floating m-1"
-                                                        style="border-radius:50%;">
-                                                        <i
-                                                                class="bi bi-facebook"></i>
-                                                </a>
-                                                <a href="#"
-                                                        class="btn btn-outline-light btn-floating m-1"
-                                                        style="border-radius:50%;">
-                                                        <i
-                                                                class="bi bi-tiktok"></i>
-                                                </a>
-                                                <a href="#"
-                                                        class="btn btn-outline-light btn-floating m-1"
-                                                        style="border-radius:50%;">
-                                                        <i
-                                                                class="bi bi-instagram"></i>
-                                                </a>
-                                                <a href="#"
-                                                        class="btn btn-outline-light btn-floating m-1"
-                                                        style="border-radius:50%;">
-                                                        <i
-                                                                class="bi bi-linkedin"></i>
-                                                </a>
-                                        </div>
+                        <!-- Derechos reservados -->
+                        <div class="row align-items-center">
+                                <div class="col-md-7 col-lg-8">
+                                        <p class="text-center text-md-start">
+                                                © 2026 <strong class="text-info">Key
+                                                        Solutions</strong>.
+                                                Todos los derechos
+                                                reservados.
+                                        </p>
                                 </div>
-
-                                <hr class="my-4 text-light">
-
-                                <!-- Derechos reservados -->
-                                <div class="row align-items-center">
-                                        <div class="col-md-7 col-lg-8">
-                                                <p
-                                                        class="text-center text-md-start">
-                                                        © 2026 <strong
-                                                                class="text-info">Key
-                                                                Solutions</strong>.
-                                                        Todos los derechos
-                                                        reservados.
-                                                </p>
-                                        </div>
-                                        <div
-                                                class="col-md-5 col-lg-4 text-center text-md-end">
-                                                <p>Diseñado by Key Solutions</p>
-                                        </div>
+                                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                                        <p>Diseñado by Key Solutions</p>
                                 </div>
                         </div>
-                </footer>
-                <!-- Bootstrap Bundle con Popper -->
-                <script src="../js/bootstrap.bundle.min.js"></script>
+                </div>
+        </footer>
+        <!-- Contenedor de botones flotantes -->
+        <div class="floating-buttons">
+                <!-- Botón WhatsApp -->
+                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+                        class="btn-whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                </a>
+                <!-- Botón Subir Arriba -->
+                <button id="btn-top" class="btn-top">
+                        <i class="bi bi-chevron-up"></i>
+                </button>
+        </div>
+        <!-- Bootstrap Bundle con Popper -->
+        <script src="../js/bootstrap.bundle.min.js"></script>
 
-                <!-- Tu JS -->
-                <script src="../js/main.js"></script>
-        </body>
+</body>
+
 </html>
+<script>
+        // BOTÓN SUBIR - robusto con contenedor flotante
+        (function () {
+                function initBtnBehavior() {
+                        const btnTop = document.getElementById("btn-top");
+                        if (!btnTop) return false;
+
+                        const SHOW_AT = 200; // px desde top para mostrar el botón
+
+                        const checkScroll = () => {
+                                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                                if (sc > SHOW_AT) {
+                                        btnTop.classList.add("show"); // añade clase para mostrar
+                                } else {
+                                        btnTop.classList.remove("show"); // oculta el botón
+                                }
+                        };
+
+                        // Estado inicial
+                        checkScroll();
+
+                        // Listeners
+                        window.addEventListener("scroll", checkScroll, { passive: true });
+                        window.addEventListener("resize", checkScroll);
+
+                        // Click en el botón
+                        btnTop.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                        });
+
+                        return true;
+                }
+
+                // Inicializar cuando el DOM esté listo
+                document.addEventListener("DOMContentLoaded", () => {
+                        if (!initBtnBehavior()) {
+                                // Si el botón aparece después de cargar el script
+                                const mo = new MutationObserver((mutations, observer) => {
+                                        if (initBtnBehavior()) observer.disconnect();
+                                });
+                                mo.observe(document.body, { childList: true, subtree: true });
+
+                                // Fallback: intenta después de 1 segundo
+                                setTimeout(() => { initBtnBehavior(); }, 1000);
+                        }
+                });
+        })();
+
+</script>

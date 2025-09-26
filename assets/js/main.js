@@ -243,5 +243,55 @@ document.addEventListener("DOMContentLoaded", () => {
   sectores.forEach((card) => observer.observe(card));
 });
 
+// BOTÓN SUBIR - robusto con contenedor flotante
+(function () {
+  function initBtnBehavior() {
+    const btnTop = document.getElementById("btn-top");
+    if (!btnTop) return false;
+
+    const SHOW_AT = 200; // px desde top para mostrar el botón
+
+    const checkScroll = () => {
+      const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (sc > SHOW_AT) {
+        btnTop.classList.add("show"); // añade clase para mostrar
+      } else {
+        btnTop.classList.remove("show"); // oculta el botón
+      }
+    };
+
+    // Estado inicial
+    checkScroll();
+
+    // Listeners
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+
+    // Click en el botón
+    btnTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    return true;
+  }
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!initBtnBehavior()) {
+      // Si el botón aparece después de cargar el script
+      const mo = new MutationObserver((mutations, observer) => {
+        if (initBtnBehavior()) observer.disconnect();
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+
+      // Fallback: intenta después de 1 segundo
+      setTimeout(() => { initBtnBehavior(); }, 1000);
+    }
+  });
+})();
+
+
+
 
 

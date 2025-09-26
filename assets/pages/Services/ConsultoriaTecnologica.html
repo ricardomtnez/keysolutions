@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría Tecnológica</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="../../img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #00d4ff, #7b68ee);
+            --secondary-gradient: linear-gradient(45deg, #ff6b6b, #feca57);
+            --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #2d3561 50%, #16213e 100%);
+            --text-light: #b8c5d6;
+            --text-muted: #a0aec0;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 4rem 0 5rem;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 111, 97, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-banner {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white !important;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .contact-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+
+        .contact-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.25rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 104, 238, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 5rem;
+            height: 5rem;
+            background: var(--primary-gradient);
+            border-radius: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: #00d4ff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2rem;
+            position: relative;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        .btn-cta {
+            background: var(--secondary-gradient);
+            border: none;
+            padding: 1.125rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            color: white !important;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+            color: white !important;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Delays para animaciones */
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .service-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="../../../index.html">
+                <img src="../../img/icono.svg" alt="Icono Key Solutions" height="65">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="#">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Desarrollo
+                                    de
+                                    Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Automatización
+                                    de
+                                    Procesos
+                                    con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Páginas
+                                    y
+                                    Sitios
+                                    Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Recuperación
+                                    de
+                                    datos</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Soporte
+                                    Técnico</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Mantenimiento
+                                    Preventivo
+                                    y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Infraestructura
+                                    de
+                                    Red</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Instalación
+                                    de
+                                    Cámaras
+                                    de
+                                    Videovigilancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mb-3">
+            <a href="tel:+522761276329" class="contact-banner">
+                ¡Cotiza ahora! 📱 276 127 6329
+            </a>
+        </div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="main-title mb-4">Consultoría Tecnológica</h1>
+                    <p class="hero-subtitle mb-5">
+                        Transformamos tu negocio con soluciones tecnológicas de vanguardia.
+                        Impulsa tu empresa hacia el futuro digital con nuestros servicios especializados
+                        que maximizan tu productividad y competitividad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">🎯</div>
+                        <h3 class="service-title mb-3">Planeación y Gestión de Proyectos Tecnológicos</h3>
+                        <p class="service-description mb-4">
+                            Metodologías ágiles y marcos de trabajo modernos para ejecutar proyectos exitosos
+                            que impulsen la transformación digital de tu organización.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Gestión con metodologías Scrum y Kanban</li>
+                            <li class="mb-2">Análisis de riesgos y viabilidad</li>
+                            <li class="mb-2">Control de recursos y presupuestos</li>
+                            <li>Seguimiento en tiempo real</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">🛡️</div>
+                        <h3 class="service-title mb-3">Ciberseguridad Integral y Compliance</h3>
+                        <p class="service-description mb-4">
+                            Protección avanzada contra amenazas cibernéticas con auditorías de seguridad,
+                            implementación de políticas y cumplimiento normativo.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Auditorías de seguridad ISO 27001</li>
+                            <li class="mb-2">Implementación de SOC/SIEM</li>
+                            <li class="mb-2">Protección contra ransomware</li>
+                            <li>Capacitación en seguridad</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">🔍</div>
+                        <h3 class="service-title mb-3">Evaluación de Proveedores y Due Diligence</h3>
+                        <p class="service-description mb-4">
+                            Análisis exhaustivo para la selección óptima de soluciones tecnológicas,
+                            proveedores cloud y partners estratégicos para tu negocio.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Benchmarking de proveedores</li>
+                            <li class="mb-2">Análisis de TCO y ROI</li>
+                            <li class="mb-2">Evaluación de SLAs</li>
+                            <li>Negociación de contratos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">🤖</div>
+                        <h3 class="service-title mb-3">Transformación Digital con IA</h3>
+                        <p class="service-description mb-4">
+                            Implementación de inteligencia artificial, automatización robótica de procesos
+                            y análisis predictivo para revolucionar tus operaciones.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Implementación de ChatBots y GenAI</li>
+                            <li class="mb-2">Automatización RPA</li>
+                            <li class="mb-2">Machine Learning y Analytics</li>
+                            <li>Digitalización de procesos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">☁️</div>
+                        <h3 class="service-title mb-3">Migración y Arquitectura Cloud</h3>
+                        <p class="service-description mb-4">
+                            Estrategias de migración a la nube, arquitecturas multi-cloud y optimización
+                            de costos para maximizar la eficiencia operacional.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">AWS, Azure, Google Cloud</li>
+                            <li class="mb-2">Containerización con Kubernetes</li>
+                            <li class="mb-2">DevOps y CI/CD</li>
+                            <li>Optimización de costos cloud</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">📊</div>
+                        <h3 class="service-title mb-3">Business Intelligence y Data Analytics</h3>
+                        <p class="service-description mb-4">
+                            Convertimos tus datos en insights estratégicos con dashboards avanzados,
+                            análisis predictivo y reportes automatizados para decisiones inteligentes.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Implementación de Power BI y Tableau</li>
+                            <li class="mb-2">Data Warehousing moderno</li>
+                            <li class="mb-2">Análisis predictivo y prescriptivo</li>
+                            <li>Reportes ejecutivos automatizados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">🌐</div>
+                        <h3 class="service-title mb-3">Infraestructura IT y Modernización</h3>
+                        <p class="service-description mb-4">
+                            Diseño e implementación de infraestructuras tecnológicas robustas,
+                            escalables y preparadas para el futuro de tu organización.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Virtualización y hiperconvergencia</li>
+                            <li class="mb-2">Redes SD-WAN y 5G</li>
+                            <li class="mb-2">Backup y disaster recovery</li>
+                            <li>Monitoreo 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon mb-4">📱</div>
+                        <h3 class="service-title mb-3">Desarrollo de Apps y Ecosistemas Digitales</h3>
+                        <p class="service-description mb-4">
+                            Creación de aplicaciones móviles nativas, PWAs y plataformas digitales
+                            que conecten con tus clientes y optimicen la experiencia del usuario.
+                        </p>
+                        <ul class="service-features list-unstyled mb-0">
+                            <li class="mb-2">Apps nativas iOS/Android</li>
+                            <li class="mb-2">Progressive Web Apps (PWA)</li>
+                            <li class="mb-2">APIs y microservicios</li>
+                            <li>UX/UI centrado en el usuario</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="cta-section p-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="cta-title mb-4">¿Listo para Transformar tu Negocio?</h2>
+                        <p class="cta-subtitle mb-5">
+                            Únete a las empresas líderes que ya han potenciado su crecimiento
+                            con nuestras soluciones tecnológicas de vanguardia.
+                        </p>
+                        <a href="tel:+522761276329" class="btn-cta">
+                            Consulta Gratuita Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus
+                        soluciones tecnológicas.
+                        Innovación, confianza y
+                        soporte para el
+                        crecimiento de tu
+                        negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="../../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="../Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="../Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="../Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i>
+                        El Carmen Tequexquitla,
+                        Tlaxcala
+                    </p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i>
+                        +52 276 127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>.
+                        Todos los
+                        derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+<script>
+    // BOTÓN SUBIR - robusto con contenedor flotante
+    (function () {
+        function initBtnBehavior() {
+            const btnTop = document.getElementById("btn-top");
+            if (!btnTop) return false;
+
+            const SHOW_AT = 200; // px desde top para mostrar el botón
+
+            const checkScroll = () => {
+                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                if (sc > SHOW_AT) {
+                    btnTop.classList.add("show"); // añade clase para mostrar
+                } else {
+                    btnTop.classList.remove("show"); // oculta el botón
+                }
+            };
+
+            // Estado inicial
+            checkScroll();
+
+            // Listeners
+            window.addEventListener("scroll", checkScroll, { passive: true });
+            window.addEventListener("resize", checkScroll);
+
+            // Click en el botón
+            btnTop.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            return true;
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!initBtnBehavior()) {
+                // Si el botón aparece después de cargar el script
+                const mo = new MutationObserver((mutations, observer) => {
+                    if (initBtnBehavior()) observer.disconnect();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+
+                // Fallback: intenta después de 1 segundo
+                setTimeout(() => { initBtnBehavior(); }, 1000);
+            }
+        });
+    })();
+    // Animación de las tarjetas al hacer scroll usando Bootstrap classes
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
+    });
+
+    // Efecto de parallax suave para el hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.hero-section');
+        const speed = scrolled * 0.5;
+        parallax.style.transform = `translateY(${speed}px)`;
+    });
+
+    // Smooth scroll para enlaces internos (si los hubiera)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
