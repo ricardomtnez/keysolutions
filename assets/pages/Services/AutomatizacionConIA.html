@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización Con IA</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="../../img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-blue: #004b87;
+            --secondary-blue: #0066b3;
+            --light-blue: #4a90d9;
+            --dark-blue: #003366;
+            --accent-cyan: #00b4d8;
+            --text-light: #e8f4f8;
+            --text-gray: #b0c4d4;
+        }
+
+        body {
+            background: linear-gradient(135deg, #004b87 0%, #003366 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 4rem 0 5rem;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 180, 216, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(74, 144, 217, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-banner {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white !important;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .contact-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            color: #ffffff;
+            animation: fadeInUp 1s ease;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+            display: block;
+            text-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(74, 144, 217, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(0, 180, 216, 0.3);
+            border-color: rgba(0, 180, 216, 0.5);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 4px 15px rgba(0, 180, 216, 0.3));
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--accent-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .tech-badge {
+            background: rgba(0, 180, 216, 0.2);
+            border: 1px solid rgba(0, 180, 216, 0.4);
+            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            margin: 0.3rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(0, 180, 216, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Use Cases Section */
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .use-case-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 180, 216, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .use-case-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .use-case-text {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            min-width: 4rem;
+            text-align: center;
+        }
+
+        .benefit-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .benefit-content p {
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -1.5rem;
+            left: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--light-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+        }
+
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ROI Calculator */
+        .roi-section {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(74, 144, 217, 0.15));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+
+        .roi-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .roi-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.2), rgba(74, 144, 217, 0.2));
+            border-radius: 2rem;
+            border: 2px solid rgba(0, 180, 216, 0.3);
+            box-shadow: 0 15px 50px rgba(0, 180, 216, 0.2);
+        }
+
+        .btn-cta {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--light-blue));
+            border: none;
+            padding: 1.125rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 180, 216, 0.4);
+            text-decoration: none;
+            color: white !important;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 180, 216, 0.6);
+            color: white !important;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .service-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .contact-banner {
+                position: static !important;
+                display: inline-block;
+                top: auto !important;
+                right: auto !important;
+            }
+
+            .hero-section {
+                padding: 2rem 0 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="../../../index.html">
+                <img src="../../img/icono.svg" alt="Icono Key Solutions" height="65">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo
+                                    de
+                                    Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="#">Automatización
+                                    de
+                                    Procesos
+                                    con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SitiosWeb.html">Páginas
+                                    y
+                                    Sitios
+                                    Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación
+                                    de
+                                    datos</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SoporteTecnicoRemoto.html">Soporte
+                                    Técnico Remoto</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento
+                                    Preventivo
+                                    y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura
+                                    de
+                                    Red</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InstalacionCamarasVideovigilancia.html">Instalación
+                                    de
+                                    Cámaras
+                                    de
+                                    Videovigilancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mb-3">
+            <a href="tel:+522761276329" class="contact-banner">
+                ¡Cotiza ahora! 📱 276 127 6329
+            </a>
+        </div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="main-title mb-4">Automatización de Procesos con IA</h1>
+                    <p class="hero-subtitle mb-5">
+                        Transforma tu empresa con Inteligencia Artificial de última generación.
+                        Automatiza tareas repetitivas, optimiza procesos y libera el potencial de tu equipo
+                        para enfocarse en lo que realmente importa: hacer crecer tu negocio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container">
+        <div class="stats-section">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">80%</span>
+                        <div class="stat-label">Reducción de Tiempo</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">95%</span>
+                        <div class="stat-label">Precisión en Tareas</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">60%</span>
+                        <div class="stat-label">Ahorro en Costos</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Operación Continua</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Soluciones de IA para tu Negocio</h2>
+            <p class="section-subtitle">
+                Implementamos tecnologías de Inteligencia Artificial que revolucionan la forma
+                en que tu empresa opera, optimizando cada aspecto de tus procesos
+            </p>
+
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">🤖</div>
+                        <h3 class="service-title">Chatbots Inteligentes para Atención al Cliente</h3>
+                        <p class="service-description mb-3">
+                            Respuesta automática a preguntas frecuentes, soporte 24/7, integración
+                            con WhatsApp o sitio web para mejorar la experiencia del cliente.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Atención 24/7 sin descanso</li>
+                            <li>Respuestas en tiempo real</li>
+                            <li>Integración WhatsApp Business</li>
+                            <li>Múltiples idiomas</li>
+                            <li>Transferencia a humanos cuando sea necesario</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">GPT-4</span>
+                            <span class="tech-badge">DialogFlow</span>
+                            <span class="tech-badge">Rasa</span>
+                            <span class="tech-badge">WhatsApp API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">📧</div>
+                        <h3 class="service-title">Clasificación Automática de Correos o Tickets</h3>
+                        <p class="service-description mb-3">
+                            Sistema que lee correos entrantes y los deriva automáticamente según
+                            tema o urgencia, optimizando tiempos de respuesta.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Clasificación inteligente por prioridad</li>
+                            <li>Detección de urgencias automática</li>
+                            <li>Enrutamiento a departamentos</li>
+                            <li>Análisis de sentimiento</li>
+                            <li>Respuestas sugeridas con IA</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">Zendesk AI</span>
+                            <span class="tech-badge">BERT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">📊</div>
+                        <h3 class="service-title">Generación Automática de Reportes</h3>
+                        <p class="service-description mb-3">
+                            Creación de informes PDF o Excel a partir de bases de datos o
+                            formularios llenados, eliminando trabajo manual repetitivo.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Reportes programados automáticos</li>
+                            <li>Múltiples formatos (PDF, Excel, Word)</li>
+                            <li>Visualizaciones de datos dinámicas</li>
+                            <li>Distribución automática por email</li>
+                            <li>Personalización por usuario/rol</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">Power Automate</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">ReportLab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">🧠</div>
+                        <h3 class="service-title">Análisis de Datos con IA para Toma de Decisiones</h3>
+                        <p class="service-description mb-3">
+                            Herramientas que interpretan datos históricos y generan recomendaciones
+                            o alertas para decisiones estratégicas informadas.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Análisis predictivo avanzado</li>
+                            <li>Detección de patrones ocultos</li>
+                            <li>Forecasting de ventas</li>
+                            <li>Alertas inteligentes en tiempo real</li>
+                            <li>Recomendaciones automatizadas</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">Machine Learning</span>
+                            <span class="tech-badge">Prophet</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Power BI AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">📋</div>
+                        <h3 class="service-title">Automatización de Procesos Administrativos</h3>
+                        <p class="service-description mb-3">
+                            Relleno de formatos, organización de archivos, alertas automáticas y
+                            eliminación de tareas repetitivas que consumen tiempo valioso.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>RPA para tareas repetitivas</li>
+                            <li>Gestión documental automatizada</li>
+                            <li>Validación automática de datos</li>
+                            <li>Workflows inteligentes</li>
+                            <li>Notificaciones programadas</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">UiPath</span>
+                            <span class="tech-badge">Blue Prism</span>
+                            <span class="tech-badge">Automation Anywhere</span>
+                            <span class="tech-badge">Zapier</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">🔍</div>
+                        <h3 class="service-title">Reconocimiento Óptico de Caracteres (OCR)</h3>
+                        <p class="service-description mb-3">
+                            Extracción automática de texto de documentos escaneados, facturas o
+                            imágenes para digitalización y procesamiento inteligente.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Digitalización de documentos físicos</li>
+                            <li>Extracción de datos estructurados</li>
+                            <li>Procesamiento de facturas</li>
+                            <li>Reconocimiento de firmas</li>
+                            <li>Búsqueda en documentos escaneados</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">Tesseract OCR</span>
+                            <span class="tech-badge">Azure AI Vision</span>
+                            <span class="tech-badge">Google Vision</span>
+                            <span class="tech-badge">ABBYY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">🎯</div>
+                        <h3 class="service-title">Asistentes Virtuales Inteligentes</h3>
+                        <p class="service-description mb-3">
+                            Asistentes de IA que ayudan a empleados con búsqueda de información,
+                            programación de citas, recordatorios y gestión de tareas.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Asistente personal empresarial</li>
+                            <li>Gestión de calendario</li>
+                            <li>Búsqueda de información corporativa</li>
+                            <li>Recordatorios inteligentes</li>
+                            <li>Integración con Microsoft 365/Google Workspace</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">Microsoft Copilot</span>
+                            <span class="tech-badge">LangChain</span>
+                            <span class="tech-badge">OpenAI Assistants</span>
+                            <span class="tech-badge">Cortana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="col-lg-6 col-xl-4">
+                    <div class="service-card p-4">
+                        <div class="service-icon">🔐</div>
+                        <h3 class="service-title">Detección de Fraudes y Anomalías</h3>
+                        <p class="service-description mb-3">
+                            Sistemas de IA que monitorean transacciones y detectan patrones
+                            sospechosos o irregulares para prevenir fraudes.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li>Monitoreo en tiempo real</li>
+                            <li>Detección de patrones anómalos</li>
+                            <li>Alertas automáticas de seguridad</li>
+                            <li>Análisis de comportamiento</li>
+                            <li>Prevención proactiva</li>
+                        </ul>
+                        <div>
+                            <span class="tech-badge">Isolation Forest</span>
+                            <span class="tech-badge">Autoencoders</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Random Forest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Casos de Uso Reales</h2>
+            <p class="section-subtitle">
+                Descubre cómo empresas como la tuya están transformando sus operaciones con IA
+            </p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🏪</div>
+                        <h3 class="use-case-title">Retail & E-Commerce</h3>
+                        <p class="use-case-text">
+                            Chatbots que atienden consultas de clientes 24/7, sistemas de recomendación
+                            de productos personalizados y análisis predictivo de inventarios para optimizar stock.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🏦</div>
+                        <h3 class="use-case-title">Banca & Finanzas</h3>
+                        <p class="use-case-text">
+                            Detección automática de fraudes, clasificación de solicitudes de crédito,
+                            análisis de riesgo crediticio y atención al cliente mediante IA conversacional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🏥</div>
+                        <h3 class="use-case-title">Salud & Healthcare</h3>
+                        <p class="use-case-text">
+                            Agendamiento automático de citas, clasificación de urgencias en emergencias,
+                            extracción de datos de expedientes médicos y recordatorios de medicamentos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🏭</div>
+                        <h3 class="use-case-title">Manufactura</h3>
+                        <p class="use-case-text">
+                            Mantenimiento predictivo de maquinaria, control de calidad automatizado con
+                            visión por computadora y optimización de líneas de producción.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📚</div>
+                        <h3 class="use-case-title">Educación</h3>
+                        <p class="use-case-text">
+                            Tutores virtuales con IA, corrección automática de exámenes, sistemas de
+                            recomendación de contenido personalizado y análisis de desempeño estudiantil.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📞</div>
+                        <h3 class="use-case-title">Contact Centers</h3>
+                        <p class="use-case-text">
+                            Transcripción automática de llamadas, análisis de sentimiento en conversaciones,
+                            enrutamiento inteligente y resúmenes automáticos de interacciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Beneficios de Implementar IA</h2>
+            <p class="section-subtitle">
+                Ventajas competitivas que transformarán tu empresa de forma inmediata y sostenible
+            </p>
+
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-content">
+                            <h4>Velocidad y Eficiencia</h4>
+                            <p>
+                                Automatiza tareas que toman horas en solo minutos. Procesa miles de
+                                documentos, emails o tickets en segundos con precisión del 95%+.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <div class="benefit-content">
+                            <h4>Reducción de Costos Operativos</h4>
+                            <p>
+                                Ahorra hasta 60% en costos operativos al eliminar tareas repetitivas
+                                y optimizar recursos humanos para actividades de mayor valor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-content">
+                            <h4>Precisión y Cero Errores</h4>
+                            <p>
+                                Elimina errores humanos en procesamiento de datos, cálculos y
+                                clasificaciones. La IA aprende y mejora continuamente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌐</div>
+                        <div class="benefit-content">
+                            <h4>Disponibilidad 24/7/365</h4>
+                            <p>
+                                Tus procesos nunca se detienen. La IA trabaja las 24 horas sin
+                                descansos, fines de semana o vacaciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📈</div>
+                        <div class="benefit-content">
+                            <h4>Escalabilidad Sin Límites</h4>
+                            <p>
+                                Procesa 10 o 10,000 solicitudes con la misma eficiencia. Crece tu
+                                negocio sin necesidad de contratar personal adicional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧠</div>
+                        <div class="benefit-content">
+                            <h4>Decisiones Basadas en Datos</h4>
+                            <p>
+                                Obtén insights valiosos de tus datos. La IA identifica patrones que
+                                los humanos no pueden ver, mejorando la toma de decisiones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">😊</div>
+                        <div class="benefit-content">
+                            <h4>Mejora la Satisfacción del Cliente</h4>
+                            <p>
+                                Respuestas instantáneas, atención personalizada y resolución rápida
+                                de problemas mejoran la experiencia del cliente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚀</div>
+                        <div class="benefit-content">
+                            <h4>Ventaja Competitiva</h4>
+                            <p>
+                                Adelántate a tu competencia implementando tecnología de vanguardia
+                                que posiciona tu empresa como líder innovador.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso de Implementación</h2>
+            <p class="section-subtitle">
+                Metodología probada que garantiza una implementación exitosa de IA en tu empresa
+            </p>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Diagnóstico y Análisis</h3>
+                    <p class="step-description">
+                        Realizamos un análisis profundo de tus procesos actuales, identificamos
+                        oportunidades de automatización y evaluamos el ROI potencial. Mapeamos
+                        workflows completos y detectamos cuellos de botella que la IA puede resolver.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Diseño de Solución</h3>
+                    <p class="step-description">
+                        Diseñamos una solución de IA personalizada para tu negocio. Seleccionamos
+                        las tecnologías óptimas, creamos prototipos funcionales y definimos KPIs
+                        para medir el éxito de la implementación.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Desarrollo e Integración</h3>
+                    <p class="step-description">
+                        Desarrollamos la solución de IA con metodología ágil. Realizamos entregas
+                        iterativas, pruebas continuas y ajustes basados en feedback. Integramos
+                        con tus sistemas existentes sin interrumpir operaciones.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Entrenamiento y Capacitación</h3>
+                    <p class="step-description">
+                        Entrenamos los modelos de IA con datos reales de tu empresa. Capacitamos
+                        a tu equipo en el uso y gestión de las nuevas herramientas. Creamos
+                        documentación completa y manuales de usuario.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Despliegue y Monitoreo</h3>
+                    <p class="step-description">
+                        Implementamos la solución en producción con un plan de rollout controlado.
+                        Monitoreamos el rendimiento en tiempo real, recolectamos métricas de
+                        desempeño y realizamos optimizaciones continuas.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Soporte y Evolución</h3>
+                    <p class="step-description">
+                        Brindamos soporte técnico 24/7, actualizaciones regulares y mejoras continuas.
+                        La IA aprende de nuevos datos y se adapta a cambios en tu negocio.
+                        Garantizamos que tu inversión siga generando valor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="container">
+        <div class="roi-section">
+            <h2 class="section-title mb-4">Retorno de Inversión Comprobado</h2>
+            <p class="section-subtitle mb-5">
+                Resultados reales que nuestros clientes han logrado con la implementación de IA
+            </p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="roi-card">
+                        <div class="roi-number">3-6</div>
+                        <div class="roi-label">Meses para ROI Positivo</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="roi-card">
+                        <div class="roi-number">80%</div>
+                        <div class="roi-label">Reducción en Tiempo de Procesamiento</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="roi-card">
+                        <div class="roi-number">95%</div>
+                        <div class="roi-label">Tasa de Precisión</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="roi-card">
+                        <div class="roi-number">60%</div>
+                        <div class="roi-label">Ahorro en Costos Operativos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💡</div>
+                        <div class="benefit-content">
+                            <h4>Ejemplo Real: Empresa de Logística</h4>
+                            <p>
+                                <strong>Antes:</strong> 5 empleados procesaban manualmente 200 tickets diarios (8
+                                horas).
+                                <br>
+                                <strong>Después:</strong> IA clasifica y responde automáticamente el 70% de tickets en
+                                segundos.
+                                <br>
+                                <strong>Resultado:</strong> $45,000 USD ahorrados anualmente + mejora en tiempo de
+                                respuesta de 24h a 5 minutos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Tecnologías que Utilizamos</h2>
+            <p class="section-subtitle">
+                Stack tecnológico de última generación para garantizar resultados excepcionales
+            </p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">🤖 Modelos de Lenguaje</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">GPT-4</span>
+                            <span class="tech-badge">Claude</span>
+                            <span class="tech-badge">Llama 2</span>
+                            <span class="tech-badge">BERT</span>
+                            <span class="tech-badge">PaLM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">🧠 Machine Learning</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Keras</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">☁️ Cloud AI Services</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">Azure AI</span>
+                            <span class="tech-badge">AWS ML</span>
+                            <span class="tech-badge">Google AI</span>
+                            <span class="tech-badge">IBM Watson</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">🔧 RPA Tools</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">UiPath</span>
+                            <span class="tech-badge">Blue Prism</span>
+                            <span class="tech-badge">Automation Anywhere</span>
+                            <span class="tech-badge">Power Automate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">💬 Chatbot Platforms</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">DialogFlow</span>
+                            <span class="tech-badge">Rasa</span>
+                            <span class="tech-badge">Botpress</span>
+                            <span class="tech-badge">LangChain</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="use-case-card text-center">
+                        <h4 class="use-case-title">👁️ Computer Vision</h4>
+                        <div class="mt-3">
+                            <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">YOLO</span>
+                            <span class="tech-badge">Tesseract OCR</span>
+                            <span class="tech-badge">Azure Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle mb-5">
+                Respuestas a las dudas más comunes sobre automatización con IA
+            </p>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿Cuánto tiempo toma implementar una
+                            solución de IA?</h4>
+                        <p class="use-case-text">
+                            Dependiendo de la complejidad, entre 4-12 semanas. Proyectos simples como
+                            chatbots pueden estar listos en 3-4 semanas, mientras que soluciones más
+                            complejas requieren 8-12 semanas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿Necesito tener conocimientos técnicos?
+                        </h4>
+                        <p class="use-case-text">
+                            No es necesario. Nosotros manejamos toda la parte técnica. Solo necesitas
+                            conocer tus procesos de negocio y tener acceso a los datos o sistemas
+                            que quieres automatizar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿Qué pasa si mis datos son sensibles?</h4>
+                        <p class="use-case-text">
+                            Implementamos las más altas medidas de seguridad: encriptación end-to-end,
+                            cumplimiento con GDPR/LGPD, servidores dedicados y acuerdos de confidencialidad.
+                            Tus datos están 100% protegidos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿La IA reemplazará a mis empleados?</h4>
+                        <p class="use-case-text">
+                            No, la IA complementa el trabajo humano. Automatiza tareas repetitivas para
+                            que tu equipo se enfoque en actividades estratégicas de mayor valor que
+                            requieren creatividad y criterio humano.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿Qué tan precisa es la IA?</h4>
+                        <p class="use-case-text">
+                            Nuestras soluciones alcanzan tasas de precisión del 90-98% dependiendo del
+                            caso de uso. Implementamos mecanismos de validación y mejora continua para
+                            mantener alta precisión.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="use-case-card">
+                        <h4 class="use-case-title" style="font-size: 1.1rem;">¿Ofrecen soporte post-implementación?</h4>
+                        <p class="use-case-text">
+                            Sí, incluimos soporte técnico 24/7, actualizaciones regulares, monitoreo
+                            continuo y entrenamiento adicional. La IA evoluciona con tu negocio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="cta-section p-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="section-title mb-4">¿Listo para Automatizar tu Empresa con IA?</h2>
+                        <p class="section-subtitle mb-5">
+                            Agenda una consulta gratuita y descubre cómo la Inteligencia Artificial
+                            puede transformar tus procesos, reducir costos hasta en 60% y llevar tu
+                            negocio al siguiente nivel de eficiencia y productividad.
+                        </p>
+                        <a href="tel:+522761276329" class="btn-cta mb-3">
+                            Consulta Gratuita Ahora
+                        </a>
+                        <p class="text-white-50 mt-3">
+                            <small>✓ Sin compromiso ✓ Análisis personalizado ✓ ROI estimado incluido</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus
+                        soluciones tecnológicas.
+                        Innovación, confianza y
+                        soporte para el
+                        crecimiento de tu
+                        negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="../../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="../Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="../Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="../Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i>
+                        El Carmen Tequexquitla,
+                        Tlaxcala
+                    </p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i>
+                        +52 276 127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>.
+                        Todos los
+                        derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+<script>
+    // BOTÓN SUBIR - robusto con contenedor flotante
+    (function () {
+        function initBtnBehavior() {
+            const btnTop = document.getElementById("btn-top");
+            if (!btnTop) return false;
+
+            const SHOW_AT = 200; // px desde top para mostrar el botón
+
+            const checkScroll = () => {
+                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                if (sc > SHOW_AT) {
+                    btnTop.classList.add("show"); // añade clase para mostrar
+                } else {
+                    btnTop.classList.remove("show"); // oculta el botón
+                }
+            };
+
+            // Estado inicial
+            checkScroll();
+
+            // Listeners
+            window.addEventListener("scroll", checkScroll, { passive: true });
+            window.addEventListener("resize", checkScroll);
+
+            // Click en el botón
+            btnTop.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            return true;
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!initBtnBehavior()) {
+                // Si el botón aparece después de cargar el script
+                const mo = new MutationObserver((mutations, observer) => {
+                    if (initBtnBehavior()) observer.disconnect();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+
+                // Fallback: intenta después de 1 segundo
+                setTimeout(() => { initBtnBehavior(); }, 1000);
+            }
+        });
+    })();
+    // Animación de las tarjetas al hacer scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
+    });
+
+    // Efecto de parallax suave para el hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.hero-section');
+        if (parallax) {
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // Animación de números de estadísticas
+    const animateNumbers = () => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            const hasPercent = text.includes('%');
+            const hasSlash = text.includes('/');
+            const hasDash = text.includes('-');
+
+            if (hasSlash || hasDash) return;
+
+            const number = parseInt(text.replace(/[^0-9]/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            const increment = number / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    current = number;
+                    clearInterval(timer);
+                }
+
+                let displayText = Math.floor(current).toString();
+                if (hasPercent) displayText += '%';
+
+                stat.textContent = displayText;
+            }, duration / steps);
+        });
+
+        // Animar números ROI
+        const roiNumbers = document.querySelectorAll('.roi-number');
+        roiNumbers.forEach(roi => {
+            const text = roi.textContent;
+            const hasPercent = text.includes('%');
+            const hasDash = text.includes('-');
+
+            if (hasDash) return;
+
+            const number = parseInt(text.replace(/[^0-9]/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            const increment = number / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    current = number;
+                    clearInterval(timer);
+                }
+
+                let displayText = Math.floor(current).toString();
+                if (hasPercent) displayText += '%';
+
+                roi.textContent = displayText;
+            }, duration / steps);
+        });
+    };
+
+    // Observar cuando las estadísticas entren en viewport
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    const roiSection = document.querySelector('.roi-section');
+    if (roiSection) {
+        statsObserver.observe(roiSection);
+    }
+</script>

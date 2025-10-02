@@ -1,12 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo de Software</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="../../img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea, #764ba2);
+            --secondary-gradient: linear-gradient(45deg, #f093fb, #f5576c);
+            --tertiary-gradient: linear-gradient(45deg, #4facfe, #00f2fe);
+            --quaternary-gradient: linear-gradient(45deg, #43e97b, #38f9d7);
+            --bg-primary: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 4rem 0 5rem;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 75% 75%, rgba(240, 147, 251, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(67, 233, 123, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-banner {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white !important;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .contact-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(240, 147, 251, 0.08));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon.icon-1 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .service-icon.icon-2 {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+        }
+
+        .service-icon.icon-3 {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+        .service-icon.icon-4 {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+
+        .service-icon.icon-5 {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        }
+
+        .service-icon.icon-6 {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+
+        .service-icon.icon-7 {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+        }
+
+        .service-icon.icon-8 {
+            background: linear-gradient(45deg, #d299c2, #fef9d7);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '💻';
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+
+        .tech-stack {
+            background: rgba(102, 126, 234, 0.12);
+            border-radius: 1rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            color: #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.25);
+            margin: 0.2rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tech-stack:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .tech-stack.primary {
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .tech-stack.secondary {
+            background: rgba(240, 147, 251, 0.15);
+            color: #f093fb;
+            border-color: rgba(240, 147, 251, 0.3);
+        }
+
+        .tech-stack.tertiary {
+            background: rgba(67, 233, 123, 0.15);
+            color: #43e97b;
+            border-color: rgba(67, 233, 123, 0.3);
+        }
+
+        /* Process Section */
+        .process-section {
+            margin: 5rem 0;
+        }
+
+        .process-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.1);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -1.5rem;
+            left: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .process-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .process-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Tech Showcase */
+        .tech-showcase {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-badge {
+            background: rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 1rem;
+            padding: 0.6rem 1.2rem;
+            display: inline-block;
+            margin: 0.3rem;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(102, 126, 234, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge.featured {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            margin: 5rem 0;
+        }
+
+        .benefit-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Industries Section */
+        .industries-section {
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.05), rgba(79, 172, 254, 0.05));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .industry-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .industry-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .industry-icon {
+            font-size: 2rem;
+            min-width: 3rem;
+            text-align: center;
+        }
+
+        .industry-text {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2rem;
+            position: relative;
+            border: 1px solid var(--glass-border);
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-subtitle {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        .btn-cta {
+            background: var(--secondary-gradient);
+            border: none;
+            padding: 1.125rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            color: white !important;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+            color: white !important;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .service-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .contact-banner {
+                position: static !important;
+                margin-bottom: 2rem;
+                display: inline-block;
+                top: auto !important;
+                right: auto !important;
+            }
+
+            .hero-section {
+                padding: 2rem 0 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .contact-banner {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .main-title {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-     <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
         <div class="container-fluid">
             <!-- LOGO -->
             <a class="navbar-brand" href="../../../index.html">
@@ -28,18 +640,18 @@
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Servicios</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item active" href="#">Consultoría
+                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría
                                     Tecnológica</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Desarrollo
+                            <li><a class="dropdown-item active" href="#">Desarrollo
                                     de
                                     Software</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Automatización
+                            <li><a class="dropdown-item" href="AutomatizacionConIA.html">Automatización
                                     de
                                     Procesos
                                     con
@@ -47,40 +659,40 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Páginas
+                            <li><a class="dropdown-item" href="SitiosWeb.html">Páginas
                                     y
                                     Sitios
                                     Web</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Recuperación
+                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación
                                     de
                                     datos</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Soporte
-                                    Técnico</a></li>
+                            <li><a class="dropdown-item" href="SoporteTecnicoRemoto.html">Soporte
+                                    Técnico Remoto</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Mantenimiento
+                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento
                                     Preventivo
                                     y
                                     Correctivo</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Infraestructura
+                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura
                                     de
                                     Red</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Instalación
+                            <li><a class="dropdown-item" href="InstalacionCamarasVideovigilancia.html">Instalación
                                     de
                                     Cámaras
                                     de
@@ -95,5 +707,854 @@
             </div>
         </div>
     </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <a href="tel:+522761276329" class="contact-banner d-none d-lg-inline-block">
+                ¡Cotiza ahora! 📱 276 127 6329
+            </a>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <div class="d-lg-none mb-4">
+                        <a href="tel:+522761276329" class="contact-banner">
+                            ¡Cotiza ahora! 📱 276 127 6329
+                        </a>
+                    </div>
+
+                    <h1 class="main-title mb-4">Desarrollo de Software</h1>
+                    <p class="hero-subtitle mb-5">
+                        Creamos soluciones de software innovadoras y especializadas que revolucionan industrias.
+                        Desarrollamos tecnología de vanguardia que transforma procesos, optimiza operaciones
+                        y acelera el crecimiento exponencial de tu negocio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container">
+        <div class="stats-section">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">200+</span>
+                        <div class="stat-label">Proyectos Completados</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <div class="stat-label">Satisfacción Cliente</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Tecnologías Dominadas</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Soporte Técnico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios de Desarrollo</h2>
+            <p class="section-subtitle">
+                Soluciones tecnológicas completas que impulsan la transformación digital de tu empresa
+            </p>
+
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-1 mb-3">🏢</div>
+                        <h3 class="service-title mb-3">Sistemas de Gestión Empresarial</h3>
+                        <p class="service-description mb-3">
+                            Desarrollo de ERPs, CRMs o sistemas internos de acuerdo a necesidades y
+                            requerimientos del negocio.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">ERPs modulares personalizados</li>
+                            <li class="mb-2">CRM con automatización avanzada</li>
+                            <li class="mb-2">Gestión de recursos humanos</li>
+                            <li class="mb-2">Inventarios inteligentes</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">.NET Core</span>
+                            <span class="tech-stack secondary">SAP ABAP</span>
+                            <span class="tech-stack tertiary">Odoo</span>
+                            <span class="tech-stack primary">Oracle</span>
+                            <span class="tech-stack secondary">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-2 mb-3">⚙️</div>
+                        <h3 class="service-title mb-3">Aplicaciones Personalizadas</h3>
+                        <p class="service-description mb-3">
+                            Plataformas hechas a medida que resuelven procesos específicos del negocio.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Automatización de procesos BPM</li>
+                            <li class="mb-2">Workflows personalizados</li>
+                            <li class="mb-2">Dashboards en tiempo real</li>
+                            <li class="mb-2">Integración de sistemas legacy</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">React</span>
+                            <span class="tech-stack secondary">Angular</span>
+                            <span class="tech-stack tertiary">Vue.js</span>
+                            <span class="tech-stack primary">Node.js</span>
+                            <span class="tech-stack secondary">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-3 mb-3">📋</div>
+                        <h3 class="service-title mb-3">Aplicaciones para Registro y Control</h3>
+                        <p class="service-description mb-3">
+                            Aplicaciones para el manejo de usuarios, productos, inventario, ventas,
+                            asistencia, etc.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Control de usuarios y permisos</li>
+                            <li class="mb-2">Gestión de inventarios multi-sede</li>
+                            <li class="mb-2">Punto de venta (POS) avanzado</li>
+                            <li class="mb-2">Asistencia biométrica/facial</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Laravel</span>
+                            <span class="tech-stack secondary">Django</span>
+                            <span class="tech-stack tertiary">Spring Boot</span>
+                            <span class="tech-stack primary">MySQL</span>
+                            <span class="tech-stack secondary">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-4 mb-3">📊</div>
+                        <h3 class="service-title mb-3">Módulos de Control y Reportes</h3>
+                        <p class="service-description mb-3">
+                            Sistemas para visualizar indicadores (KPIs), generar reportes y tomar
+                            decisiones en tiempo real.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Dashboards interactivos avanzados</li>
+                            <li class="mb-2">KPIs personalizados por rol</li>
+                            <li class="mb-2">Reportes automatizados programables</li>
+                            <li class="mb-2">Análisis predictivo con ML</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Power BI</span>
+                            <span class="tech-stack secondary">Tableau</span>
+                            <span class="tech-stack tertiary">D3.js</span>
+                            <span class="tech-stack primary">Chart.js</span>
+                            <span class="tech-stack secondary">Plotly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-5 mb-3">🔗</div>
+                        <h3 class="service-title mb-3">Integraciones con Plataformas Externas</h3>
+                        <p class="service-description mb-3">
+                            Conexión con APIs, sistemas contables, pasarelas de pago y otros servicios.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">APIs RESTful y GraphQL</li>
+                            <li class="mb-2">SAP, Oracle, QuickBooks, CONTPAQi</li>
+                            <li class="mb-2">Stripe, PayPal, Mercado Pago, OXXO</li>
+                            <li class="mb-2">Webhooks y microservicios</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">REST API</span>
+                            <span class="tech-stack secondary">GraphQL</span>
+                            <span class="tech-stack tertiary">gRPC</span>
+                            <span class="tech-stack primary">Postman</span>
+                            <span class="tech-stack secondary">Swagger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-6 mb-3">📱</div>
+                        <h3 class="service-title mb-3">Aplicaciones Móviles</h3>
+                        <p class="service-description mb-3">
+                            Apps nativas y multiplataforma para iOS y Android con sincronización
+                            en tiempo real.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Apps nativas iOS/Android</li>
+                            <li class="mb-2">Progressive Web Apps (PWA)</li>
+                            <li class="mb-2">Sincronización offline-online</li>
+                            <li class="mb-2">Push notifications inteligentes</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">React Native</span>
+                            <span class="tech-stack secondary">Flutter</span>
+                            <span class="tech-stack tertiary">Swift</span>
+                            <span class="tech-stack primary">Kotlin</span>
+                            <span class="tech-stack secondary">Ionic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-7 mb-3">🛒</div>
+                        <h3 class="service-title mb-3">E-Commerce y Tiendas Online</h3>
+                        <p class="service-description mb-3">
+                            Plataformas de comercio electrónico completas con pasarelas de pago
+                            y gestión de inventarios.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Catálogos de productos avanzados</li>
+                            <li class="mb-2">Carrito de compras inteligente</li>
+                            <li class="mb-2">Pasarelas de pago múltiples</li>
+                            <li class="mb-2">Gestión de pedidos omnicanal</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Shopify</span>
+                            <span class="tech-stack secondary">WooCommerce</span>
+                            <span class="tech-stack tertiary">Magento</span>
+                            <span class="tech-stack primary">PrestaShop</span>
+                            <span class="tech-stack secondary">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-8 mb-3">🤖</div>
+                        <h3 class="service-title mb-3">Inteligencia Artificial y Automatización</h3>
+                        <p class="service-description mb-3">
+                            Chatbots inteligentes, análisis predictivo, automatización RPA y
+                            machine learning.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">ChatBots con GPT/LLM</li>
+                            <li class="mb-2">Automatización RPA</li>
+                            <li class="mb-2">Machine Learning predictivo</li>
+                            <li class="mb-2">Computer Vision y OCR</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">TensorFlow</span>
+                            <span class="tech-stack secondary">PyTorch</span>
+                            <span class="tech-stack tertiary">OpenAI API</span>
+                            <span class="tech-stack primary">Scikit-learn</span>
+                            <span class="tech-stack secondary">UiPath</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso de Desarrollo</h2>
+            <p class="section-subtitle">
+                Metodología ágil probada que garantiza entregas de calidad en tiempo y forma
+            </p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <div class="process-title">Análisis y Planificación</div>
+                        <div class="process-description">
+                            Reunimos requisitos detallados, definimos alcance del proyecto y creamos
+                            un roadmap completo con estimaciones precisas de tiempo y recursos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <div class="process-title">Diseño y Arquitectura</div>
+                        <div class="process-description">
+                            Diseñamos la experiencia de usuario (UX/UI) con prototipos interactivos
+                            y definimos la arquitectura técnica óptima y escalable.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <div class="process-title">Desarrollo Ágil</div>
+                        <div class="process-description">
+                            Desarrollo iterativo con sprints de 2 semanas, entregas continuas,
+                            demos regulares y feedback constante para ajustar según necesidades.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <div class="process-title">Testing y Despliegue</div>
+                        <div class="process-description">
+                            Pruebas exhaustivas de QA, testing automatizado, deployment en producción
+                            y capacitación completa del equipo de usuarios finales.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Showcase -->
+    <section class="container">
+        <div class="tech-showcase">
+            <h2 class="section-title mb-4">Stack Tecnológico Completo</h2>
+            <p class="section-subtitle">
+                Dominamos las tecnologías más demandadas y actualizadas del mercado
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🎨</span> Frontend & UI/UX
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">React</span>
+                            <span class="tech-badge featured">Angular</span>
+                            <span class="tech-badge featured">Vue.js</span>
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Nuxt.js</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">Material UI</span>
+                            <span class="tech-badge">Figma</span>
+                            <span class="tech-badge">Adobe XD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>⚙️</span> Backend & APIs
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">Node.js</span>
+                            <span class="tech-badge featured">.NET Core</span>
+                            <span class="tech-badge featured">Python</span>
+                            <span class="tech-badge">Java Spring</span>
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">Express.js</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">NestJS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>📱</span> Mobile Development
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">React Native</span>
+                            <span class="tech-badge featured">Flutter</span>
+                            <span class="tech-badge">Swift</span>
+                            <span class="tech-badge">Kotlin</span>
+                            <span class="tech-badge">Ionic</span>
+                            <span class="tech-badge">Xamarin</span>
+                            <span class="tech-badge">Capacitor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🗄️</span> Bases de Datos
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">PostgreSQL</span>
+                            <span class="tech-badge featured">MongoDB</span>
+                            <span class="tech-badge featured">MySQL</span>
+                            <span class="tech-badge">SQL Server</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">Oracle</span>
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">Cassandra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>☁️</span> Cloud & DevOps
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">AWS</span>
+                            <span class="tech-badge featured">Azure</span>
+                            <span class="tech-badge featured">Google Cloud</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">Jenkins</span>
+                            <span class="tech-badge">GitHub Actions</span>
+                            <span class="tech-badge">GitLab CI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🤖</span> IA & Machine Learning
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">TensorFlow</span>
+                            <span class="tech-badge featured">PyTorch</span>
+                            <span class="tech-badge featured">OpenAI API</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Hugging Face</span>
+                            <span class="tech-badge">Keras</span>
+                            <span class="tech-badge">LangChain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <p class="section-subtitle">
+                Ventajas competitivas que nos convierten en tu mejor aliado tecnológico
+            </p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-title">Desarrollo Ágil</div>
+                        <div class="benefit-text">
+                            Entregas rápidas con sprints de 2 semanas, feedback continuo y adaptación inmediata a
+                            cambios
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔒</div>
+                        <div class="benefit-title">Seguridad Garantizada</div>
+                        <div class="benefit-text">
+                            Código seguro, encriptación avanzada, auditorías de seguridad y cumplimiento normativo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📈</div>
+                        <div class="benefit-title">Escalabilidad Total</div>
+                        <div class="benefit-text">
+                            Arquitecturas cloud-native diseñadas para crecer con tu negocio sin límites
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <div class="benefit-title">ROI Comprobado</div>
+                        <div class="benefit-text">
+                            Soluciones que generan retorno de inversión medible y optimización de costos operativos
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-title">Enfoque Personalizado</div>
+                        <div class="benefit-text">
+                            Cada proyecto es único, adaptamos nuestra metodología a tus necesidades específicas
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">👥</div>
+                        <div class="benefit-title">Equipo Experto</div>
+                        <div class="benefit-text">
+                            Desarrolladores senior certificados con años de experiencia en proyectos complejos
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-title">Soporte Continuo</div>
+                        <div class="benefit-text">
+                            Mantenimiento proactivo, actualizaciones regulares y soporte técnico 24/7
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚀</div>
+                        <div class="benefit-title">Innovación Constante</div>
+                        <div class="benefit-text">
+                            Siempre a la vanguardia con las últimas tecnologías y mejores prácticas del mercado
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="container">
+        <div class="industries-section">
+            <h2 class="section-title mb-4">Industrias que Atendemos</h2>
+            <p class="section-subtitle mb-4">
+                Experiencia comprobada en múltiples sectores e industrias
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏥</div>
+                        <div class="industry-text">Salud y Healthcare - Sistemas médicos y hospitalarios</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏦</div>
+                        <div class="industry-text">Finanzas y Banca - Fintech y sistemas bancarios</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🛒</div>
+                        <div class="industry-text">Retail y E-Commerce - Tiendas online y marketplaces</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏭</div>
+                        <div class="industry-text">Manufactura - Sistemas MES y control de producción</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🎓</div>
+                        <div class="industry-text">Educación - Plataformas LMS y e-learning</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🚚</div>
+                        <div class="industry-text">Logística - Sistemas de gestión y tracking</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏨</div>
+                        <div class="industry-text">Hospitalidad - Sistemas de reservas y gestión hotelera</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🔧</div>
+                        <div class="industry-text">Servicios - Gestión de proyectos y recursos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="cta-section p-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="cta-title mb-4">¿Listo para Transformar tu Negocio con Software Innovador?</h2>
+                        <p class="cta-subtitle mb-5">
+                            Convierte tu visión en realidad con nuestro equipo de desarrolladores expertos.
+                            Desde la concepción hasta el deployment y más allá, te acompañamos en cada paso
+                            del camino hacia el éxito digital.
+                        </p>
+                        <a href="tel:+522761276329" class="btn-cta">
+                            Consulta Especializada Gratuita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus
+                        soluciones tecnológicas.
+                        Innovación, confianza y
+                        soporte para el
+                        crecimiento de tu
+                        negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="../../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="../Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="../Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="../Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i>
+                        El Carmen Tequexquitla,
+                        Tlaxcala
+                    </p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i>
+                        +52 276 127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>.
+                        Todos los
+                        derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
+<script>
+    // BOTÓN SUBIR - robusto con contenedor flotante
+    (function () {
+        function initBtnBehavior() {
+            const btnTop = document.getElementById("btn-top");
+            if (!btnTop) return false;
+
+            const SHOW_AT = 200; // px desde top para mostrar el botón
+
+            const checkScroll = () => {
+                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                if (sc > SHOW_AT) {
+                    btnTop.classList.add("show"); // añade clase para mostrar
+                } else {
+                    btnTop.classList.remove("show"); // oculta el botón
+                }
+            };
+
+            // Estado inicial
+            checkScroll();
+
+            // Listeners
+            window.addEventListener("scroll", checkScroll, { passive: true });
+            window.addEventListener("resize", checkScroll);
+
+            // Click en el botón
+            btnTop.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            return true;
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!initBtnBehavior()) {
+                // Si el botón aparece después de cargar el script
+                const mo = new MutationObserver((mutations, observer) => {
+                    if (initBtnBehavior()) observer.disconnect();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+
+                // Fallback: intenta después de 1 segundo
+                setTimeout(() => { initBtnBehavior(); }, 1000);
+            }
+        });
+    })();
+
+    // Animación de las tarjetas al hacer scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
+    });
+
+    // Efecto de parallax suave para el hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.hero-section');
+        if (parallax) {
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // Animación de números de estadísticas
+    const animateNumbers = () => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            const hasPlus = text.includes('+');
+            const hasPercent = text.includes('%');
+            const hasSlash = text.includes('/');
+
+            if (hasSlash) return; // Skip 24/7
+
+            const number = parseInt(text.replace(/[^0-9]/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            const increment = number / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    current = number;
+                    clearInterval(timer);
+                }
+
+                let displayText = Math.floor(current).toString();
+                if (hasPlus) displayText += '+';
+                if (hasPercent) displayText += '%';
+
+                stat.textContent = displayText;
+            }, duration / steps);
+        });
+    };
+
+    // Observar cuando las estadísticas entren en viewport
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+</script>

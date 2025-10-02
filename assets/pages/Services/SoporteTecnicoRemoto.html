@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico Remoto</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="../../img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary-blue: #004b87;
+            --accent-cyan: #00b4d8;
+            --success-green: #28a745;
+            --text-light: #e8f4f8;
+            --muted: rgba(255, 255, 255, 0.75);
+        }
+
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: linear-gradient(135deg, var(--primary-blue), #003366);
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+
+        .container-narrow {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 1rem
+        }
+
+
+        .hero {
+            padding: 4.5rem 1rem 3rem;
+            position: relative;
+            text-align: center
+        }
+
+        .hero .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem
+        }
+
+        .hero .lead {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem
+        }
+
+
+        .contact-banner {
+            display: inline-block;
+            padding: .65rem 1.25rem;
+            border-radius: 999px;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+            font-weight: 700;
+            color: #fff
+        }
+
+
+        .live-support {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: inline-block
+        }
+
+
+        .card-ghost {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #fff
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.75rem
+        }
+
+        .section-sub {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 1.75rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+
+        .service-card {
+            height: 100%;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #fff
+        }
+
+        .service-icon {
+            font-size: 2.25rem;
+            margin-bottom: .75rem
+        }
+
+
+        .software-card {
+            padding: 1.25rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            height: 100%;
+            text-align: center;
+            color: #fff
+        }
+
+
+        .pricing-card {
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #fff
+        }
+
+        .pricing-card.featured {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            transform: translateY(-6px)
+        }
+
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .stat {
+            flex: 1 1 160px;
+            text-align: center;
+            padding: 1rem
+        }
+
+        .stat .num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-cyan)
+        }
+
+        .stat .label {
+            color: var(--text-light)
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="../../../index.html">
+                <img src="../../img/icono.svg" alt="Icono Key Solutions" height="65">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo
+                                    de
+                                    Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="AutomatizacionConIA.html">Automatización
+                                    de
+                                    Procesos
+                                    con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SitiosWeb.html">Páginas
+                                    y
+                                    Sitios
+                                    Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación
+                                    de
+                                    datos</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="#">Soporte
+                                    Técnico Remoto</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento
+                                    Preventivo
+                                    y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura
+                                    de
+                                    Red</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InstalacionCamarasVideovigilancia.html">Instalación
+                                    de
+                                    Cámaras
+                                    de
+                                    Videovigilancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container container-narrow">
+            <div class="mb-3 d-md-none">
+                <a class="contact-banner" href="tel:+522761276329">¡Cotiza ahora! 📱 276 127 6329</a>
+            </div>
+
+            <h1 class="title">Soporte Técnico Remoto — Rápido y Seguro</h1>
+            <p class="lead">Atención inmediata para tu PC, Mac o servidor. Conexiones seguras, técnicos certificados y
+                planes para particulares y empresas.</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <a class="contact-banner" href="tel:+522761276329">📞 Llamar Ahora</a>
+                <a class="contact-banner" href="https://wa.me/522761276329" target="_blank" rel="noopener">💬
+                    WhatsApp</a>
+            </div>
+
+            <div class="mt-4 live-support reveal" id="liveSupport">
+                <div class="live-support-inner">
+                    <strong class="online-indicator">
+                        <span class="dot" aria-hidden="true"></span>
+                        Técnicos Disponibles Ahora
+                    </strong>
+                    <div class="live-sub">Conexión inmediata • Solución en tiempo real • Sin esperas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-4">
+        <div class="container container-narrow">
+            <div class="card-ghost stats reveal" id="stats">
+                <div class="stat">
+                    <div class="num">15min</div>
+                    <div class="label">Tiempo Promedio</div>
+                </div>
+                <div class="stat">
+                    <div class="num">98%</div>
+                    <div class="label">Problemas Resueltos</div>
+                </div>
+                <div class="stat">
+                    <div class="num">24/7</div>
+                    <div class="label">Disponibilidad</div>
+                </div>
+                <div class="stat">
+                    <div class="num">15,000+</div>
+                    <div class="label">Casos Atendidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5">
+        <div class="container container-narrow">
+            <h2 class="section-title">Servicios de Soporte Remoto</h2>
+            <p class="section-sub">Asistencia técnica profesional a distancia para todos tus problemas tecnológicos.</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s1">
+                        <div class="service-icon">👨‍💻</div>
+                        <h3 id="s1">Asistencia para Software</h3>
+                        <p>Diagnóstico y reparación en tiempo real. Errores, apps que no abren y optimización.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s2">
+                        <div class="service-icon">⚙️</div>
+                        <h3 id="s2">Instalación y Configuración</h3>
+                        <p>Instalamos y configuramos software, licencias y suites empresariales.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s3">
+                        <div class="service-icon">🔒</div>
+                        <h3 id="s3">Eliminación de Malware</h3>
+                        <p>Limpieza profunda, rescate de archivos y recomendaciones de seguridad.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s4">
+                        <div class="service-icon">🌐</div>
+                        <h3 id="s4">Redes y Conectividad</h3>
+                        <p>Solución de internet, VPNs, impresoras en red y optimización de Wi-Fi.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s5">
+                        <div class="service-icon">📧</div>
+                        <h3 id="s5">Email y Office</h3>
+                        <p>Configuración de Outlook, Google Workspace y sincronización corporativa.</p>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="service-card reveal" aria-labelledby="s6">
+                        <div class="service-icon">🛡️</div>
+                        <h3 id="s6">Monitoreo y Respaldo</h3>
+                        <p>Monitoreo proactivo, respaldos y mantenimientos programados.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools" class="py-5 tools-section">
+        <div class="container container-narrow">
+            <h2 class="section-title">Herramientas de Acceso Remoto</h2>
+            <p class="section-sub">Usamos plataformas seguras y confiables: TeamViewer, AnyDesk, Chrome Remote Desktop y
+                más.</p>
+
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="software-card reveal">
+                        <div class="software-logo">🖥️</div>
+                        <h4>TeamViewer</h4>
+                        <p>Acceso remoto multiplataforma con funciones empresariales.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="software-card reveal">
+                        <div class="software-logo">💻</div>
+                        <h4>AnyDesk</h4>
+                        <p>Ligero y rápido, ideal para conexiones con ancho de banda limitado.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="software-card reveal">
+                        <div class="software-logo">🔧</div>
+                        <h4>Chrome Remote Desktop</h4>
+                        <p>Acceso desde navegador, simple y seguro.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="software-card reveal">
+                        <div class="software-logo">🛠️</div>
+                        <h4>Microsoft RDP</h4>
+                        <p>Conexiones para servidores y entornos Windows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans" class="py-5">
+        <div class="container container-narrow">
+            <h2 class="section-title">Planes y Precios</h2>
+            <p class="section-sub">Opciones flexibles para usuarios y empresas. Precios mostrados como ejemplo.</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-card reveal">
+                        <h3>Por Incidente</h3>
+                        <div class="price">$39 <small>USD</small></div>
+                        <ul class="features">
+                            <li>1 problema técnico</li>
+                            <li>Hasta 1 hora de soporte</li>
+                            <li>Pago después de resolver</li>
+                        </ul>
+                        <a class="contact-banner mt-3 d-inline-block" href="tel:+522761276329">Solicitar Soporte</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-card featured reveal">
+                        <div class="ribbon">Más Popular</div>
+                        <h3>Plan Mensual</h3>
+                        <div class="price">$99 <small>USD / mes</small></div>
+                        <ul class="features">
+                            <li>Soporte ilimitado</li>
+                            <li>Hasta 5 dispositivos</li>
+                            <li>Monitoreo proactivo</li>
+                        </ul>
+                        <a class="contact-banner mt-3 d-inline-block" href="tel:+522761276329">Contratar Plan</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-card reveal">
+                        <h3>Plan Empresarial</h3>
+                        <div class="price">$299+ <small>USD / mes</small></div>
+                        <ul class="features">
+                            <li>Técnico dedicado</li>
+                            <li>Dispositivos ilimitados</li>
+                            <li>SLA personalizado</li>
+                        </ul>
+                        <a class="contact-banner mt-3 d-inline-block" href="tel:+522761276329">Contactar Ventas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4"><small>* Precios de ejemplo. Contacta para cotización personalizada.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-5">
+        <div class="container container-narrow">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-sub">Resolvemos las dudas más comunes sobre nuestro servicio remoto.</p>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card-ghost reveal">
+                        <h5>¿Es seguro dar acceso remoto?</h5>
+                        <p>Sí. Usamos conexiones cifradas y solo actuamos con tu autorización. Puedes ver y finalizar la
+                            sesión en cualquier momento.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-ghost reveal">
+                        <h5>¿Qué necesito para recibir soporte?</h5>
+                        <p>Conexión a internet y permiso para descargar el software de acceso remoto (2 minutos).</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-ghost reveal">
+                        <h5>¿Pueden trabajar fuera de horario?</h5>
+                        <p>Sí, 24/7 para emergencias. Fuera de horario con cargo adicional.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-ghost reveal">
+                        <h5>¿No resolvieron mi problema?</h5>
+                        <p>Si no es posible solucionarlo de forma remota, no cobramos y te orientamos sobre siguientes
+                            pasos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus
+                        soluciones tecnológicas.
+                        Innovación, confianza y
+                        soporte para el
+                        crecimiento de tu
+                        negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="../../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="../Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="../Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="../Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i>
+                        El Carmen Tequexquitla,
+                        Tlaxcala
+                    </p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i>
+                        +52 276 127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>.
+                        Todos los
+                        derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+<script>
+    // BOTÓN SUBIR - robusto con contenedor flotante
+    (function () {
+        function initBtnBehavior() {
+            const btnTop = document.getElementById("btn-top");
+            if (!btnTop) return false;
+
+            const SHOW_AT = 200; // px desde top para mostrar el botón
+
+            const checkScroll = () => {
+                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                if (sc > SHOW_AT) {
+                    btnTop.classList.add("show"); // añade clase para mostrar
+                } else {
+                    btnTop.classList.remove("show"); // oculta el botón
+                }
+            };
+
+            // Estado inicial
+            checkScroll();
+
+            // Listeners
+            window.addEventListener("scroll", checkScroll, { passive: true });
+            window.addEventListener("resize", checkScroll);
+
+            // Click en el botón
+            btnTop.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            return true;
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!initBtnBehavior()) {
+                // Si el botón aparece después de cargar el script
+                const mo = new MutationObserver((mutations, observer) => {
+                    if (initBtnBehavior()) observer.disconnect();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+
+                // Fallback: intenta después de 1 segundo
+                setTimeout(() => { initBtnBehavior(); }, 1000);
+            }
+        });
+    })();
+    // Interacciones: menú móvil, reveal on scroll
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', function () {
+                const isOpen = mobileMenu.style.display === 'block';
+                mobileMenu.style.display = isOpen ? 'none' : 'block';
+                mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+                mobileMenu.setAttribute('aria-hidden', String(isOpen));
+            });
+
+            // close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    mobileMenu.style.display = 'none';
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                });
+            });
+
+            // keyboard accessible toggle (Enter / Space)
+            mobileBtn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    mobileBtn.click();
+                }
+            });
+        }
+
+        // IntersectionObserver for reveal elements
+        const revealElems = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && revealElems.length) {
+            const io = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElems.forEach(el => io.observe(el));
+        } else {
+            // fallback: show all
+            revealElems.forEach(el => el.classList.add('visible'));
+        }
+    });
+
+</script>

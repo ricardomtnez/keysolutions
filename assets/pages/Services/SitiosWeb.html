@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas y Sitios Web</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="../../img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(45deg, #64b5f6, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #b8c5d6;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(33, 150, 243, 0.6);
+            color: white;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: #0d1529;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: #8892a6;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(33, 150, 243, 0.5);
+            box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+        }
+
+        .service-icon-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+        }
+
+        .icon-gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .icon-gradient-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .icon-gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .service-description {
+            color: #b8c5d6;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 0;
+            background: #0a0e27;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 45px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(33, 150, 243, 0.5);
+            box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #2196F3;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.25) 0%, rgba(25, 118, 210, 0.3) 100%);
+            position: relative;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .pricing-plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2196F3;
+            margin-bottom: 8px;
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: #8892a6;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .pricing-description {
+            color: #b8c5d6;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 35px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            color: #b8c5d6;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li i {
+            color: #4CAF50;
+            margin-right: 12px;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.5);
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .cta-text {
+            font-size: 1.15rem;
+            color: #b8c5d6;
+            margin-bottom: 35px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 1rem;
+        }
+
+        .contact-btn:hover {
+            background: rgba(33, 150, 243, 0.3);
+            border-color: rgba(33, 150, 243, 0.5);
+            transform: translateY(-3px);
+            color: #ffffff;
+        }
+
+        .contact-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="../../../index.html">
+                <img src="../../img/icono.svg" alt="Icono Key Solutions" height="65">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo
+                                    de
+                                    Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="AutomatizacionConIA.html">Automatización
+                                    de
+                                    Procesos
+                                    con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="#">Páginas
+                                    y
+                                    Sitios
+                                    Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación
+                                    de
+                                    datos</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SoporteTecnicoRemoto.html">Soporte
+                                    Técnico Remoto</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento
+                                    Preventivo
+                                    y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura
+                                    de
+                                    Red</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InstalacionCamarasVideovigilancia.html">Instalación
+                                    de
+                                    Cámaras
+                                    de
+                                    Videovigilancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="highlight">Páginas y Sitios Web</span> Profesionales
+                        </h1>
+                        <p class="hero-subtitle">
+                            Implementamos tecnologías de desarrollo web que revolucionan la forma en que tu
+                            empresa se presenta en línea, optimizando cada aspecto de tu presencia digital
+                            para convertir visitantes en clientes.
+                        </p>
+                        <a href="#contacto" class="hero-btn">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Cotiza Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Páginas y Sitios Web</h2>
+                <p class="section-subtitle">
+                    Creamos soluciones web personalizadas que se adaptan perfectamente a las necesidades de tu negocio
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Sitios Institucionales y Corporativos -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon icon-gradient-1">
+                                <i class="bi bi-building"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">Sitios Institucionales y Corporativos</h3>
+                        <p class="service-description">
+                            Sitios sólidos, confiables y alineados a la identidad de tu Negocio.
+                            Diseñados para comunicar profesionalismo, fortalecer tu marca, presentar
+                            servicios, equipo, misión, visión y generar confianza ante tus clientes,
+                            socios o inversionistas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sitios de Una Sola Página -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon icon-gradient-2">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">Sitios de Una Sola Página (One Pages)</h3>
+                        <p class="service-description">
+                            Sitios web de una sola página que comunican todo lo esencial de forma
+                            clara, rápida y visualmente atractiva. Ideal para negocios que quieren
+                            presencia digital sin complicaciones, con navegación fluida, diseño
+                            responsive y enfoque directo en convertir visitantes en clientes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Páginas de Aterrizaje -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon icon-gradient-3">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">Páginas de Aterrizaje (Landing Pages)</h3>
+                        <p class="service-description">
+                            Diseños enfocados en convertir visitas en contactos o ventas. Ideales
+                            para campañas de marketing digital, lanzamiento de productos o servicios,
+                            con diseño responsive y enfoque directo en convertir visitantes en clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Planes de Desarrollo Web</h2>
+                <p class="section-subtitle">
+                    Elige el plan que mejor se adapte a las necesidades de tu negocio
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Plan Básico -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="pricing-card">
+                        <h3 class="pricing-plan-name">Plan Básico</h3>
+                        <div class="pricing-price">$4,999</div>
+                        <span class="pricing-period">Pago único</span>
+                        <p class="pricing-description">
+                            Perfecto para pequeños negocios o emprendedores que necesitan
+                            presencia profesional en línea.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Hasta 5 páginas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Diseño responsive (móvil y escritorio)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Formulario de contacto</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Integración con redes sociales</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Optimización SEO básica</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Google Maps integrado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado SSL</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Hosting incluido (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dominio .com o .mx (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 3 cuentas de correo corporativo</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Capacitación básica</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 1 mes de soporte técnico</li>
+                        </ul>
+                        <a href="#contacto" class="pricing-btn">Solicitar Plan Básico</a>
+                    </div>
+                </div>
+
+                <!-- Plan Profesional -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Más Popular</span>
+                        <h3 class="pricing-plan-name">Plan Profesional</h3>
+                        <div class="pricing-price">$9,999</div>
+                        <span class="pricing-period">Pago único</span>
+                        <p class="pricing-description">
+                            Ideal para empresas establecidas que buscan destacar con
+                            funcionalidades avanzadas y diseño personalizado.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Hasta 15 páginas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Diseño 100% personalizado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Blog o sección de noticias</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Formularios avanzados</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Galería multimedia</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Optimización SEO avanzada</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Panel de administración CMS</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Integración con CRM</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Chat de WhatsApp Business</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Google Analytics configurado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado SSL premium</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Hosting incluido (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dominio premium (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 10 cuentas de correo corporativo</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Capacitación completa</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 3 meses de soporte técnico</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Actualizaciones de contenido mensuales</li>
+                        </ul>
+                        <a href="#contacto" class="pricing-btn">Solicitar Plan Profesional</a>
+                    </div>
+                </div>
+
+                <!-- Plan Pro -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="pricing-card">
+                        <h3 class="pricing-plan-name">Plan Pro</h3>
+                        <div class="pricing-price">$19,999</div>
+                        <span class="pricing-period">Pago único</span>
+                        <p class="pricing-description">
+                            Para empresas que requieren soluciones web avanzadas con
+                            funcionalidades personalizadas y máxima optimización.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Páginas ilimitadas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Diseño UI/UX premium personalizado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Portal de clientes o área privada</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Sistema de reservas o citas online</li>
+                            <li><i class="bi bi-check-circle-fill"></i> E-commerce básico (hasta 50 productos)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Integraciones API personalizadas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Blog multiautor con editor avanzado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Sistema de newsletters</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Multiidioma (hasta 3 idiomas)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Optimización de velocidad avanzada</li>
+                            <li><i class="bi bi-check-circle-fill"></i> SEO técnico avanzado</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Analytics y reportes personalizados</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado SSL premium</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Hosting premium incluido (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dominio premium (1 año)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Correos corporativos ilimitados</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Capacitación completa para equipo</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 6 meses de soporte prioritario</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Mantenimiento y actualizaciones incluidas</li>
+                        </ul>
+                        <a href="#contacto" class="pricing-btn">Solicitar Plan Pro</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 fade-up">
+                <p style="color: #8892a6; font-size: 1rem;">
+                    ¿Necesitas algo personalizado?
+                    <a href="#contacto" style="color: #2196F3; text-decoration: none; font-weight: 600;">
+                        Contáctanos para un plan a tu medida
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <div class="fade-up">
+                <h2 class="cta-title">¡Cotiza Ahora!</h2>
+                <p class="cta-text">
+                    Comienza tu proyecto web hoy mismo y lleva tu negocio al siguiente nivel.
+                    Nuestro equipo está listo para ayudarte a crear la presencia digital que tu empresa merece.
+                </p>
+                <a href="https://wa.me/5212761276329" class="hero-btn" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i>Contactar por WhatsApp
+                </a>
+
+                <div class="contact-info">
+                    <a href="https://wa.me/5212761276329" class="contact-btn" target="_blank">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>276 127 6329</span>
+                    </a>
+                    <a href="mailto:info@keysolutions.tech" class="contact-btn">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>info@keysolutions.tech</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus
+                        soluciones tecnológicas.
+                        Innovación, confianza y
+                        soporte para el
+                        crecimiento de tu
+                        negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="../../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="../Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="../Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="../Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i>
+                        El Carmen Tequexquitla,
+                        Tlaxcala
+                    </p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i>
+                        +52 276 127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>.
+                        Todos los
+                        derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+<script>
+    // BOTÓN SUBIR - robusto con contenedor flotante
+    (function () {
+        function initBtnBehavior() {
+            const btnTop = document.getElementById("btn-top");
+            if (!btnTop) return false;
+
+            const SHOW_AT = 200; // px desde top para mostrar el botón
+
+            const checkScroll = () => {
+                const sc = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                if (sc > SHOW_AT) {
+                    btnTop.classList.add("show"); // añade clase para mostrar
+                } else {
+                    btnTop.classList.remove("show"); // oculta el botón
+                }
+            };
+
+            // Estado inicial
+            checkScroll();
+
+            // Listeners
+            window.addEventListener("scroll", checkScroll, { passive: true });
+            window.addEventListener("resize", checkScroll);
+
+            // Click en el botón
+            btnTop.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            return true;
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!initBtnBehavior()) {
+                // Si el botón aparece después de cargar el script
+                const mo = new MutationObserver((mutations, observer) => {
+                    if (initBtnBehavior()) observer.disconnect();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+
+                // Fallback: intenta después de 1 segundo
+                setTimeout(() => { initBtnBehavior(); }, 1000);
+            }
+        });
+    })();
+    
+    // Intersection Observer para animaciones
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>

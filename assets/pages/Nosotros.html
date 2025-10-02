@@ -13,328 +13,983 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-        <!-- Animaciones -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+                rel="stylesheet">
         <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
                 body {
-                        background-color: #0a0f1c;
-                        color: white;
-                        font-family: 'Segoe UI', sans-serif;
+                        font-family: 'Poppins', sans-serif;
+                        background: #0a0e27;
+                        color: #ffffff;
+                        overflow-x: hidden;
                 }
 
-                h1,
-                h2,
-                h3,
-                h4 {
-                        font-weight: 700;
-                }
-
+                /* Hero Section */
                 .hero-section {
-                        background: linear-gradient(135deg, #0a0f1c 0%, #003366 100%);
-                        padding: 120px 0 80px;
-                        text-align: center;
+                        min-height: 100vh;
+                        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                        display: flex;
+                        align-items: center;
+                        padding: 100px 0;
+                        position: relative;
+                        overflow: hidden;
                 }
 
-                .hero-section h1 {
+                .hero-section::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background:
+                                radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                                radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.15) 0%, transparent 50%);
+                }
+
+                .hero-content {
+                        position: relative;
+                        z-index: 2;
+                }
+
+                .hero-badge {
+                        display: inline-block;
+                        background: rgba(33, 150, 243, 0.2);
+                        border: 1px solid rgba(33, 150, 243, 0.5);
+                        color: #64b5f6;
+                        padding: 10px 25px;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        margin-bottom: 25px;
+                }
+
+                .hero-title {
+                        font-size: 3.8rem;
+                        font-weight: 800;
+                        margin-bottom: 25px;
+                        line-height: 1.2;
+                        color: #ffffff;
+                }
+
+                .hero-title .highlight {
+                        background: linear-gradient(45deg, #64b5f6, #2196F3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                }
+
+                .hero-subtitle {
+                        font-size: 1.3rem;
+                        color: #b8c5d6;
+                        margin-bottom: 35px;
+                        line-height: 1.7;
+                }
+
+                .hero-btn {
+                        display: inline-block;
+                        padding: 18px 45px;
+                        background: linear-gradient(45deg, #2196F3, #1976D2);
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+                }
+
+                .hero-btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 12px 35px rgba(33, 150, 243, 0.6);
+                        color: white;
+                }
+
+                /* Stats Section */
+                .stats-section {
+                        padding: 100px 0;
+                        background: #0d1529;
+                }
+
+                .stat-card {
+                        text-align: center;
+                        padding: 40px 20px;
+                        background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+                        border-radius: 20px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.4s ease;
+                        height: 100%;
+                }
+
+                .stat-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(33, 150, 243, 0.5);
+                        box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+                }
+
+                .stat-icon {
+                        font-size: 3.5rem;
+                        margin-bottom: 20px;
+                        background: linear-gradient(45deg, #64b5f6, #2196F3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                }
+
+                .stat-number {
                         font-size: 3rem;
-                        color: #00e5ff;
-                        /* azul aqua corporativo */
+                        font-weight: 800;
+                        color: #ffffff;
+                        margin-bottom: 10px;
                 }
 
-                .section-dark {
-                        background-color: #111827;
-                        padding: 80px 0;
+                .stat-label {
+                        font-size: 1.1rem;
+                        color: #8892a6;
                 }
 
-                .section-light {
-                        background-color: #111;
-                        color: #111;
-                        padding: 80px 0;
+                /* Mission Section */
+                .mission-section {
+                        padding: 100px 0;
+                        background: #0a0e27;
                 }
 
-                .section-light h2 {
-                        color: #003366;
-                }
-
-                .icon-box {
+                .section-header {
                         text-align: center;
-                        padding: 20px;
-                        border-radius: 12px;
-                        background: rgba(255, 255, 255, 0.05);
+                        margin-bottom: 70px;
+                }
+
+                .section-title {
+                        font-size: 2.8rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        color: #ffffff;
+                }
+
+                .section-subtitle {
+                        font-size: 1.15rem;
+                        color: #8892a6;
+                        max-width: 650px;
+                        margin: 0 auto;
+                }
+
+                .mission-card {
+                        background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+                        border-radius: 20px;
+                        padding: 50px 40px;
+                        height: 100%;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.4s ease;
+                        text-align: center;
+                }
+
+                .mission-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(33, 150, 243, 0.5);
+                        box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+                }
+
+                .mission-icon {
+                        width: 100px;
+                        height: 100px;
+                        margin: 0 auto 30px;
+                        border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 3rem;
+                }
+
+                .icon-gradient-1 {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                }
+
+                .icon-gradient-2 {
+                        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                }
+
+                .icon-gradient-3 {
+                        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                }
+
+                .mission-title {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        color: #ffffff;
+                }
+
+                .mission-description {
+                        color: #b8c5d6;
+                        line-height: 1.7;
+                        font-size: 1.05rem;
+                }
+
+                /* Values Section */
+                .values-section {
+                        padding: 100px 0;
+                        background: #0d1529;
+                }
+
+                .value-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 25px;
+                        margin-bottom: 40px;
+                        padding: 35px;
+                        background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(25, 118, 210, 0.05) 100%);
+                        border-radius: 15px;
+                        border-left: 4px solid #2196F3;
                         transition: all 0.3s ease;
                 }
 
-                .icon-box:hover {
-                        transform: translateY(-10px);
-                        background: rgba(0, 229, 255, 0.1);
+                .value-item:hover {
+                        transform: translateX(10px);
+                        background: linear-gradient(135deg, rgba(33, 150, 243, 0.15) 0%, rgba(25, 118, 210, 0.1) 100%);
                 }
 
-                .icon-box i {
-                        font-size: 40px;
-                        color: #00e5ff;
-                        margin-bottom: 15px;
-                }
-
-                .values-card {
-                        background: white;
-                        color: #111;
-                        padding: 30px;
+                .value-icon {
+                        width: 60px;
+                        height: 60px;
+                        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
                         border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.8rem;
+                        flex-shrink: 0;
+                }
+
+                .value-content h3 {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                        color: #ffffff;
+                }
+
+                .value-content p {
+                        color: #b8c5d6;
+                        line-height: 1.6;
+                        margin: 0;
+                }
+
+                /* Team Section */
+                .team-section {
+                        padding: 100px 0;
+                        background: #0a0e27;
+                }
+
+                .team-card {
+                        background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+                        border-radius: 20px;
+                        padding: 40px 30px;
                         text-align: center;
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                        transition: transform 0.3s ease;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.4s ease;
+                        height: 100%;
                 }
 
-                .values-card:hover {
-                        transform: scale(1.05);
+                .team-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(33, 150, 243, 0.5);
+                        box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
                 }
 
-                .values-card P {
-                        color: #0A4E8C;
+                .team-avatar {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+                        margin: 0 auto 25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 3rem;
+                        color: white;
+                        border: 4px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .team-name {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 8px;
+                        color: #ffffff;
+                }
+
+                .team-role {
+                        font-size: 1rem;
+                        color: #64b5f6;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                }
+
+                .team-description {
+                        color: #b8c5d6;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                }
+
+                /* Timeline Section */
+                .timeline-section {
+                        padding: 100px 0;
+                        background: #0d1529;
+                }
+
+                .timeline-item {
+                        display: flex;
+                        gap: 40px;
+                        margin-bottom: 50px;
+                        position: relative;
+                }
+
+                .timeline-item::before {
+                        content: '';
+                        position: absolute;
+                        left: 89px;
+                        top: 100px;
+                        width: 2px;
+                        height: calc(100% + 50px);
+                        background: linear-gradient(180deg, #2196F3 0%, transparent 100%);
+                }
+
+                .timeline-item:last-child::before {
+                        display: none;
+                }
+
+                .timeline-date {
+                        width: 180px;
+                        text-align: right;
+                        padding-top: 10px;
+                        flex-shrink: 0;
+                }
+
+                .timeline-year {
+                        font-size: 2.5rem;
+                        font-weight: 800;
+                        background: linear-gradient(45deg, #64b5f6, #2196F3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        line-height: 1;
+                }
+
+                .timeline-content {
+                        flex: 1;
+                        background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+                        border-radius: 20px;
+                        padding: 35px 30px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        position: relative;
+                }
+
+                .timeline-content::before {
+                        content: '';
+                        position: absolute;
+                        left: -20px;
+                        top: 30px;
+                        width: 20px;
+                        height: 20px;
+                        background: #2196F3;
+                        border-radius: 50%;
+                        box-shadow: 0 0 0 6px rgba(33, 150, 243, 0.2);
+                }
+
+                .timeline-title {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 15px;
+                        color: #ffffff;
+                }
+
+                .timeline-description {
+                        color: #b8c5d6;
+                        line-height: 1.6;
+                }
+
+                /* CTA Section */
+                .cta-section {
+                        padding: 100px 0;
+                        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                        text-align: center;
+                }
+
+                .cta-title {
+                        font-size: 2.8rem;
+                        font-weight: 800;
+                        margin-bottom: 20px;
+                        color: #ffffff;
+                }
+
+                .cta-text {
+                        font-size: 1.2rem;
+                        color: #b8c5d6;
+                        margin-bottom: 35px;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+
+                .contact-info {
+                        display: flex;
+                        justify-content: center;
+                        gap: 25px;
+                        margin-top: 40px;
+                        flex-wrap: wrap;
+                }
+
+                .contact-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 18px 35px;
+                        background: rgba(255, 255, 255, 0.1);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        border-radius: 50px;
+                        color: #ffffff;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        backdrop-filter: blur(10px);
+                        font-size: 1.05rem;
+                        font-weight: 600;
+                }
+
+                .contact-btn:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                        border-color: rgba(255, 255, 255, 0.4);
+                        transform: translateY(-3px);
+                        color: #ffffff;
+                }
+
+                .contact-btn i {
+                        font-size: 1.4rem;
+                }
+
+                /* Responsive */
+                @media (max-width: 992px) {
+                        .hero-title {
+                                font-size: 2.8rem;
+                        }
+
+                        .timeline-item {
+                                flex-direction: column;
+                                gap: 20px;
+                        }
+
+                        .timeline-date {
+                                text-align: left;
+                        }
+
+                        .timeline-item::before {
+                                display: none;
+                        }
+
+                        .timeline-content::before {
+                                display: none;
+                        }
+                }
+
+                @media (max-width: 768px) {
+                        .hero-title {
+                                font-size: 2.2rem;
+                        }
+
+                        .hero-subtitle {
+                                font-size: 1.05rem;
+                        }
+
+                        .section-title {
+                                font-size: 2rem;
+                        }
+
+                        .stat-number {
+                                font-size: 2.5rem;
+                        }
+
+                        .value-item {
+                                flex-direction: column;
+                                text-align: center;
+                        }
+                }
+
+                /* Animations */
+                .fade-up {
+                        opacity: 0;
+                        transform: translateY(30px);
+                        transition: all 0.8s ease;
+                }
+
+                .fade-up.visible {
+                        opacity: 1;
+                        transform: translateY(0);
                 }
         </style>
 </head>
 
 <body>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
                 <div class="container-fluid">
+                        <!-- LOGO -->
                         <a class="navbar-brand" href="../../index.html">
-                                <img src="../img/icono.svg" alt="Key Solutions" height="55">
+                                <img src="../img/icono.svg" alt="Icono Key Solutions" height="65">
                         </a>
+
+                        <!-- Botón hamburguesa -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav">
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav ms-auto">
+
+                        <!-- Menú -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                         <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="Servicios.html">Servicios</a>
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/ConsultoriaTecnologica.html">Consultoría
+                                                                        Tecnológica</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/DesarrolloSoftware.html">Desarrollo
+                                                                        de
+                                                                        Software</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Automatización
+                                                                        de
+                                                                        Procesos
+                                                                        con
+                                                                        IA</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Páginas
+                                                                        y
+                                                                        Sitios
+                                                                        Web</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Recuperación
+                                                                        de
+                                                                        datos</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Soporte
+                                                                        Técnico</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Mantenimiento
+                                                                        Preventivo
+                                                                        y
+                                                                        Correctivo</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Infraestructura
+                                                                        de
+                                                                        Red</a></li>
+                                                        <li>
+                                                                <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item" href="#">Instalación
+                                                                        de
+                                                                        Cámaras
+                                                                        de
+                                                                        Videovigilancia</a></li>
+                                                </ul>
                                         </li>
                                         <li class="nav-item"><a class="nav-link" href="Productos.html">Productos</a>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link active text-info" href="#">Nosotros</a>
-                                        </li>
+                                        <li class="nav-item"><a class="nav-link active" href="#">Nosotros</a></li>
                                         <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
                                 </ul>
                         </div>
                 </div>
         </nav>
-
-        <!-- HERO -->
+        <!-- Hero Section -->
         <section class="hero-section">
                 <div class="container">
-                        <h1 class="animate__animated animate__fadeInDown">Nosotros</h1>
-                        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
-                                La clave de tus soluciones tecnológicas
-                        </p>
-                </div>
-        </section>
-
-        <!-- QUIÉNES SOMOS -->
-        <section class="section-light">
-                <div class="container">
                         <div class="row align-items-center">
-                                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                                        <h2>¿Quiénes somos?</h2>
-                                        <p class="text-justify">En un
-                                                mundo donde la
-                                                tecnología avanza cada
-                                                día a
-                                                pasos impresionantes,
-                                                las empresas y personas
-                                                necesitan soluciones
-                                                inteligentes, seguras y
-                                                a la
-                                                medida.
-                                        </p>
-                                        <p class="text-justify"> <b>Key
-                                                        Solutions</b>
-                                                es la llave que abre la
-                                                puerta al crecimiento,
-                                                la innovación y la
-                                                eficiencia.
-                                                Somos una marca joven,
-                                                apasionada por la
-                                                tecnología,
-                                                con enfoque profesional,
-                                                cercano y orientado a
-                                                resultados, creemos en
-                                                una tecnología al
-                                                servicio de
-                                                las personas, que haga
-                                                su vida más fácil,
-                                                productiva y
-                                                eficiente.</p>
-                                        <p class="text-justify">
-                                                Ofrecemos soluciones
-                                                prácticas y sostenibles,
-                                                siempre
-                                                con atención
-                                                personalizada y
-                                                compromiso total.</p>
-                                </div>
-                                <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
-                                        <img src="../img/quienes-somos.png" class="img-fluid rounded"
-                                                alt="Quienes somos">
+                                <div class="col-lg-8 mx-auto text-center">
+                                        <div class="hero-content">
+                                                <span class="hero-badge">
+                                                        <i class="bi bi-star-fill me-2"></i>Tecnología al Servicio de
+                                                        las Personas
+                                                </span>
+                                                <h1 class="hero-title">
+                                                        Somos <span class="highlight">Key Solutions</span>
+                                                </h1>
+                                                <p class="hero-subtitle">
+                                                        En un mundo donde la tecnología avanza cada día a pasos
+                                                        impresionantes,
+                                                        las empresas y personas necesitan soluciones inteligentes,
+                                                        seguras y a la medida.
+                                                        Somos la llave que abre la puerta al crecimiento, la innovación
+                                                        y la eficiencia.
+                                                </p>
+                                                <a href="#contacto" class="hero-btn">
+                                                        Trabaja con Nosotros
+                                                </a>
+                                        </div>
                                 </div>
                         </div>
                 </div>
         </section>
 
-        <!-- NUESTRA HISTORIA -->
-        <section class="section-dark">
+        <!-- Stats Section -->
+        <section class="stats-section">
                 <div class="container">
-                        <div class="row align-items-center">
-                                <div class="col-lg-6 text-center animate__animated animate__zoomIn">
-                                        <img src="../img/nuestra-historia.png" class="img-fluid" alt="Nuestra Historia">
-                                </div>
-                                <div class="col-lg-6 animate__animated animate__fadeInUp">
-                                        <h2 class="text-info">Nuestra
-                                                historia</h2>
-                                        <p class="text-justify"><b>Key
-                                                        Solutions</b>
-                                                nace el
-                                                1 de mayo de 2023, con
-                                                el propósito de acercar
-                                                tecnología innovadora a
-                                                empresas mexicanas.</p>
-                                        <p class="text-justify">Con más
-                                                de 5 años de
-                                                experiencia técnica
-                                                acumulada, buscamos ser
-                                                un referente confiable,
-                                                cercano y efectivo en el
-                                                país.</p>
-
-                                </div>
-                        </div>
-                </div>
-        </section>
-
-        <!-- MISIÓN Y VISIÓN -->
-        <section class="section-light">
-                <div class="container text-center">
-                        <div class="row">
-                                <div class="col-md-6 animate__animated animate__fadeInLeft">
-                                        <h2>Misión</h2>
-                                        <p>Brindar soluciones
-                                                tecnológicas
-                                                innovadoras, funcionales
-                                                y
-                                                accesibles que mejoren
-                                                la vida y los procesos
-                                                de nuestros clientes,
-                                                mediante un servicio
-                                                cercano, profesional y
-                                                enfocado en
-                                                resultados.</p>
-                                </div>
-                                <div class="col-md-6 animate__animated animate__fadeInRight">
-                                        <h2>Visión</h2>
-                                        <p>Ser una marca líder en el
-                                                desarrollo de tecnología
-                                                en México,
-                                                reconocida por la
-                                                calidad humana y técnica
-                                                de su equipo, su
-                                                compromiso con la mejora
-                                                continua y su
-                                                contribución al
-                                                crecimiento digital del
-                                                país.</p>
-                                </div>
-                        </div>
-                </div>
-        </section>
-
-        <!-- VALORES -->
-        <section class="section-dark">
-                <div class="container">
-                        <h2 class="text-center mb-5 text-info animate__animated animate__fadeInDown">Nuestros
-                                Valores</h2>
                         <div class="row g-4">
-                                <div class="col-md-3">
-                                        <div class="values-card">
-                                                <h4>Liderazgo</h4>
-                                                <p class="text-justify">Tomamos
-                                                        la iniciativa,
-                                                        marcamos el
-                                                        rumbo y
-                                                        transformamos
-                                                        desafíos
-                                                        en
-                                                        oportunidades.
-                                                        No
-                                                        seguimos
-                                                        tendencias, las
-                                                        creamos.</p>
+                                <div class="col-lg-3 col-md-6 fade-up">
+                                        <div class="stat-card">
+                                                <i class="bi bi-calendar-check stat-icon"></i>
+                                                <div class="stat-number">2+</div>
+                                                <div class="stat-label">Años de Experiencia</div>
                                         </div>
                                 </div>
-                                <div class="col-md-3">
-                                        <div class="values-card">
-                                                <h4>Disciplina</h4>
-                                                <p class="text-justify">Mantenemos
-                                                        el rumbo
-                                                        incluso
-                                                        cuando
-                                                        la
-                                                        motivación es
-                                                        baja. La
-                                                        constancia nos
-                                                        permite
-                                                        avanzar con
-                                                        firmeza hacia
-                                                        nuestros
-                                                        objetivos.</p>
+                                <div class="col-lg-3 col-md-6 fade-up">
+                                        <div class="stat-card">
+                                                <i class="bi bi-people-fill stat-icon"></i>
+                                                <div class="stat-number">200+</div>
+                                                <div class="stat-label">Clientes Satisfechos</div>
                                         </div>
                                 </div>
-                                <div class="col-md-3">
-                                        <div class="values-card">
-                                                <h4>Aprendizaje</h4>
-                                                <p class="text-justify">Mejoramos
-                                                        cada
-                                                        día,
-                                                        sabiendo
-                                                        que
-                                                        el
-                                                        conocimiento
-                                                        y
-                                                        las
-                                                        habilidades de
-                                                        hoy son la
-                                                        base para las
-                                                        soluciones
-                                                        del
-                                                        mañana.</p>
+                                <div class="col-lg-3 col-md-6 fade-up">
+                                        <div class="stat-card">
+                                                <i class="bi bi-trophy-fill stat-icon"></i>
+                                                <div class="stat-number">98%</div>
+                                                <div class="stat-label">Tasa de Satisfacción</div>
                                         </div>
                                 </div>
-                                <div class="col-md-3">
-                                        <div class="values-card">
-                                                <h4>Enfoque</h4>
-                                                <p class="text-justify">Concentramos
-                                                        nuestra
-                                                        energía
-                                                        en
-                                                        lo
-                                                        que
-                                                        realmente
-                                                        importa.
-                                                        Evitamos
-                                                        distracciones y
-                                                        trabajamos con
-                                                        dirección
-                                                        clara
-                                                        hacia
-                                                        nuestros
-                                                        objetivos.</p>
+                                <div class="col-lg-3 col-md-6 fade-up">
+                                        <div class="stat-card">
+                                                <i class="bi bi-lightning-charge-fill stat-icon"></i>
+                                                <div class="stat-number">500+</div>
+                                                <div class="stat-label">Proyectos Completados</div>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </section>
 
+        <!-- Mission Section -->
+        <section class="mission-section">
+                <div class="container">
+                        <div class="section-header fade-up">
+                                <h2 class="section-title">Nuestra Esencia</h2>
+                                <p class="section-subtitle">
+                                        Lo que nos define y nos impulsa cada día a dar lo mejor
+                                </p>
+                        </div>
+
+                        <div class="row g-4">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="mission-card">
+                                                <div class="mission-icon icon-gradient-1">
+                                                        <i class="bi bi-bullseye"></i>
+                                                </div>
+                                                <h3 class="mission-title">Misión</h3>
+                                                <p class="mission-description">
+                                                        Proveer soluciones tecnológicas de calidad, desarrolladas con
+                                                        talento local,
+                                                        que hagan la vida y el trabajo más fácil, productivo y eficiente
+                                                        para empresas
+                                                        y personas mexicanas.
+                                                </p>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="mission-card">
+                                                <div class="mission-icon icon-gradient-2">
+                                                        <i class="bi bi-eye-fill"></i>
+                                                </div>
+                                                <h3 class="mission-title">Visión</h3>
+                                                <p class="mission-description">
+                                                        Consolidarnos como una referencia confiable, cercana y efectiva
+                                                        en el sector
+                                                        tecnológico mexicano, siendo reconocidos por nuestra innovación,
+                                                        profesionalismo
+                                                        y compromiso con el éxito de nuestros clientes.
+                                                </p>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="mission-card">
+                                                <div class="mission-icon icon-gradient-3">
+                                                        <i class="bi bi-heart-fill"></i>
+                                                </div>
+                                                <h3 class="mission-title">Propósito</h3>
+                                                <p class="mission-description">
+                                                        Democratizar el acceso a tecnología de calidad, poniendo al
+                                                        alcance de todos
+                                                        soluciones que antes solo estaban disponibles para grandes
+                                                        empresas, siempre
+                                                        con atención personalizada y compromiso total.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+                <div class="container">
+                        <div class="section-header fade-up">
+                                <h2 class="section-title">Nuestros Valores</h2>
+                                <p class="section-subtitle">
+                                        Los principios que guían cada decisión y acción en Key Solutions
+                                </p>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-lg-6 fade-up">
+                                        <div class="value-item">
+                                                <div class="value-icon">
+                                                        <i class="bi bi-trophy-fill"></i>
+                                                </div>
+                                                <div class="value-content">
+                                                        <h3>Liderazgo</h3>
+                                                        <p>
+                                                                Tomamos la iniciativa, marcamos el rumbo y transformamos
+                                                                desafíos
+                                                                en oportunidades. No seguimos tendencias, las creamos
+                                                                para inspirar
+                                                                y guiar el futuro tecnológico.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-6 fade-up">
+                                        <div class="value-item">
+                                                <div class="value-icon">
+                                                        <i class="bi bi-alarm-fill"></i>
+                                                </div>
+                                                <div class="value-content">
+                                                        <h3>Disciplina</h3>
+                                                        <p>
+                                                                Mantenemos el rumbo incluso cuando la motivación baja.
+                                                                La constancia
+                                                                nos permite avanzar con firmeza y alcanzar los objetivos
+                                                                que nos
+                                                                proponemos como equipo.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-6 fade-up">
+                                        <div class="value-item">
+                                                <div class="value-icon">
+                                                        <i class="bi bi-mortarboard-fill"></i>
+                                                </div>
+                                                <div class="value-content">
+                                                        <h3>Aprendizaje Continuo</h3>
+                                                        <p>
+                                                                Mejoramos cada día, entendiendo que el conocimiento y
+                                                                las habilidades
+                                                                de hoy son la base de las soluciones innovadoras del
+                                                                mañana.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-6 fade-up">
+                                        <div class="value-item">
+                                                <div class="value-icon">
+                                                        <i class="bi bi-bullseye"></i>
+                                                </div>
+                                                <div class="value-content">
+                                                        <h3>Enfoque</h3>
+                                                        <p>
+                                                                Concentramos nuestra energía en lo que realmente
+                                                                importa. Evitamos
+                                                                distracciones y trabajamos con claridad y dirección
+                                                                hacia cada meta
+                                                                trazada.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+
+        <!-- Team Section -->
+        <section class="team-section">
+                <div class="container">
+                        <div class="section-header fade-up">
+                                <h2 class="section-title">Nuestro Equipo</h2>
+                                <p class="section-subtitle">
+                                        Conoce a las personas apasionadas que hacen posible cada proyecto
+                                </p>
+                        </div>
+
+                        <div class="row g-4 justify-content-center">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="team-card">
+                                                <div class="team-avatar">
+                                                        <i class="bi bi-person-circle"></i>
+                                                </div>
+                                                <h3 class="team-name">Ing. Ricardo Martínez</h3>
+                                                <p class="team-role">Fundador & CEO</p>
+                                                <p class="team-description">
+                                                        Apasionado de la tecnología con la misión de poner al alcance de
+                                                        empresas
+                                                        y personas mexicanas soluciones tecnológicas de calidad,
+                                                        desarrolladas con
+                                                        talento local. Más de 5 años de experiencia en el sector.
+                                                </p>
+                                        </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="team-card">
+                                                <div class="team-avatar">
+                                                        <i class="bi bi-person-circle"></i>
+                                                </div>
+                                                <h3 class="team-name">Ing. Ezequiel Velez</h3>
+                                                <p class="team-role">Co-Fundador & Especialista en Tecnología</p>
+                                                <p class="team-description">
+                                                        Entusiasta de la innovación y la transformación digital, con el
+                                                        compromiso de acercar soluciones tecnológicas accesibles y
+                                                        efectivas. Su visión estratégica impulsa el desarrollo de
+                                                        proyectos que generan valor y confianza en nuestros clientes.
+                                                </p>
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+                <div class="container">
+                        <div class="section-header fade-up">
+                                <h2 class="section-title">Nuestra Historia</h2>
+                                <p class="section-subtitle">
+                                        El camino que hemos recorrido hasta hoy
+                                </p>
+                        </div>
+
+                        <div class="timeline-item fade-up">
+                                <div class="timeline-date">
+                                        <div class="timeline-year">2018</div>
+                                </div>
+                                <div class="timeline-content">
+                                        <h3 class="timeline-title">Los Inicios</h3>
+                                        <p class="timeline-description">
+                                                Comienza la experiencia técnica acumulada en el sector tecnológico.
+                                                Desarrollo de habilidades y conocimientos en diversas áreas de TI.
+                                        </p>
+                                </div>
+                        </div>
+
+                        <div class="timeline-item fade-up">
+                                <div class="timeline-date">
+                                        <div class="timeline-year">2021</div>
+                                </div>
+                                <div class="timeline-content">
+                                        <h3 class="timeline-title">Primeros Servicios</h3>
+                                        <p class="timeline-description">
+                                                Inicio de operaciones ofreciendo servicios tecnológicos de forma
+                                                independiente.
+                                                Construcción de una base sólida de clientes satisfechos.
+                                        </p>
+                                </div>
+                        </div>
+
+                        <div class="timeline-item fade-up">
+                                <div class="timeline-date">
+                                        <div class="timeline-year">2023</div>
+                                </div>
+                                <div class="timeline-content">
+                                        <h3 class="timeline-title">Formalización de Key Solutions</h3>
+                                        <p class="timeline-description">
+                                                Consolidación oficial de Key Solutions como empresa. Expansión del
+                                                portafolio
+                                                de servicios y crecimiento del equipo para atender mejor a nuestros
+                                                clientes.
+                                        </p>
+                                </div>
+                        </div>
+
+                        <div class="timeline-item fade-up">
+                                <div class="timeline-date">
+                                        <div class="timeline-year">2024</div>
+                                </div>
+                                <div class="timeline-content">
+                                        <h3 class="timeline-title">Crecimiento y Expansión</h3>
+                                        <p class="timeline-description">
+                                                Superamos los 200 clientes satisfechos y 500 proyectos completados.
+                                                Implementación de nuevas tecnologías y servicios especializados.
+                                        </p>
+                                </div>
+                        </div>
+
+                        <div class="timeline-item fade-up">
+                                <div class="timeline-date">
+                                        <div class="timeline-year">2025</div>
+                                </div>
+                                <div class="timeline-content">
+                                        <h3 class="timeline-title">Consolidación</h3>
+                                        <p class="timeline-description">
+                                                Reconocimiento como referencia en el sector tecnológico mexicano.
+                                                Continuamos innovando y comprometidos con el éxito de nuestros clientes.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contacto" class="cta-section">
+                <div class="container">
+                        <div class="fade-up">
+                                <h2 class="cta-title">¿Listo para Transformar tu Negocio?</h2>
+                                <p class="cta-text">
+                                        Estamos aquí para ayudarte a alcanzar tus objetivos. Contáctanos y descubre
+                                        cómo podemos impulsar tu proyecto con soluciones tecnológicas innovadoras.
+                                </p>
+                                <a href="#" class="hero-btn">
+                                        Contáctanos Ahora
+                                </a>
+
+                                <div class="contact-info">
+                                        <a href="mailto:contacto@keysolutions.com" class="contact-btn">
+                                                <i class="bi bi-envelope-fill"></i>
+                                                <span>Email</span>
+                                        </a>
+                                        <a href="tel:+52XXXXXXXXXX" class="contact-btn">
+                                                <i class="bi bi-telephone-fill"></i>
+                                                <span>Teléfono</span>
+                                        </a>
+                                        <a href="https://wa.me/52XXXXXXXXXX" class="contact-btn" target="_blank">
+                                                <i class="bi bi-whatsapp"></i>
+                                                <span>WhatsApp</span>
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+        </section>
         <!-- FOOTER -->
         <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
                 <div class="container text-md-left">
@@ -488,5 +1143,37 @@
                         }
                 });
         })();
+        // Intersection Observer para animaciones al hacer scroll
+        const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                        }
+                });
+        }, observerOptions);
+
+        // Observar todos los elementos con la clase fade-up
+        document.addEventListener('DOMContentLoaded', function () {
+                const fadeElements = document.querySelectorAll('.fade-up');
+                fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                                target.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                });
+                        }
+                });
+        });
 </script>

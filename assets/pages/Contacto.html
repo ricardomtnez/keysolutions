@@ -15,52 +15,570 @@
         <link rel="stylesheet" href="../css/style.css">
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+                rel="stylesheet">
         <style>
-                body,
-                html {
+                /* Variables y base */
+                :root {
+                        --primary-dark: #0a0e27;
+                        --section-dark: #0d1529;
+                        --gradient-start: #1e3c72;
+                        --gradient-end: #2a5298;
+                        --accent-blue: #2196F3;
+                        --accent-blue-2: #1976D2;
+                        --accent-green: #4CAF50;
+                        --muted: #b8c5d6;
+                        --card-bg: rgba(30, 60, 114, 0.5);
+                        --card-bg-2: rgba(42, 82, 152, 0.3);
+                        --card-border: rgba(255, 255, 255, 0.1);
+                        --glass: rgba(255, 255, 255, 0.08);
+                }
+
+                * {
                         margin: 0;
                         padding: 0;
-                        background-color: #121212;
-                        /* un negro/gris oscuro */
+                        box-sizing: border-box;
                 }
 
+                html,
+                body {
+                        min-height: 100%;
+                        font-family: 'Poppins', sans-serif;
+                        background: var(--primary-dark);
+                        color: #ffffff;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        /* ✅ asegura scroll vertical */
+                }
+
+
+                /* Layout helper */
+                .container {
+                        max-width: 1160px;
+                        margin: 0 auto;
+                        padding: 0 1rem;
+                }
+
+                /* ---------------- Hero Section ---------------- */
+                .hero-section {
+                        min-height: 80vh;
+                        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+                        display: flex;
+                        align-items: center;
+                        padding: 120px 0 80px;
+                        position: relative;
+                        overflow: hidden;
+                }
+
+                .hero-section::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background:
+                                radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                                radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.1) 0%, transparent 50%);
+                        pointer-events: none;
+                }
+
+                .hero-content {
+                        position: relative;
+                        z-index: 2;
+                        text-align: center;
+                }
+
+                .hero-badge {
+                        display: inline-block;
+                        background: rgba(76, 175, 80, 0.12);
+                        border: 1px solid rgba(76, 175, 80, 0.35);
+                        color: var(--accent-green);
+                        padding: 10px 25px;
+                        border-radius: 50px;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        margin-bottom: 25px;
+                }
+
+                .hero-title {
+                        font-size: 3.5rem;
+                        font-weight: 800;
+                        margin-bottom: 20px;
+                        line-height: 1.15;
+                        color: #ffffff;
+                }
+
+                .hero-title .highlight {
+                        background: linear-gradient(45deg, #64b5f6, #2196F3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                }
+
+                .hero-subtitle {
+                        font-size: 1.15rem;
+                        color: var(--muted);
+                        margin-bottom: 35px;
+                        line-height: 1.7;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+
+                /* ---------------- Contact Form Section ---------------- */
                 .contact-section {
-                        padding: 80px 0;
+                        padding: 100px 0;
+                        background: var(--section-dark);
                 }
 
-                .contact-info i {
-                        font-size: 1.5rem;
-                        color: #0d6efd;
-                        margin-right: 10px;
+                .contact-form-wrapper {
+                        background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+                        border-radius: 20px;
+                        padding: 50px 45px;
+                        border: 1px solid var(--card-border);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                }
+
+                /* Typography inside the form */
+                .form-title {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        margin-bottom: 15px;
+                        color: #ffffff;
+                }
+
+                .form-subtitle {
+                        color: var(--muted);
+                        margin-bottom: 35px;
+                        font-size: 1rem;
+                }
+
+                /* Labels & inputs */
+                .form-label {
+                        color: var(--muted);
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        font-size: 0.95rem;
+                        display: block;
+                }
+
+                .form-control,
+                .form-select {
+                        width: 100%;
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 1px solid rgba(255, 255, 255, 0.08);
+                        color: #ffffff;
+                        padding: 14px 18px;
+                        border-radius: 10px;
+                        font-size: 1rem;
+                        transition: all 0.2s ease;
+                        outline: none;
+                }
+
+                .form-control::placeholder {
+                        color: #6b7280;
+                }
+
+                .form-control:focus,
+                .form-select:focus {
+                        background: rgba(255, 255, 255, 0.08);
+                        border-color: var(--accent-blue);
+                        box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.08);
+                        color: #fff;
+                }
+
+                /* Opciones del menú desplegable */
+                .form-select option {
+                        background-color: var(--section-dark);
+                        /* mismo color que la sección */
+                        color: #fff;
+                        /* letras blancas */
+                        font-weight: 500;
+                        /* negritas suaves */
+                }
+
+                /* Opciones al pasar el mouse */
+                .form-select option:hover,
+                .form-select option:checked {
+                        background-color: var(--accent-blue);
+                        color: #fff;
+                }
+
+                /* textarea */
+                textarea.form-control {
+                        min-height: 140px;
+                        resize: vertical;
+                }
+
+                /* submit */
+                .submit-btn {
+                        width: 100%;
+                        padding: 16px;
+                        background: linear-gradient(45deg, var(--accent-blue), var(--accent-blue-2));
+                        color: white;
+                        border: none;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        transition: transform .18s ease, box-shadow .18s ease;
+                        box-shadow: 0 8px 25px rgba(33, 150, 243, 0.36);
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 8px;
+                }
+
+                .submit-btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 12px 35px rgba(33, 150, 243, 0.52);
+                }
+
+                .submit-btn:active {
+                        transform: translateY(-1px);
+                }
+
+                /* ---------------- Contact Info Cards ---------------- */
+                .contact-info-section {
+                        padding: 0 0 100px;
+                        background: var(--section-dark);
                 }
 
                 .contact-card {
-                        background: #fff;
-                        border-radius: 12px;
-                        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-                        padding: 30px;
-                }
-
-                .btn-whatsapp {
-                        background-color: #25D366;
+                        background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+                        border-radius: 20px;
+                        padding: 40px 30px;
+                        text-align: center;
+                        border: 1px solid var(--card-border);
+                        transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+                        height: 100%;
                         color: #fff;
                 }
 
-                .btn-whatsapp:hover {
-                        background-color: #1ebe5d;
+                .contact-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(33, 150, 243, 0.5);
+                        box-shadow: 0 20px 50px rgba(33, 150, 243, 0.18);
                 }
 
-                .btn-facebook {
-                        background-color: #1877f2;
+                .contact-icon {
+                        width: 80px;
+                        height: 80px;
+                        margin: 0 auto 25px;
+                        border-radius: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2.2rem;
                         color: #fff;
                 }
 
-                .btn-facebook:hover {
-                        background-color: #0f5dc0;
+                /* icon gradients */
+                .icon-gradient-1 {
+                        background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
                 }
 
-                iframe {
-                        border-radius: 12px;
+                .icon-gradient-2 {
+                        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+                }
+
+                .icon-gradient-3 {
+                        background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+                }
+
+                .icon-gradient-4 {
+                        background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+                }
+
+                .contact-title {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                        color: #fff;
+                }
+
+                .contact-detail {
+                        color: var(--muted);
+                        font-size: 1rem;
+                        margin-bottom: 10px;
+                }
+
+                .contact-link {
+                        color: #64b5f6;
+                        font-weight: 600;
+                        text-decoration: none;
+                        transition: color .18s ease;
+                }
+
+                .contact-link:hover {
+                        color: var(--accent-blue);
+                        text-decoration: underline;
+                }
+
+                /* ---------------- FAQ Section ---------------- */
+                .faq-section {
+                        padding: 100px 0;
+                        background: var(--primary-dark);
+                }
+
+                .section-header {
+                        text-align: center;
+                        margin-bottom: 60px;
+                }
+
+                .section-title {
+                        font-size: 2.8rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        color: #ffffff;
+                }
+
+                .section-subtitle {
+                        font-size: 1.15rem;
+                        color: var(--muted);
+                        max-width: 650px;
+                        margin: 0 auto;
+                }
+
+                /* Accordion overrides for consistent look */
+                .accordion .accordion-item {
+                        background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+                        border: 1px solid var(--card-border);
+                        border-radius: 15px;
+                        margin-bottom: 15px;
+                        overflow: hidden;
+                }
+
+                .accordion-button {
+                        background: transparent;
+                        color: #ffffff;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        padding: 18px 22px;
+                        border: none;
+                        box-shadow: none;
+                }
+
+                .accordion-button:not(.collapsed) {
+                        background: rgba(33, 150, 243, 0.06);
+                        color: #64b5f6;
+                }
+
+                .accordion-button:focus {
+                        box-shadow: none;
+                        outline: none;
+                }
+
+                .accordion-button::after {
+                        filter: invert(1) brightness(2);
+                }
+
+                /* Accordion body */
+                .accordion-body {
+                        color: var(--muted);
+                        padding: 18px 22px;
+                        line-height: 1.6;
+                }
+
+                /* ---------------- Map / Placeholder ---------------- */
+                .map-section {
+                        padding: 100px 0;
+                        background: var(--section-dark);
+                }
+
+                .map-wrapper {
+                        border-radius: 20px;
+                        overflow: hidden;
+                        border: 1px solid var(--card-border);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                }
+
+                .map-placeholder {
+                        width: 100%;
+                        height: 450px;
+                        background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 20px;
+                }
+
+                .map-placeholder i {
+                        font-size: 4rem;
+                        color: var(--accent-blue);
+                }
+
+                /* ---------------- CTA Section ---------------- */
+                .cta-section {
+                        padding: 100px 0;
+                        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+                        text-align: center;
+                }
+
+                .cta-title {
+                        font-size: 2.5rem;
+                        font-weight: 800;
+                        margin-bottom: 20px;
+                        color: #ffffff;
+                }
+
+                .cta-text {
+                        font-size: 1.15rem;
+                        color: var(--muted);
+                        margin-bottom: 35px;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+
+                .cta-buttons {
+                        display: flex;
+                        justify-content: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                }
+
+                .cta-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 18px 40px;
+                        background: rgba(255, 255, 255, 0.06);
+                        border: 2px solid rgba(255, 255, 255, 0.14);
+                        border-radius: 50px;
+                        color: #ffffff;
+                        text-decoration: none;
+                        transition: all 0.25s ease;
+                        backdrop-filter: blur(6px);
+                        font-size: 1.05rem;
+                        font-weight: 600;
+                }
+
+                .cta-btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                }
+
+                .cta-btn-primary {
+                        background: linear-gradient(45deg, #4CAF50, #388E3C);
+                        border: none;
+                }
+
+                .cta-btn-primary:hover {
+                        transform: translateY(-3px) scale(1.02);
+                }
+
+                /* ---------------- Trust badges ---------------- */
+                .trust-badges {
+                        display: flex;
+                        justify-content: center;
+                        gap: 40px;
+                        margin-top: 50px;
+                        flex-wrap: wrap;
+                }
+
+                .trust-badge {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        color: var(--muted);
+                        font-size: 0.95rem;
+                }
+
+                .trust-badge i {
+                        font-size: 1.5rem;
+                        color: var(--accent-green);
+                }
+
+                /* ---------------- Animations / visibility ---------------- */
+                .fade-up {
+                        opacity: 0;
+                        transform: translateY(30px);
+                        transition: all 0.7s cubic-bezier(.2, .9, .2, 1);
+                }
+
+                .fade-up.visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                }
+
+                /* Success message */
+                .success-message {
+                        display: none;
+                        background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+                        color: white;
+                        padding: 16px;
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        font-weight: 600;
+                }
+
+                .success-message.show {
+                        display: block;
+                        animation: slideDown .45s ease both;
+                }
+
+                /* slide down */
+                @keyframes slideDown {
+                        from {
+                                opacity: 0;
+                                transform: translateY(-12px);
+                        }
+
+                        to {
+                                opacity: 1;
+                                transform: translateY(0);
+                        }
+                }
+
+                /* ---------------- Misc / Responsive ---------------- */
+                @media (max-width: 992px) {
+                        .hero-title {
+                                font-size: 2.5rem;
+                        }
+
+                        .contact-form-wrapper {
+                                padding: 40px 30px;
+                        }
+                }
+
+                @media (max-width: 768px) {
+                        .hero-title {
+                                font-size: 2rem;
+                        }
+
+                        .hero-subtitle {
+                                font-size: 1.05rem;
+                        }
+
+                        .section-title {
+                                font-size: 2rem;
+                        }
+
+                        .contact-form-wrapper {
+                                padding: 30px 20px;
+                        }
+
+                        .cta-buttons {
+                                flex-direction: column;
+                        }
+
+                        .cta-btn {
+                                width: 100%;
+                                justify-content: center;
+                        }
+                }
+
+                /* Small accessibility improvements */
+                a:focus,
+                button:focus,
+                .form-control:focus {
+                        outline: 3px solid rgba(255, 255, 255, 0.06);
+                        outline-offset: 2px;
+                        border-radius: 8px;
                 }
         </style>
 </head>
@@ -88,12 +606,14 @@
                                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                                         data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
                                                 <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Consultoría
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/ConsultoriaTecnologica.html">Consultoría
                                                                         Tecnológica</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="#">Desarrollo
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/DesarrolloSoftware.html">Desarrollo
                                                                         de
                                                                         Software</a></li>
                                                         <li>
@@ -156,98 +676,187 @@
                 </div>
         </nav>
         <!-- CONTACTO -->
-        <section class="contact-section bg-dark text-light py-5">
+        <!-- Hero -->
+        <section class="hero-section">
                 <div class="container">
-                        <div class="text-center mb-5">
-                                <h2 class="fw-bold text-white mt-5 pt-4">Contactános</h2>
-                                <p class="text-light">Estamos aquí para
-                                        ayudarte a descubrir el
-                                        verdadero potencial de la
-                                        tecnología. Contáctanos para
-                                        asesoramiento, soporte o
-                                        soluciones a la medida.
-                                        Nuestro equipo está listo para
-                                        ti.</p>
+                        <div class="hero-content">
+                                <span class="hero-badge">
+                                        <i class="bi bi-chat-dots me-2"></i>Estamos Listos para Ayudarte
+                                </span>
+                                <h1 class="hero-title">
+                                        ¿Tienes un <span class="highlight">Proyecto en Mente?</span>
+                                </h1>
+                                <p class="hero-subtitle">
+                                        Cuéntanos sobre tu idea y transformémosla en realidad. Nuestro equipo está listo
+                                        para asesorarte y crear la solución tecnológica perfecta para tu negocio.
+                                </p>
                         </div>
-                        <div class="row g-5">
+                </div>
+        </section>
 
-                                <!-- INFORMACIÓN DE CONTACTO -->
-                                <div class="col-lg-5">
-                                        <div class="contact-info mb-4">
-                                                <p><i class="bi bi-envelope-fill"></i>
-                                                        <strong>Email:</strong>
-                                                        contacto@keysolutions.mx
-                                                </p>
-                                                <p><i class="bi bi-telephone-fill"></i>
-                                                        <strong>Teléfono:</strong>
-                                                        +52 276 127
-                                                        6329
-                                                </p>
-                                                <p><i class="bi bi-geo-alt-fill"></i>
-                                                        <strong>Dirección:</strong>
-                                                        Calle Altamirano
-                                                        S/N,
-                                                        El Carmen
-                                                        Tequexquitla,
-                                                        90570, Tlax,
-                                                        México
-                                                </p>
-                                        </div>
-                                        <div class="d-flex gap-3">
-                                                <a href="https://wa.me/522761276329" target="_blank"
-                                                        class="btn btn-success px-3">
-                                                        <i class="bi bi-whatsapp"></i>
-                                                        WhatsApp
-                                                </a>
-                                                <a href="https://www.facebook.com/profile.php?id=100092268075207"
-                                                        target="_blank" class="btn btn-primary px-3">
-                                                        <i class="bi bi-facebook"></i>
-                                                        Facebook
-                                                </a>
-                                        </div>
-                                        <!-- MAPA -->
-                                        <div class="mt-4">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.5446887489427!2d-97.65248922915437!3d19.3219275536544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c5522c52c43841%3A0xb75e4c4426a8c5f5!2sAltamirano%2C%20Centro%2C%2090570%20Villa%20de%20El%20Carmen%20Tequexquitla%2C%20Tlax.!5e0!3m2!1ses-419!2smx!4v1758749035836!5m2!1ses-419!2smx"
-                                                        width="100%" height="250" style="border:0;" allowfullscreen
-                                                        loading="lazy"
-                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        </div>
-                                </div>
+        <!-- Contact Form -->
+        <section class="contact-section">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-lg-8 mx-auto fade-up">
+                                        <div class="contact-form-wrapper">
+                                                <div class="success-message" id="successMessage">
+                                                        <i class="bi bi-check-circle me-2"></i>
+                                                        ¡Mensaje enviado exitosamente! Te contactaremos pronto.
+                                                </div>
+                                                <h2 class="form-title">Solicita tu Cotización Gratuita</h2>
+                                                <p class="form-subtitle">Completa el formulario y recibe una respuesta
+                                                        en menos de 24 horas</p>
 
-                                <!-- FORMULARIO -->
-                                <div class="col-lg-7">
-                                        <div class="contact-card bg-secondary p-4 rounded">
-                                                <h4 class="fw-bold mb-3 text-white">Envíanos
-                                                        un mensaje</h4>
-                                                <form>
-                                                        <div class="mb-3">
-                                                                <label for="name" class="form-label text-light">Tu
-                                                                        nombre</label>
-                                                                <input type="text" class="form-control  border-light"
-                                                                        id="name" placeholder="Ingresa tu nombre">
+                                                <form id="contactForm">
+                                                        <div class="row g-3">
+                                                                <div class="col-md-6">
+                                                                        <label for="nombre" class="form-label">Nombre
+                                                                                Completo *</label>
+                                                                        <input id="nombre" name="nombre" type="text"
+                                                                                class="form-control"
+                                                                                placeholder="Juan Pérez" required>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <label for="empresa" class="form-label">Empresa
+                                                                                / Negocio</label>
+                                                                        <input id="empresa" name="empresa" type="text"
+                                                                                class="form-control"
+                                                                                placeholder="Mi Empresa S.A.">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <label for="email" class="form-label">Email
+                                                                                *</label>
+                                                                        <input id="email" name="email" type="email"
+                                                                                class="form-control"
+                                                                                placeholder="correo@ejemplo.com"
+                                                                                required>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <label for="telefono"
+                                                                                class="form-label">Teléfono / WhatsApp
+                                                                                *</label>
+                                                                        <input id="telefono" name="telefono" type="tel"
+                                                                                class="form-control"
+                                                                                placeholder="276 127 6329" required>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                        <label for="servicio" class="form-label">¿Qué
+                                                                                servicio te interesa? *</label>
+                                                                        <select id="servicio" name="servicio"
+                                                                                class="form-select" required>
+                                                                                <option value="">Selecciona un servicio
+                                                                                </option>
+                                                                                <option value="chatbots">Chatbots
+                                                                                        Inteligentes</option>
+                                                                                <option value="clasificacion">
+                                                                                        Clasificación Automática
+                                                                                </option>
+                                                                                <option value="reportes">Generación de
+                                                                                        Reportes</option>
+                                                                                <option value="recuperacion">
+                                                                                        Recuperación de Información
+                                                                                </option>
+                                                                                <option value="web-corporativo">Sitio
+                                                                                        Web Corporativo</option>
+                                                                                <option value="web-onepage">Sitio One
+                                                                                        Page</option>
+                                                                                <option value="landing">Landing Page
+                                                                                </option>
+                                                                                <option value="ecommerce">Tienda en
+                                                                                        Línea</option>
+                                                                                <option value="otro">Otro</option>
+                                                                        </select>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                        <label for="presupuesto"
+                                                                                class="form-label">Presupuesto
+                                                                                Estimado</label>
+                                                                        <select id="presupuesto" name="presupuesto"
+                                                                                class="form-select">
+                                                                                <option value="">Selecciona un rango
+                                                                                </option>
+                                                                                <option value="menos-5000">Menos de
+                                                                                        $5,000 MXN</option>
+                                                                                <option value="5000-10000">$5,000 -
+                                                                                        $10,000 MXN</option>
+                                                                                <option value="10000-20000">$10,000 -
+                                                                                        $20,000 MXN</option>
+                                                                                <option value="20000-50000">$20,000 -
+                                                                                        $50,000 MXN</option>
+                                                                                <option value="mas-50000">Más de $50,000
+                                                                                        MXN</option>
+                                                                        </select>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                        <label for="mensaje"
+                                                                                class="form-label">Cuéntanos sobre tu
+                                                                                proyecto *</label>
+                                                                        <textarea id="mensaje" name="mensaje"
+                                                                                class="form-control"
+                                                                                placeholder="Describe tu proyecto..."
+                                                                                required></textarea>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                        <button type="submit" class="submit-btn">
+                                                                                <i class="bi bi-send me-2"></i>Enviar
+                                                                                Solicitud
+                                                                        </button>
+                                                                </div>
                                                         </div>
-                                                        <div class="mb-3">
-                                                                <label for="email" class="form-label text-light">Tu
-                                                                        correo
-                                                                        electrónico</label>
-                                                                <input type="email" class="form-control  border-light"
-                                                                        id="email" placeholder="ejemplo@correo.com">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                                <label for="message"
-                                                                        class="form-label text-light">Mensaje</label>
-                                                                <textarea class="form-control  border-light"
-                                                                        id="message" rows="5"
-                                                                        placeholder="Escribe tu mensaje aquí..."></textarea>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary w-100">Enviar
-                                                                mensaje</button>
                                                 </form>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </section>
+
+        <!-- Contact Info -->
+        <section class="contact-info-section">
+                <div class="container">
+                        <div class="row g-4">
+                                <div class="col-md-6 col-lg-3 fade-up">
+                                        <div class="contact-card">
+                                                <div class="contact-icon icon-gradient-1"><i class="bi bi-whatsapp"></i>
+                                                </div>
+                                                <h3 class="contact-title">WhatsApp</h3>
+                                                <p class="contact-detail">Respuesta inmediata</p>
+                                                <a href="https://wa.me/5212761276329" class="contact-link"
+                                                        target="_blank">276 127 6329</a>
+                                        </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 fade-up">
+                                        <div class="contact-card">
+                                                <div class="contact-icon icon-gradient-2"><i
+                                                                class="bi bi-envelope-fill"></i></div>
+                                                <h3 class="contact-title">Email</h3>
+                                                <p class="contact-detail">Respuesta en 24 hrs</p>
+                                                <a href="mailto:info@keysolutions.tech"
+                                                        class="contact-link">info@keysolutions.tech</a>
+                                        </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 fade-up">
+                                        <div class="contact-card">
+                                                <div class="contact-icon icon-gradient-3"><i
+                                                                class="bi bi-telephone-fill"></i></div>
+                                                <h3 class="contact-title">Teléfono</h3>
+                                                <p class="contact-detail">Lun - Vie: 9am - 7pm</p>
+                                                <a href="tel:+522761276329" class="contact-link">276 127 6329</a>
+                                        </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 fade-up">
+                                        <div class="contact-card">
+                                                <div class="contact-icon icon-gradient-4"><i
+                                                                class="bi bi-geo-alt-fill"></i></div>
+                                                <h3 class="contact-title">Ubicación</h3>
+                                                <p class="contact-detail">Tlaxcala, México</p>
+                                                <a href="#mapa" class="contact-link">Ver en mapa</a>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
 
         <!-- FOOTER -->
         <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
@@ -404,5 +1013,34 @@
                         }
                 });
         })();
+        // Animación Fade-up con IntersectionObserver
+        document.addEventListener("DOMContentLoaded", () => {
+                const faders = document.querySelectorAll(".fade-up");
+                const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                        entry.target.classList.add("visible");
+                                        observer.unobserve(entry.target);
+                                }
+                        });
+                }, { threshold: 0.2 });
+
+                faders.forEach(el => appearOnScroll.observe(el));
+
+                // Formulario
+                const form = document.getElementById("contactForm");
+                const successMessage = document.getElementById("successMessage");
+
+                form.addEventListener("submit", (e) => {
+                        e.preventDefault();
+
+                        // Aquí podrías hacer fetch() a tu backend / Email API
+                        // Por ahora solo mostramos mensaje de éxito
+                        successMessage.classList.add("show");
+                        form.reset();
+
+                        setTimeout(() => successMessage.classList.remove("show"), 5000);
+                });
+        });
 
 </script>

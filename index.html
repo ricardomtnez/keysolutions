@@ -1,701 +1,1269 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Key Solutions</title>
-        <!-- Favicon en PNG (opcional, mejor calidad) -->
-        <link rel="icon" href="assets/img/faticon.png" type="image/svg+xml">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Solutions</title>
+    <!-- Favicon en PNG (opcional, mejor calidad) -->
+    <link rel="icon" href="assets/img/faticon.png" type="image/svg+xml">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-        <!-- Bootstrap Icons -->
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-        <!--Icons -->
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-        <!-- Tus estilos personalizados -->
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
-        <nav
-            class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
-            <div class="container-fluid">
-                <!-- LOGO -->
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/icono.svg" alt="Icono Key Solutions"
-                        height="65">
-                </a>
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
 
-                <!-- Botón hamburguesa -->
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --light-blue: #64b5f6;
+            --accent-cyan: #2196F3;
+            --text-light: #b8c5d6;
+        }
 
-                <!-- Menú -->
-                <div class="collapse navbar-collapse"
-                    id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active"
-                                href="#">Inicio</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#"
-                                role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">Servicios</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item"
-                                        href="assets/pages/Services/ConsultoriaTecnologica.html">Consultoría
-                                        Tecnológica</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Desarrollo
-                                        de Software</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item"
-                                        href="#">Automatización de Procesos con
-                                        IA</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Páginas y
-                                        Sitios Web</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item"
-                                        href="#">Recuperación de datos</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Soporte
-                                        Técnico</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item"
-                                        href="#">Mantenimiento Preventivo y
-                                        Correctivo</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item"
-                                        href="#">Infraestructura de Red</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item"
-                                        href="#">Instalación de Cámaras de
-                                        Videovigilancia</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="assets/pages/Productos.html">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="assets/pages/Nosotros.html">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="assets/pages/Contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- Fondo animado -->
-        <canvas id="bg"></canvas>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-        <!-- Contenido principal -->
-        <section
-            class="main-content d-flex align-items-start justify-content-center text-center min-vh-100">
-            <div class="container">
-                <img src="assets/img/logotipo.svg" class="img-fluid pt-3 mt-4"
-                    alt="Logotipo Key Solutions" style="max-width: 290px;">
-                <h1 class="pt-4">"La clave de tus soluciones tecnológicas"</h1>
-                <p class="lead mb-2">
-                    Key Solutions ofrece servicios tecnológicos innovadores y
-                    confiables
-                    para el crecimiento de su negocio. Desde software a la
-                    medida y consultoría de TI
-                    hasta automatización de IA y soporte técnico, impulsamos su
-                    transformación digital.
-                </p>
-                <button class="btn btn-primary">Cotiza ahora</button>
-            </div>
-        </section>
-        <!-- Sección de características -->
-        <section id="features" class="py-5 bg-dark text-white">
-            <div class="container text-center">
-                <h2 class="fw-bold mb-3">Descubra nuestras características
-                    principales</h2>
-                <p class="text-muted mb-5">
-                    Key Solutions Technology ofrece servicios tecnológicos
-                    integrales para empresas modernas.
-                    Explore nuestras innovadoras funciones que garantizan la
-                    confiabilidad,
-                    la seguridad y el crecimiento de su empresa.
-                </p>
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-                <div class="row g-4">
-                    <!-- Card 1 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i class="bi bi-cpu fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Desarrollo de
-                                    software
-                                    personalizado</h5>
-                                <p class="text-muted">
-                                    ERP, CRM y aplicaciones empresariales
-                                    personalizados diseñados
-                                    para optimizar sus operaciones e impulsar la
-                                    eficiencia.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(100, 181, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-                    <!-- Card 2 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-laptop fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Sitios web y
-                                    páginas de
-                                    destino</h5>
-                                <p class="text-muted">
-                                    Sitios modernos y responsivos creados para
-                                    las necesidades únicas de su marca.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-                    <!-- Card 3 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-tools fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Mantenimiento y
-                                    soporte</h5>
-                                <p class="text-muted">
-                                    Mantenimiento preventivo y soporte remoto
-                                    para mantener sus sistemas funcionando.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-logo {
+            max-width: 100%;
+            width: 320px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            margin: 0 auto 2rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
 
-                    <!-- Card 4 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-shield-lock fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Recuperación y
-                                    seguridad de
-                                    datos</h5>
-                                <p class="text-muted">
-                                    Soluciones avanzadas para mantener su
-                                    negocio protegido con seguridad robusta.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0); 
+            }
+            50% { 
+                transform: translateY(-15px); 
+            }
+        }
 
-                    <!-- Card 5 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-lightning-charge fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Automatización
-                                    de IA</h5>
-                                <p class="text-muted">
-                                    Implementación de IA inteligente: chatbots,
-                                    OCR e informes automatizados
-                                    para máxima productividad.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-badge {
+            display: inline-block;
+            background: rgba(33, 150, 243, 0.2);
+            border: 1px solid rgba(33, 150, 243, 0.5);
+            color: #64b5f6;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
 
-                    <!-- Card 6 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-people fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Consultoría
-                                    tecnológica</h5>
-                                <p class="text-muted">
-                                    Consultoría y asesoramiento personalizado
-                                    para ayudar a su empresa
-                                    a crecer y adoptar nuevas tecnologías.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: #ffffff;
+        }
 
-                    <!-- Card 7 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-diagram-3 fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Redes y
-                                    cableado</h5>
-                                <p class="text-muted">
-                                    Diseño e instalación de redes y cableado
-                                    confiables para
-                                    garantizar una conectividad perfecta.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        .hero-title .highlight {
+            background: linear-gradient(45deg, #64b5f6, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-                    <!-- Card 8 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100 shadow-sm border-0 feature-card">
-                            <div class="card-body text-center">
-                                <i
-                                    class="bi bi-cart-check fs-1 text-primary mb-3"></i>
-                                <h5 class="fw-bold text-primary">Venta de
-                                    equipos y
-                                    accesorios</h5>
-                                <p class="text-muted">
-                                    Amplia gama de repuestos, equipos y
-                                    accesorios para que
-                                    su negocio funcione sin problemas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Sectores -->
-        <section id="sectores" class="sectores-section">
-            <div class="container">
-                <h2 class="title">Sectores que potenciamos con
-                    <span>tecnología</span></h2>
-                <p class="subtitle">Transformamos cada industria con innovación
-                    y soluciones digitales a medida</p>
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-                <div class="sectores-grid">
-                    <div class="sector-card">
-                        <div class="icon">🛍️</div>
-                        <h3>Comercio</h3>
-                        <p>Impulsamos tus ventas con soluciones digitales que
-                            generan experiencias únicas para tus clientes.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">🏭</div>
-                        <h3>Manufactura</h3>
-                        <p>Automatización y control para hacer tu producción más
-                            eficiente y rentable.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">🏢</div>
-                        <h3>Inmobiliario</h3>
-                        <p>Plataformas modernas que conectan clientes con
-                            propiedades de forma sencilla.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">🏛️</div>
-                        <h3>Gobierno</h3>
-                        <p>Soluciones seguras y escalables para gestión pública
-                            eficiente y transparente.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">⚕️</div>
-                        <h3>Salud</h3>
-                        <p>Digitalización de procesos médicos, telemedicina y
-                            sistemas seguros para pacientes.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">⚖️</div>
-                        <h3>Legal</h3>
-                        <p>Automatización documental y gestión de casos para
-                            bufetes más ágiles.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">🎓</div>
-                        <h3>Educación</h3>
-                        <p>Plataformas e-learning interactivas y seguras para
-                            potenciar el aprendizaje.</p>
-                    </div>
-                    <div class="sector-card">
-                        <div class="icon">💻</div>
-                        <h3>Comercio electrónico</h3>
-                        <p>Desarrollamos e-shops con inteligencia de datos para
-                            maximizar tus ventas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
 
-        <!-- TECNOLOGÍAS -->
-        <section class="technologies-section py-5">
-            <div class="container text-center">
-                <h2 class="fw-bold mb-5 text-light">Nuestras Tecnologías</h2>
+        .hero-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+        }
 
-                <!-- Desarrollo Web -->
-                <h3 class="fw-semibold text-primary mb-4">🌐 Desarrollo Web</h3>
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-html5-plain colored fs-1"></i>
-                            <p class="mt-2">HTML5</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-css3-plain colored fs-1"></i>
-                            <p class="mt-2">CSS3</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i
-                                class="devicon-javascript-plain colored fs-1"></i>
-                            <p class="mt-2">JavaScript</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i
-                                class="devicon-typescript-plain colored fs-1"></i>
-                            <p class="mt-2">TypeScript</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-php-plain colored fs-1"></i>
-                            <p class="mt-2">PHP</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-sass-original colored fs-1"></i>
-                            <p class="mt-2">Sass</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i
-                                class="devicon-tailwindcss-plain colored fs-1"></i>
-                            <p class="mt-2">Tailwind CSS</p>
-                        </div>
-                    </div>
-                </div>
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(33, 150, 243, 0.6);
+            color: white;
+        }
 
-                <!-- Desarrollo Móvil -->
-                <h3 class="fw-semibold text-primary mb-4">📱 Desarrollo
-                    Móvil</h3>
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-android-plain colored fs-1"></i>
-                            <p class="mt-2">Android</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-apple-original colored fs-1"></i>
-                            <p class="mt-2">iOS</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-flutter-plain colored fs-1"></i>
-                            <p class="mt-2">Flutter</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-react-original colored fs-1"></i>
-                            <p class="mt-2">React Native</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-kotlin-plain colored fs-1"></i>
-                            <p class="mt-2">Kotlin</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-swift-plain colored fs-1"></i>
-                            <p class="mt-2">Swift</p>
-                        </div>
-                    </div>
-                </div>
+        .hero-btn-secondary {
+            display: inline-block;
+            padding: 18px 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
 
-                <!-- Frameworks y Librerías -->
-                <h3 class="fw-semibold text-primary mb-4">⚙️ Frameworks y
-                    Librerías</h3>
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-react-original colored fs-1"></i>
-                            <p class="mt-2">React</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-angularjs-plain colored fs-1"></i>
-                            <p class="mt-2">Angular</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-vuejs-plain colored fs-1"></i>
-                            <p class="mt-2">Vue.js</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-nodejs-plain colored fs-1"></i>
-                            <p class="mt-2">Node.js</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-django-plain colored fs-1"></i>
-                            <p class="mt-2">Django</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-nextjs-original colored fs-1"></i>
-                            <p class="mt-2">Next.js</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-nestjs-plain colored fs-1"></i>
-                            <p class="mt-2">NestJS</p>
-                        </div>
-                    </div>
-                </div>
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+        }
 
-                <!-- Nube / DevOps -->
-                <h3 class="fw-semibold text-primary mb-4">☁️ Nube & DevOps</h3>
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-aws-plain colored fs-1"></i>
-                            <p class="mt-2">AWS</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-docker-plain colored fs-1"></i>
-                            <p class="mt-2">Docker</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i
-                                class="devicon-kubernetes-plain colored fs-1"></i>
-                            <p class="mt-2">Kubernetes</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-terraform-plain colored fs-1"></i>
-                            <p class="mt-2">Terraform</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-git-plain colored fs-1"></i>
-                            <p class="mt-2">Git</p>
-                        </div>
-                    </div>
-                </div>
+        .hero-features {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
 
-                <!-- Otras Tecnologías Avanzadas -->
-                <h3 class="fw-semibold text-primary mb-4">🚀 Otras Tecnologías
-                    Avanzadas</h3>
-                <div class="row g-4 mb-5 justify-content-center">
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-python-plain colored fs-1"></i>
-                            <p class="mt-2">Inteligencia Artificial</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-unity-plain colored fs-1"></i>
-                            <p class="mt-2">VR/AR</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-tableau-plain colored fs-1"></i>
-                            <p class="mt-2">Tableau</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-powerbi-plain colored fs-1"></i>
-                            <p class="mt-2">Power BI</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <div
-                            class="d-flex flex-column align-items-center text-light">
-                            <i class="devicon-jasper-plain colored fs-1"></i>
-                            <p class="mt-2">Jasper Reports</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
 
-        <!-- FOOTER -->
-        <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
-            <div class="container text-md-left">
-                <div class="row text-md-left">
+        .hero-feature:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(33, 150, 243, 0.5);
+            transform: translateY(-3px);
+        }
 
-                    <!-- Logo y descripción -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <a class="navbar-brand" href="#">
-                            <img src="assets/img/logotipo.svg"
-                                alt="Key Solutions"
-                                height="80">
-                        </a>
-                        <p class="mt-3">
-                            La clave de tus soluciones tecnológicas.
-                            Innovación, confianza y soporte para el crecimiento
-                            de tu negocio.
-                        </p>
-                    </div>
+        .hero-feature i {
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
 
-                    <!-- Enlaces rápidos -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
-                        <p><a href="index.html"
-                                class="text-light text-decoration-none">Inicio</a></p>
-                        <p><a href="pages/Servicios.html"
-                                class="text-light text-decoration-none">Servicios</a></p>
-                        <p><a href="pages/Productos.html"
-                                class="text-light text-decoration-none">Productos</a></p>
-                        <p><a href="pages/Nosotros.html"
-                                class="text-light text-decoration-none">Nosotros</a></p>
-                        <p><a href="pages/Contacto.html"
-                                class="text-light text-decoration-none">Contacto</a></p>
-                    </div>
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 15px;
+            }
 
-                    <!-- Contacto -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
-                        <p><i class="bi bi-geo-alt-fill text-info"></i> El
-                            Carmen Tequexquitla, Tlaxcala</p>
-                        <p><i class="bi bi-envelope-fill text-info"></i>
-                            ventas@keysolutions.com</p>
-                        <p><i class="bi bi-phone-fill text-info"></i> +52 276
-                            127 63 29</p>
-                    </div>
+            .hero-logo {
+                width: 260px;
+                margin-bottom: 1.5rem;
+            }
 
-                    <!-- Redes sociales -->
-                    <div
-                        class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
-                        <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100092268075207"
-                            target="_blank"
-                            class="btn btn-outline-light btn-floating m-1"
-                            style="border-radius:50%;">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#"
-                            class="btn btn-outline-light btn-floating m-1"
-                            style="border-radius:50%;">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                        <a href="#"
-                            class="btn btn-outline-light btn-floating m-1"
-                            style="border-radius:50%;">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#"
-                            class="btn btn-outline-light btn-floating m-1"
-                            style="border-radius:50%;">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
+            .hero-badge {
+                font-size: 0.85rem;
+                padding: 8px 20px;
+            }
 
-                <hr class="my-4 text-light">
+            .hero-title {
+                margin-bottom: 1.2rem;
+            }
 
-                <!-- Derechos reservados -->
-                <div class="row align-items-center">
-                    <div class="col-md-7 col-lg-8">
-                        <p class="text-center text-md-start">
-                            © 2026 <strong class="text-info">Key
-                                Solutions</strong>. Todos los derechos
-                            reservados.
-                        </p>
-                    </div>
-                    <div class="col-md-5 col-lg-4 text-center text-md-end">
-                        <p>Diseñado by Key Solutions</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Contenedor de botones flotantes -->
-        <div class="floating-buttons">
-            <!-- Botón WhatsApp -->
-            <a
-                href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información"
-                target="_blank"
-                class="btn-whatsapp">
-                <i class="bi bi-whatsapp"></i>
+            .hero-subtitle {
+                margin-bottom: 2rem;
+            }
+
+            .hero-btn,
+            .hero-btn-secondary {
+                padding: 15px 35px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .hero-features {
+                gap: 15px;
+            }
+
+            .hero-feature {
+                font-size: 0.9rem;
+                padding: 10px 16px;
+            }
+
+            .hero-feature i {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo {
+                width: 220px;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-feature {
+                width: 100%;
+                max-width: 260px;
+                justify-content: center;
+            }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 0;
+            background: #0d1529;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(33, 150, 243, 0.5);
+            box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #64b5f6, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: #0a0e27;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(33, 150, 243, 0.5);
+            box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+        }
+
+        .icon-gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .icon-gradient-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .icon-gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .icon-gradient-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .icon-gradient-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .icon-gradient-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Tech Stack Section */
+        .tech-section {
+            padding: 100px 0;
+            background: #0d1529;
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 35px 25px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(33, 150, 243, 0.5);
+            box-shadow: 0 15px 40px rgba(33, 150, 243, 0.3);
+        }
+
+        .tech-card h4 {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: rgba(33, 150, 243, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(33, 150, 243, 0.15);
+            transform: translateX(5px);
+        }
+
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .tech-name {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Section */
+        .why-card {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(25, 118, 210, 0.05) 100%);
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(33, 150, 243, 0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.15) 0%, rgba(25, 118, 210, 0.1) 100%);
+            border-color: rgba(33, 150, 243, 0.5);
+        }
+
+        .why-icon {
+            font-size: 3rem;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .why-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/icono.svg" alt="Icono Key Solutions" height="65">
             </a>
-            <!-- Botón Subir Arriba -->
-            <button id="btn-top" class="btn-top">
-                <i class="bi bi-chevron-up"></i>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="assets/pages/Services/ConsultoriaTecnologica.html">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="assets/pages/Services/DesarrolloSoftware.html">Desarrollo
+                                    de Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Automatización de Procesos con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Páginas y
+                                    Sitios Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Recuperación de datos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Soporte
+                                    Técnico</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Mantenimiento Preventivo y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Infraestructura de Red</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Instalación de Cámaras de
+                                    Videovigilancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="assets/pages/Productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assets/pages/Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="assets/pages/Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <!-- Bootstrap Bundle con Popper -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!-- Librerías necesarias -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <div class="container-fluid mt-4">
+                            <img src="assets/img/logotipo.svg" class="hero-logo" alt="Key Solutions">
+                        </div>
 
-        <!-- Tu JS -->
-        <script src="assets/js/main.js"></script>
+                        <span class="hero-badge">
+                            <i class="bi bi-award me-2"></i>Más de 2 Años de Experiencia
+                        </span>
 
-    </body>
+                        <h1 class="hero-title">
+                            <span class="highlight">La Clave</span> de tus Soluciones Tecnológicas
+                        </h1>
+
+                        <p class="hero-subtitle">
+                            Transformamos tu negocio con tecnología innovadora y confiable. Desde desarrollo de software
+                            personalizado hasta automatización con IA y recuperación de datos, impulsamos tu crecimiento
+                            digital con soluciones profesionales que generan resultados reales.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#" class="hero-btn">
+                                Cotiza Ahora
+                            </a>
+                            <a href="#servicios" class="hero-btn-secondary">
+                                Ver Servicios
+                            </a>
+                        </div>
+
+                        <div class="hero-features">
+                            <div class="hero-feature">
+                                <i class="bi bi-shield-check-fill"></i>
+                                <span>100% Confiable</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="bi bi-clock-history"></i>
+                                <span>Soporte 24/7</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="bi bi-award-fill"></i>
+                                <span>Calidad Garantizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="stat-card">
+                        <i class="bi bi-briefcase-fill stat-icon"></i>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Proyectos Completados</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="stat-card">
+                        <i class="bi bi-emoji-smile-fill stat-icon"></i>
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">% Satisfacción</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="stat-card">
+                        <i class="bi bi-people-fill stat-icon"></i>
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label">Clientes Felices</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="stat-card">
+                        <i class="bi bi-headset stat-icon"></i>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Soporte Técnico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicios">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Nuestros Servicios Principales</h2>
+                <p class="section-subtitle">
+                    Soluciones tecnológicas integrales diseñadas para impulsar el crecimiento de tu negocio
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-1">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h3 class="service-title">Desarrollo de Software</h3>
+                        <p class="service-description">
+                            Sistemas ERP, CRM y aplicaciones personalizadas diseñadas específicamente para
+                            optimizar tus procesos y aumentar tu productividad empresarial.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-2">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <h3 class="service-title">Páginas y Sitios Web</h3>
+                        <p class="service-description">
+                            Sitios web profesionales, modernos y optimizados que convierten visitantes
+                            en clientes y fortalecen tu presencia digital.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-3">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h3 class="service-title">Automatización con IA</h3>
+                        <p class="service-description">
+                            Chatbots inteligentes, clasificación automática y reportes generados por IA
+                            que revolucionan la forma en que opera tu empresa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-4">
+                            <i class="bi bi-hdd-rack-fill"></i>
+                        </div>
+                        <h3 class="service-title">Recuperación de Datos</h3>
+                        <p class="service-description">
+                            Servicio especializado para recuperar información perdida de discos duros,
+                            USBs y tarjetas SD con 96% de tasa de éxito.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-5">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h3 class="service-title">Soporte Técnico 24/7</h3>
+                        <p class="service-description">
+                            Mantenimiento preventivo y soporte remoto disponible las 24 horas para
+                            mantener tus sistemas funcionando sin interrupciones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="service-card">
+                        <div class="service-icon icon-gradient-6">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3 class="service-title">Consultoría Tecnológica</h3>
+                        <p class="service-description">
+                            Asesoramiento estratégico personalizado para ayudar a tu empresa a crecer
+                            y adoptar nuevas tecnologías de forma inteligente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="services-section" style="background: #0d1529;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <p class="section-subtitle">
+                    Somos tu aliado tecnológico de confianza con soluciones que realmente funcionan
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-award-fill why-icon"></i>
+                        <h3 class="why-title">Experiencia Comprobada</h3>
+                        <p class="why-description">
+                            Más de 2 años de trayectoria consolidada y más de 5 años de experiencia
+                            técnica acumulada en el sector tecnológico mexicano.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-shield-fill-check why-icon"></i>
+                        <h3 class="why-title">Confianza Total</h3>
+                        <p class="why-description">
+                            98% de satisfacción de nuestros clientes. Trabajamos con transparencia,
+                            honestidad y compromiso total con tu éxito.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-lightning-charge-fill why-icon"></i>
+                        <h3 class="why-title">Respuesta Rápida</h3>
+                        <p class="why-description">
+                            Soporte técnico disponible 24/7 y tiempos de respuesta ágiles para
+                            mantener tu negocio operando sin interrupciones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-people-fill why-icon"></i>
+                        <h3 class="why-title">Atención Personalizada</h3>
+                        <p class="why-description">
+                            Tratamiento cercano y profesional. Escuchamos tus necesidades y creamos
+                            soluciones específicas para tu negocio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-cash-coin why-icon"></i>
+                        <h3 class="why-title">Precios Justos</h3>
+                        <p class="why-description">
+                            Tarifas competitivas sin sacrificar calidad. Planes flexibles que se
+                            ajustan al presupuesto de tu empresa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-rocket-takeoff-fill why-icon"></i>
+                        <h3 class="why-title">Innovación Constante</h3>
+                        <p class="why-description">
+                            Nos mantenemos a la vanguardia tecnológica para ofrecerte siempre las
+                            mejores y más modernas soluciones del mercado.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-trophy-fill why-icon"></i>
+                        <h3 class="why-title">Calidad Garantizada</h3>
+                        <p class="why-description">
+                            Cada proyecto incluye garantía y soporte post-entrega. Tu satisfacción
+                            es nuestra prioridad número uno.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card">
+                        <i class="bi bi-geo-alt-fill why-icon"></i>
+                        <h3 class="why-title">Talento Local</h3>
+                        <p class="why-description">
+                            Soluciones desarrolladas con talento mexicano de calidad mundial,
+                            contribuyendo al desarrollo tecnológico del país.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Nuestro Stack Tecnológico</h2>
+                <p class="section-subtitle">
+                    Trabajamos con las tecnologías más modernas y demandadas del mercado
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Frontend -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-window-desktop"></i> Frontend</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-filetype-jsx"></i></div>
+                            <span class="tech-name">React.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-arrow-repeat"></i></div>
+                            <span class="tech-name">Next.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-browser-chrome"></i></div>
+                            <span class="tech-name">Vue.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-triangle"></i></div>
+                            <span class="tech-name">Angular</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-filetype-html"></i></div>
+                            <span class="tech-name">HTML5 / CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-filetype-js"></i></div>
+                            <span class="tech-name">JavaScript / TypeScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-wind"></i></div>
+                            <span class="tech-name">Tailwind CSS</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-bootstrap-fill"></i></div>
+                            <span class="tech-name">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-server"></i> Backend</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-boxes"></i></div>
+                            <span class="tech-name">Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-filetype-py"></i></div>
+                            <span class="tech-name">Python / Django</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-filetype-php"></i></div>
+                            <span class="tech-name">PHP / Laravel</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-lightning-fill"></i></div>
+                            <span class="tech-name">Express.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-rocket-fill"></i></div>
+                            <span class="tech-name">FastAPI</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <span class="tech-name">ASP.NET Core</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-cup-hot-fill"></i></div>
+                            <span class="tech-name">Spring Boot</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-gem"></i></div>
+                            <span class="tech-name">Ruby on Rails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-database-fill"></i> Bases de Datos</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-database"></i></div>
+                            <span class="tech-name">MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-database-fill-gear"></i></div>
+                            <span class="tech-name">PostgreSQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-file-earmark-code"></i></div>
+                            <span class="tech-name">MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <span class="tech-name">SQL Server</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-hdd-network"></i></div>
+                            <span class="tech-name">MariaDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-speedometer2"></i></div>
+                            <span class="tech-name">Redis</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-fire"></i></div>
+                            <span class="tech-name">Firebase</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-building"></i></div>
+                            <span class="tech-name">Oracle Database</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-cloud-fill"></i> Cloud & DevOps</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <span class="tech-name">AWS</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <span class="tech-name">Microsoft Azure</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-google"></i></div>
+                            <span class="tech-name">Google Cloud</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-box-seam"></i></div>
+                            <span class="tech-name">Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-hexagon"></i></div>
+                            <span class="tech-name">Kubernetes</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-git"></i></div>
+                            <span class="tech-name">Git / GitHub / GitLab</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-arrow-repeat"></i></div>
+                            <span class="tech-name">CI/CD Pipelines</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-globe2"></i></div>
+                            <span class="tech-name">Vercel / Netlify</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IA & Machine Learning -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-robot"></i> IA & Machine Learning</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-chat-dots-fill"></i></div>
+                            <span class="tech-name">OpenAI API</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                            <span class="tech-name">TensorFlow</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-fire"></i></div>
+                            <span class="tech-name">PyTorch</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-graph-up"></i></div>
+                            <span class="tech-name">Scikit-learn</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-link-45deg"></i></div>
+                            <span class="tech-name">LangChain</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-table"></i></div>
+                            <span class="tech-name">Pandas / NumPy</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-emoji-smile"></i></div>
+                            <span class="tech-name">Hugging Face</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-eye-fill"></i></div>
+                            <span class="tech-name">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="tech-card">
+                        <h4><i class="bi bi-phone-fill"></i> Mobile</h4>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-phone"></i></div>
+                            <span class="tech-name">React Native</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-google"></i></div>
+                            <span class="tech-name">Flutter</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-lightning-charge"></i></div>
+                            <span class="tech-name">Ionic</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-android2"></i></div>
+                            <span class="tech-name">Kotlin (Android)</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-apple"></i></div>
+                            <span class="tech-name">Swift (iOS)</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-globe"></i></div>
+                            <span class="tech-name">PWA</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-android"></i></div>
+                            <span class="tech-name">Android Studio</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="bi bi-apple"></i></div>
+                            <span class="tech-name">Xcode</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center fade-up mt-5">
+                <p style="color: var(--text-light); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    <i class="bi bi-info-circle me-2" style="color: var(--accent-cyan);"></i>
+                    Nuestro equipo se mantiene constantemente actualizado con las últimas tecnologías y mejores
+                    prácticas de la industria para garantizar soluciones de vanguardia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="fade-up">
+                <h2 class="cta-title">¿Listo para Transformar tu Negocio?</h2>
+                <p class="cta-text">
+                    Agenda una consulta gratuita y descubre cómo podemos impulsar el crecimiento de tu
+                    empresa con tecnología de vanguardia. Sin compromiso, análisis personalizado incluido.
+                </p>
+                <div>
+                    <a href="#" class="hero-btn">
+                        Agendar Consulta Gratuita
+                    </a>
+                    <a href="https://wa.me/5212761276329" class="hero-btn"
+                        style="background: linear-gradient(45deg, #25D366, #20ba5a);" target="_blank">
+                        <i class="bi bi-whatsapp me-2"></i>Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo y descripción -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logotipo.svg" alt="Key Solutions" height="80">
+                    </a>
+                    <p class="mt-3">
+                        La clave de tus soluciones tecnológicas.
+                        Innovación, confianza y soporte para el crecimiento
+                        de tu negocio.
+                    </p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
+                    <p><a href="index.html" class="text-light text-decoration-none">Inicio</a></p>
+                    <p><a href="pages/Servicios.html" class="text-light text-decoration-none">Servicios</a></p>
+                    <p><a href="pages/Productos.html" class="text-light text-decoration-none">Productos</a></p>
+                    <p><a href="pages/Nosotros.html" class="text-light text-decoration-none">Nosotros</a></p>
+                    <p><a href="pages/Contacto.html" class="text-light text-decoration-none">Contacto</a></p>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="mb-4 fw-bold text-info">Contáctanos</h5>
+                    <p><i class="bi bi-geo-alt-fill text-info"></i> El
+                        Carmen Tequexquitla, Tlaxcala</p>
+                    <p><i class="bi bi-envelope-fill text-info"></i>
+                        ventas@keysolutions.com</p>
+                    <p><i class="bi bi-phone-fill text-info"></i> +52 276
+                        127 63 29</p>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3 text-center">
+                    <h5 class="mb-4 fw-bold text-info">Síguenos</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100092268075207" target="_blank"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <!-- Derechos reservados -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start">
+                        © 2026 <strong class="text-info">Key
+                            Solutions</strong>. Todos los derechos
+                        reservados.
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4 text-center text-md-end">
+                    <p>Diseñado by Key Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Contenedor de botones flotantes -->
+    <div class="floating-buttons">
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" target="_blank"
+            class="btn-whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <!-- Botón Subir Arriba -->
+        <button id="btn-top" class="btn-top">
+            <i class="bi bi-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Tu JS -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
