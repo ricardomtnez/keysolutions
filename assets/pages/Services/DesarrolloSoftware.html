@@ -66,10 +66,7 @@
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
+            display: inline-block;
         }
 
         @keyframes pulse {
@@ -605,10 +602,7 @@
         }
 
         @media (min-width: 992px) and (max-width: 1199px) {
-            .contact-banner {
-                font-size: 0.75rem;
-                padding: 0.5rem 1rem;
-            }
+          
 
             .main-title {
                 font-size: 2.8rem;
@@ -708,20 +702,15 @@
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container position-relative">
-            <a href="tel:+522761276329" class="contact-banner d-none d-lg-inline-block">
+    <section class="hero-section mt-5">
+        <div class="container mb-3 mt-4 text-center">
+            <a href="tel:+522761276329" class="contact-banner">
                 ¡Cotiza ahora! 📱 276 127 6329
             </a>
-
+        </div>
+        <div class="container position-relative">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
-                    <div class="d-lg-none mb-4">
-                        <a href="tel:+522761276329" class="contact-banner">
-                            ¡Cotiza ahora! 📱 276 127 6329
-                        </a>
-                    </div>
-
                     <h1 class="main-title mb-4">Desarrollo de Software</h1>
                     <p class="hero-subtitle mb-5">
                         Creamos soluciones de software innovadoras y especializadas que revolucionan industrias.
