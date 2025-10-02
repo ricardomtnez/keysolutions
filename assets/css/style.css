@@ -1,6 +1,6 @@
 /*Degradado fijo con efecto glassmorphism en el navbar*/
 .navbar {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.95), rgba(42, 82, 152, 0.95));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -26,7 +26,7 @@
 }
 
 .dropdown-menu {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.95), rgba(42, 82, 152, 0.95));
   /* semi-transparente */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

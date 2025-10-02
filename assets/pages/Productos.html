@@ -14,6 +14,346 @@
         <link rel="stylesheet" href="../css/style.css">
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+                rel="stylesheet">
+
+        <style>
+                :root {
+                        --primary-blue: #1e3c72;
+                        --secondary-blue: #2a5298;
+                        --light-blue: #64b5f6;
+                        --accent-cyan: #2196F3;
+                        --text-light: #b8c5d6;
+                        --text-gray: #8892a6;
+                }
+
+                * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: 'Poppins', sans-serif;
+                        background: #0a0e27;
+                        color: #ffffff;
+                }
+
+                /* Hero Section */
+                .hero-productos {
+                        min-height: 60vh;
+                        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 100px 20px 80px;
+                        position: relative;
+                        overflow: hidden;
+                        text-align: center;
+                }
+
+                .hero-productos::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background:
+                                radial-gradient(circle at 30% 50%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                                radial-gradient(circle at 70% 80%, rgba(100, 181, 246, 0.15) 0%, transparent 50%);
+                }
+
+                .hero-content {
+                        position: relative;
+                        z-index: 2;
+                        max-width: 900px;
+                        margin: 0 auto;
+                }
+
+                .hero-productos h1 {
+                        font-size: clamp(2.5rem, 5vw, 3.5rem);
+                        font-weight: 800;
+                        margin-bottom: 1.5rem;
+                        color: #ffffff;
+                }
+
+                .hero-productos .lead {
+                        font-size: clamp(1.1rem, 2vw, 1.3rem);
+                        color: var(--text-light);
+                        margin-bottom: 2rem;
+                        line-height: 1.7;
+                }
+
+                .hero-btn {
+                        display: inline-block;
+                        padding: 18px 45px;
+                        background: linear-gradient(45deg, #2196F3, #1976D2);
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+                        border: none;
+                }
+
+                .hero-btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 12px 35px rgba(33, 150, 243, 0.6);
+                        color: white;
+                }
+
+                /* Why Section */
+                .why-section {
+                        padding: 100px 0;
+                        background: #0d1529;
+                }
+
+                .why-section h2 {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        margin-bottom: 2rem;
+                        color: #ffffff;
+                }
+
+                .why-section p {
+                        font-size: 1.1rem;
+                        color: var(--text-light);
+                        line-height: 1.8;
+                        margin-bottom: 1.5rem;
+                }
+
+                .why-section strong,
+                .why-section b {
+                        color: var(--accent-cyan);
+                }
+
+                .highlight-text {
+                        color: var(--accent-cyan);
+                        font-weight: 600;
+                }
+
+                /* Catalog Section */
+                .catalog-section {
+                        padding: 100px 0;
+                        background: #0a0e27;
+                }
+
+                .section-title {
+                        font-size: 2.8rem;
+                        font-weight: 700;
+                        text-align: center;
+                        margin-bottom: 70px;
+                        color: #ffffff;
+                }
+
+                .product-card {
+                        background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+                        border-radius: 20px;
+                        padding: 40px 30px;
+                        height: 100%;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.4s ease;
+                        display: flex;
+                        flex-direction: column;
+                }
+
+                .product-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(33, 150, 243, 0.5);
+                        box-shadow: 0 20px 50px rgba(33, 150, 243, 0.3);
+                }
+
+                .product-icon {
+                        width: 70px;
+                        height: 70px;
+                        margin: 0 auto 25px;
+                        border-radius: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2rem;
+                }
+
+                .icon-gradient-1 {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                }
+
+                .icon-gradient-2 {
+                        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                }
+
+                .icon-gradient-3 {
+                        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                }
+
+                .icon-gradient-4 {
+                        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+                }
+
+                .icon-gradient-5 {
+                        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+                }
+
+                .icon-gradient-6 {
+                        background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+                }
+
+                .product-card h4 {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        color: #ffffff;
+                }
+
+                .product-card ul {
+                        list-style: none;
+                        padding: 0;
+                        margin-bottom: 25px;
+                        flex-grow: 1;
+                }
+
+                .product-card ul li {
+                        padding: 10px 0;
+                        color: var(--text-light);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                }
+
+                .product-card ul li:last-child {
+                        border-bottom: none;
+                }
+
+                .product-card ul li::before {
+                        content: '✓';
+                        color: #4CAF50;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        flex-shrink: 0;
+                }
+
+                .btn-cotizar {
+                        display: block;
+                        width: 100%;
+                        padding: 15px;
+                        background: linear-gradient(45deg, #2196F3, #1976D2);
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        text-align: center;
+                        transition: all 0.3s ease;
+                        border: 2px solid transparent;
+                }
+
+                .btn-cotizar:hover {
+                        background: transparent;
+                        border-color: var(--accent-cyan);
+                        color: var(--accent-cyan);
+                        transform: translateY(-2px);
+                }
+
+                /* CTA Section */
+                .cta-section {
+                        padding: 100px 0;
+                        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                        text-align: center;
+                        position: relative;
+                        overflow: hidden;
+                }
+
+                .cta-section::before {
+                        content: '';
+                        position: absolute;
+                        width: 500px;
+                        height: 500px;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, rgba(33, 150, 243, 0.2) 0%, transparent 70%);
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                }
+
+                .cta-content {
+                        position: relative;
+                        z-index: 2;
+                        max-width: 800px;
+                        margin: 0 auto;
+                }
+
+                .cta-section h2 {
+                        font-size: 2.8rem;
+                        font-weight: 800;
+                        margin-bottom: 1.5rem;
+                        color: #ffffff;
+                }
+
+                .cta-section p {
+                        font-size: 1.2rem;
+                        color: var(--text-light);
+                        margin-bottom: 2.5rem;
+                }
+
+                .btn-whatsapp2 {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 20px 50px;
+                        background: #25D366;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+                }
+
+                .btn-whatsapp2:hover {
+                        background: #20ba5a;
+                        transform: translateY(-3px);
+                        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+                        color: white;
+                }
+
+                /* Responsive */
+                @media (max-width: 768px) {
+                        .hero-productos {
+                                padding: 80px 15px 60px;
+                                min-height: 50vh;
+                        }
+
+                        .why-section,
+                        .catalog-section,
+                        .cta-section {
+                                padding: 60px 0;
+                        }
+
+                        .section-title {
+                                font-size: 2rem;
+                                margin-bottom: 40px;
+                        }
+
+                        .product-card {
+                                padding: 30px 20px;
+                        }
+                }
+
+                /* Animations */
+                .fade-up {
+                        opacity: 0;
+                        transform: translateY(30px);
+                        transition: all 0.8s ease;
+                }
+
+                .fade-up.visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                }
+        </style>
 
 </head>
 
@@ -40,12 +380,14 @@
                                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                                         data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
                                                 <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="Services/ConsultoriaTecnologica.html">Consultoría
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/ConsultoriaTecnologica.html">Consultoría
                                                                         Tecnológica</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/DesarrolloSoftware.html">Desarrollo
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/DesarrolloSoftware.html">Desarrollo
                                                                         de
                                                                         Software</a></li>
                                                         <li>
@@ -104,45 +446,60 @@
                         </div>
                 </div>
         </nav>
-        <!-- HERO -->
-        <section class="hero-section text-center">
+        <!-- Hero Section -->
+        <section class="hero-productos">
                 <div class="container">
-                        <h1 class="animate__animated animate__fadeInDown">Catálogo de Productos</h1>
-                        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
-                                Tecnología nueva, semi-nueva y reacondicionada a precios accesibles. Garantía directa de
-                                3 meses.
-                        </p>
-                        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20un%20producto"
-                                target="_blank" class="btn btn-info btn-lg mt-3">Cotiza ahora</a>
+                        <div class="hero-content">
+                                <h1>Catálogo de Productos</h1>
+                                <p class="lead">
+                                        Tecnología nueva, semi-nueva y reacondicionada a precios accesibles. Garantía
+                                        directa de 3 meses.
+                                </p>
+                                <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20un%20producto"
+                                        target="_blank" class="hero-btn">
+                                        <i class="bi bi-whatsapp me-2"></i>Cotiza Ahora
+                                </a>
+                        </div>
                 </div>
         </section>
 
-        <!-- POR QUÉ NOSOTROS -->
-        <section class="section-light text-center py-5">
+        <!-- Why Section -->
+        <section class="why-section">
                 <div class="container">
-                        <h2 class="text-info mb-4">¿Por qué comprar con nosotros?</h2>
-                        <p>En <strong>Key Solutions</strong> trabajamos con un modelo <b>Just in Time</b>: no
-                                almacenamos productos,
-                                conseguimos lo que necesitas justo cuando lo pides, garantizando <b>precios más
-                                        bajos</b> y máxima
-                                <b>calidad</b>.
-                        </p>
-                        <p>Contamos con proveedores confiables en CDMX y Puebla. Equipos <b>nuevos, semi-nuevos o
-                                        reacondicionados</b>
-                                siempre con <span class="text-info">3 meses de garantía directa</span>.</p>
+                        <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                        <h2 class="text-center">¿Por qué comprar con nosotros?</h2>
+                                        <p class="text-center">
+                                                En <strong>Key Solutions</strong> trabajamos con un modelo <b>Just in
+                                                        Time</b>: no almacenamos productos,
+                                                conseguimos lo que necesitas justo cuando lo pides, garantizando
+                                                <b>precios más bajos</b> y máxima <b>calidad</b>.
+                                        </p>
+                                        <p class="text-center">
+                                                Contamos con proveedores confiables en CDMX y Puebla. Equipos <b>nuevos,
+                                                        semi-nuevos o reacondicionados</b>
+                                                siempre con <span class="highlight-text">3 meses de garantía
+                                                        directa</span>.
+                                        </p>
+                                </div>
+                        </div>
                 </div>
         </section>
 
-        <!-- CATÁLOGO -->
-        <section class="section-dark py-5">
+        <!-- Catalog Section -->
+        <section class="catalog-section">
                 <div class="container">
-                        <h2 class="text-center text-info mb-5">Nuestras Categorías</h2>
+                        <h2 class="section-title">Nuestras Categorías</h2>
+
                         <div class="row g-4">
                                 <!-- Refacciones -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-1">
+                                                        <i class="bi bi-cpu"></i>
+                                                </div>
                                                 <h4>Refacciones y Componentes</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Discos duros (HDD / SSD)</li>
                                                         <li>Memorias RAM</li>
                                                         <li>Tarjetas gráficas (GPU)</li>
@@ -151,15 +508,20 @@
                                                         <li>Procesadores y Chips</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20refacciones"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
 
                                 <!-- Equipos -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-2">
+                                                        <i class="bi bi-laptop"></i>
+                                                </div>
                                                 <h4>Equipos y Periféricos</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Laptops nuevas y reacondicionadas</li>
                                                         <li>PCs a la medida</li>
                                                         <li>Monitores y pantallas</li>
@@ -168,15 +530,20 @@
                                                         <li>Servidores y estaciones de trabajo</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20equipos"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
 
                                 <!-- Redes y accesorios -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-3">
+                                                        <i class="bi bi-router"></i>
+                                                </div>
                                                 <h4>Accesorios y Redes</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Routers y repetidores WiFi</li>
                                                         <li>Cables de red</li>
                                                         <li>Bluetooth y adaptadores WiFi</li>
@@ -185,15 +552,20 @@
                                                         <li>Switches y Patch Panels</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20accesorios"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
 
                                 <!-- Software -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-4">
+                                                        <i class="bi bi-code-square"></i>
+                                                </div>
                                                 <h4>Software y Licencias</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Sistemas operativos Windows / Linux</li>
                                                         <li>Office y Suites de productividad</li>
                                                         <li>Software de diseño y edición</li>
@@ -201,15 +573,20 @@
                                                         <li>ERP y CRM</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20software"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
 
                                 <!-- Soluciones IoT -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-5">
+                                                        <i class="bi bi-wifi"></i>
+                                                </div>
                                                 <h4>Soluciones IoT</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Domótica y automatización</li>
                                                         <li>Sensores de monitoreo</li>
                                                         <li>Cámaras inteligentes</li>
@@ -217,14 +594,20 @@
                                                         <li>Dispositivos conectados</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20IoT"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
-                                <!-- Dispositivos Móviles y Accesorios -->
-                                <div class="col-md-4">
-                                        <div class="values-card">
+
+                                <!-- Dispositivos Móviles -->
+                                <div class="col-lg-4 col-md-6 fade-up">
+                                        <div class="product-card">
+                                                <div class="product-icon icon-gradient-6">
+                                                        <i class="bi bi-phone"></i>
+                                                </div>
                                                 <h4>Dispositivos Móviles y Accesorios</h4>
-                                                <ul class="text-start">
+                                                <ul>
                                                         <li>Celulares nuevos y reacondicionados</li>
                                                         <li>Tablets y e-readers</li>
                                                         <li>Smartwatches y wearables</li>
@@ -232,22 +615,30 @@
                                                         <li>Auriculares y altavoces Bluetooth</li>
                                                 </ul>
                                                 <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20cotizar%20dispositivos%20móviles"
-                                                        target="_blank" class="btn btn-outline-info mt-2">Cotizar</a>
+                                                        target="_blank" class="btn-cotizar">
+                                                        <i class="bi bi-whatsapp me-2"></i>Cotizar Ahora
+                                                </a>
                                         </div>
                                 </div>
-
                         </div>
                 </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="hero-section text-center py-5">
+        <!-- CTA Section -->
+        <section class="cta-section">
                 <div class="container">
-                        <h2 class="mb-3">¿Listo para dar el siguiente paso?</h2>
-                        <p class="mb-4">Contáctanos hoy mismo y equipa tu negocio con la mejor tecnología a costos
-                                accesibles.</p>
-                        <a href="https://wa.me/5212761276329?text=Hola!%20Estoy%20interesado%20en%20sus%20productos"
-                                target="_blank" class="btn btn-info btn-lg">Hablar por WhatsApp</a>
+                        <div class="cta-content">
+                                <h2>¿Listo para dar el siguiente paso?</h2>
+                                <p>
+                                        Contáctanos hoy mismo y equipa tu negocio con la mejor tecnología a costos
+                                        accesibles.
+                                </p>
+                                <a href="https://wa.me/5212761276329?text=Hola!%20Estoy%20interesado%20en%20sus%20productos"
+                                        target="_blank" class="btn-whatsapp2">
+                                        <i class="bi bi-whatsapp"></i>
+                                        Hablar por WhatsApp
+                                </a>
+                        </div>
                 </div>
         </section>
 
@@ -404,5 +795,22 @@
                         }
                 });
         })();
+        // Intersection Observer para animaciones
+        const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                        }
+                });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+        });
 
 </script>
