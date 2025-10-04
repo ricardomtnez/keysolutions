@@ -379,6 +379,105 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Feature pairs (image + text) */
+        .feature-pair {
+            padding: 80px 0;
+            background: transparent;
+        }
+
+        .feature-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-image img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(2, 6, 23, 0.6);
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+        }
+
+        .feature-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 22px;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            color: #b8c5d6;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .feature-cta {
+            display: block; /* make margin auto centerable */
+            max-width: 320px;
+            width: auto;
+            padding: 12px 26px;
+            margin: 10px auto 0; /* center horizontally */
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 999px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.55), inset 0 1px 0 rgba(255,255,255,0.03);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            text-align: center;
+            transition: transform 240ms cubic-bezier(.2,.9,.2,1), box-shadow 240ms ease, background 240ms ease;
+        }
+
+        /* sheen effect */
+        .feature-cta::after {
+            content: '';
+            position: absolute;
+            left: -60%;
+            top: -10%;
+            width: 40%;
+            height: 120%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.02));
+            transform: rotate(18deg);
+            transition: left 450ms ease;
+            pointer-events: none;
+        }
+
+        .feature-cta:hover,
+        .feature-cta:focus {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255,255,255,0.03);
+            background: linear-gradient(180deg, rgba(33,150,243,0.12), rgba(25,118,210,0.08));
+        }
+
+        .feature-cta:hover::after,
+        .feature-cta:focus::after {
+            left: 120%;
+        }
+
+        .feature-cta:focus {
+            outline: 3px solid rgba(33,150,243,0.14);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-pair { padding: 40px 0; }
+            .feature-image img { max-height: 240px; }
+            .feature-title { font-size: 1.4rem; }
+        }
     </style>
 </head>
 
@@ -491,6 +590,34 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Pair: Image Left / Text Right -->
+    <section class="feature-pair container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 feature-image fade-up">
+                <img src="../../img/Pagina-1.png" alt="Diseño de sitio web moderno" loading="lazy">
+            </div>
+            <div class="col-lg-6 feature-body fade-up">
+                <h3 class="feature-title">Diseños Web que Convierten</h3>
+                <p class="feature-text">Diseñamos experiencias digitales centradas en la conversión: navegación clara, jerarquía visual y llamadas a la acción optimizadas para transformar visitantes en clientes.</p>
+                <a href="#contacto" class="feature-cta">Cotiza tu Sitio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Pair: Text Left / Image Right -->
+    <section class="feature-pair container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 feature-body fade-up">
+                <h3 class="feature-title">Velocidad y SEO desde el Primer Día</h3>
+                <p class="feature-text">Implementamos prácticas de rendimiento y arquitectura SEO técnico para que tus páginas carguen rápido y sean fácilmente indexadas por buscadores, mejorando visibilidad y experiencia de usuario.</p>
+                <a href="#contacto" class="feature-cta">Hablemos de SEO</a>
+            </div>
+            <div class="col-lg-6 feature-image fade-up">
+                <img src="../../img/Pagina-2.png" alt="Optimización y velocidad web" loading="lazy">
             </div>
         </div>
     </section>

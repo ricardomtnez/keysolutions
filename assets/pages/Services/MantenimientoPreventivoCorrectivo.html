@@ -14,6 +14,662 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea, #764ba2);
+            --secondary-gradient: linear-gradient(45deg, #f093fb, #f5576c);
+            --tertiary-gradient: linear-gradient(45deg, #4facfe, #00f2fe);
+            --quaternary-gradient: linear-gradient(45deg, #43e97b, #38f9d7);
+            --bg-primary: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 4rem 0 5rem;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 75% 75%, rgba(240, 147, 251, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(67, 233, 123, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-banner {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white !important;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .contact-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            color: white !important;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(240, 147, 251, 0.08));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Team & Support Visual Section */
+        .team-support-section {
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+
+        .visual-card {
+            display: flex;
+            flex-direction: column; /* stacked by default for mobile */
+            gap: 1rem;
+            align-items: stretch;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(102,126,234,0.02));
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        
+
+        .visual-image { width: 100%; display:block; }
+
+        .visual-img { display: block; width: auto; max-width: 70%; height: auto; object-fit: contain; border-radius: 0.75rem; margin: 0 auto; }
+
+        .visual-body { width: 100%; padding: 0.75rem 0; }
+
+        /* Desktop: alternate layout with image/text side-by-side */
+        @media (min-width: 992px) {
+            .visual-card {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 2rem;
+            }
+
+            .visual-card.reverse {
+                flex-direction: row-reverse;
+            }
+
+            .visual-image { flex: 0 0 45%; max-width: 45%; }
+
+            .visual-body { flex: 1; padding: 0 1rem; }
+
+            .visual-img { max-width: 100%; margin: 0; }
+        }
+
+        .visual-title { font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; }
+
+        .visual-text { color: var(--text-light); margin-bottom: 1rem; line-height: 1.6; }
+
+        .btn-cta { background: linear-gradient(45deg, #f093fb, #764ba2); border: none; color: white; padding: 0.75rem 1.25rem; border-radius: 40px; font-weight: 700; }
+
+        @media (max-width: 992px) {
+            .visual-card { flex-direction: column; }
+            .visual-card.reverse { flex-direction: column; }
+            .visual-image { width: 100%; flex: none; }
+            .visual-body { padding: 1rem 0; }
+        }
+
+        .service-icon {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon.icon-1 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .service-icon.icon-2 {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+        }
+
+        .service-icon.icon-3 {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+        .service-icon.icon-4 {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+
+        .service-icon.icon-5 {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        }
+
+        .service-icon.icon-6 {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+
+        .service-icon.icon-7 {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+        }
+
+        .service-icon.icon-8 {
+            background: linear-gradient(45deg, #d299c2, #fef9d7);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '🔧';
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+
+        .tech-stack {
+            background: rgba(102, 126, 234, 0.12);
+            border-radius: 1rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            color: #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.25);
+            margin: 0.2rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tech-stack:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .tech-stack.primary {
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .tech-stack.secondary {
+            background: rgba(240, 147, 251, 0.15);
+            color: #f093fb;
+            border-color: rgba(240, 147, 251, 0.3);
+        }
+
+        .tech-stack.tertiary {
+            background: rgba(67, 233, 123, 0.15);
+            color: #43e97b;
+            border-color: rgba(67, 233, 123, 0.3);
+        }
+
+        /* Process Section */
+        .process-section {
+            margin: 5rem 0;
+        }
+
+        .process-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.1);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -1.5rem;
+            left: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .process-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .process-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Tech Showcase */
+        .tech-showcase {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-badge {
+            background: rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 1rem;
+            padding: 0.6rem 1.2rem;
+            display: inline-block;
+            margin: 0.3rem;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(102, 126, 234, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge.featured {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            margin: 5rem 0;
+        }
+
+        .benefit-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Industries Section */
+        .industries-section {
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.05), rgba(79, 172, 254, 0.05));
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .industry-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .industry-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .industry-icon {
+            font-size: 2rem;
+            min-width: 3rem;
+            text-align: center;
+        }
+
+        .industry-text {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2rem;
+            position: relative;
+            border: 1px solid var(--glass-border);
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-subtitle {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        .btn-cta {
+            background: var(--secondary-gradient);
+            border: none;
+            padding: 1.125rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            color: white !important;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+            color: white !important;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .service-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .contact-banner {
+                position: static !important;
+                margin-bottom: 2rem;
+                display: inline-block;
+                top: auto !important;
+                right: auto !important;
+            }
+
+            .hero-section {
+                padding: 2rem 0 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+          
+
+            .main-title {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -106,7 +762,648 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section mt-5">
+        <div class="container mb-3 mt-4 text-center">
+            <a href="tel:+522761276329" class="contact-banner">
+                ¡Cotiza ahora! 📱 276 127 6329
+            </a>
+        </div>
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="main-title mb-4">Mantenimiento Preventivo y Correctivo</h1>
+                    <p class="hero-subtitle mb-5">
+                        Servicios especializados de mantenimiento tecnológico que garantizan el funcionamiento 
+                        óptimo de tu infraestructura informática. Prolongamos la vida útil de tus equipos, 
+                        maximizamos su rendimiento y aseguramos la continuidad operativa de tu negocio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Stats Section -->
+    <section class="container">
+        <div class="stats-section">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <div class="stat-label">Equipos Mantenidos</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">99%</span>
+                        <div class="stat-label">Uptime Garantizado</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">72H</span>
+                        <div class="stat-label">Tiempo de Respuesta</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Monitoreo Continuo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios de Mantenimiento</h2>
+            <p class="section-subtitle">
+                Soluciones integrales de mantenimiento que mantienen tu tecnología funcionando al máximo rendimiento
+            </p>
+
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-1 mb-3">🖥️</div>
+                        <h3 class="service-title mb-3">Mantenimiento de Computadoras</h3>
+                        <p class="service-description mb-3">
+                            Limpieza interna, optimización de software, actualización de drivers y verificación 
+                            de hardware para un rendimiento óptimo.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Limpieza profunda de hardware</li>
+                            <li class="mb-2">Optimización del sistema operativo</li>
+                            <li class="mb-2">Actualización de drivers y software</li>
+                            <li class="mb-2">Verificación de temperatura y ventilación</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Desktop</span>
+                            <span class="tech-stack secondary">Laptop</span>
+                            <span class="tech-stack tertiary">All-in-One</span>
+                            <span class="tech-stack primary">Workstation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-2 mb-3">🖨️</div>
+                        <h3 class="service-title mb-3">Mantenimiento de Impresoras</h3>
+                        <p class="service-description mb-3">
+                            Limpieza de cabezales, calibración, cambio de consumibles y reparación 
+                            de atascos para imprimir con calidad profesional.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Limpieza de cabezales de impresión</li>
+                            <li class="mb-2">Calibración de colores y alineación</li>
+                            <li class="mb-2">Mantenimiento de rodillos y sensores</li>
+                            <li class="mb-2">Reemplazo de consumibles</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Láser</span>
+                            <span class="tech-stack secondary">Inyección</span>
+                            <span class="tech-stack tertiary">Multifuncional</span>
+                            <span class="tech-stack primary">Gran formato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-3 mb-3">🌐</div>
+                        <h3 class="service-title mb-3">Mantenimiento de Servidores</h3>
+                        <p class="service-description mb-3">
+                            Monitoreo 24/7, actualizaciones de seguridad, optimización de bases de datos 
+                            y gestión proactiva de recursos del servidor.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Monitoreo continuo de rendimiento</li>
+                            <li class="mb-2">Aplicación de parches de seguridad</li>
+                            <li class="mb-2">Optimización de bases de datos</li>
+                            <li class="mb-2">Backup automático y verificación</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Windows Server</span>
+                            <span class="tech-stack secondary">Linux</span>
+                            <span class="tech-stack tertiary">VMware</span>
+                            <span class="tech-stack primary">Hyper-V</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-4 mb-3">🌐</div>
+                        <h3 class="service-title mb-3">Mantenimiento de Redes</h3>
+                        <p class="service-description mb-3">
+                            Verificación de conectividad, actualización de firmware, optimización 
+                            de configuraciones y monitoreo de tráfico de red.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Verificación de conectividad</li>
+                            <li class="mb-2">Actualización de firmware</li>
+                            <li class="mb-2">Optimización de configuraciones</li>
+                            <li class="mb-2">Monitoreo de ancho de banda</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Switches</span>
+                            <span class="tech-stack secondary">Routers</span>
+                            <span class="tech-stack tertiary">Access Points</span>
+                            <span class="tech-stack primary">Firewall</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-5 mb-3">🔒</div>
+                        <h3 class="service-title mb-3">Seguridad y Antivirus</h3>
+                        <p class="service-description mb-3">
+                            Actualización de antivirus, escaneo profundo del sistema, eliminación 
+                            de malware y configuración de políticas de seguridad.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Actualización de definiciones</li>
+                            <li class="mb-2">Escaneo completo del sistema</li>
+                            <li class="mb-2">Eliminación de malware y virus</li>
+                            <li class="mb-2">Configuración de políticas de seguridad</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Antivirus</span>
+                            <span class="tech-stack secondary">Anti-malware</span>
+                            <span class="tech-stack tertiary">Firewall</span>
+                            <span class="tech-stack primary">EDR/XDR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-6 mb-3">💾</div>
+                        <h3 class="service-title mb-3">Gestión de Backups</h3>
+                        <p class="service-description mb-3">
+                            Configuración, verificación y pruebas de respaldos automáticos para 
+                            garantizar la integridad y disponibilidad de los datos críticos.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Configuración de backups automáticos</li>
+                            <li class="mb-2">Verificación de integridad</li>
+                            <li class="mb-2">Pruebas de restauración</li>
+                            <li class="mb-2">Backup local y en la nube</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Incremental</span>
+                            <span class="tech-stack secondary">Diferencial</span>
+                            <span class="tech-stack tertiary">Completo</span>
+                            <span class="tech-stack primary">Cloud Backup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-7 mb-3">🔧</div>
+                        <h3 class="service-title mb-3">Mantenimiento Correctivo</h3>
+                        <p class="service-description mb-3">
+                            Diagnóstico y reparación de fallas, reemplazo de componentes dañados 
+                            y restauración completa del funcionamiento normal de los equipos.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Diagnóstico avanzado de fallas</li>
+                            <li class="mb-2">Reparación de hardware y software</li>
+                            <li class="mb-2">Reemplazo de componentes</li>
+                            <li class="mb-2">Restauración de sistema</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">Diagnóstico</span>
+                            <span class="tech-stack secondary">Reparación</span>
+                            <span class="tech-stack tertiary">Reemplazo</span>
+                            <span class="tech-stack primary">Restauración</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="service-card p-4 h-100">
+                        <div class="service-icon icon-8 mb-3">📊</div>
+                        <h3 class="service-title mb-3">Monitoreo y Reportes</h3>
+                        <p class="service-description mb-3">
+                            Monitoreo continuo del estado de los equipos, generación de reportes 
+                            detallados y alertas proactivas para prevenir fallas.
+                        </p>
+                        <ul class="service-features list-unstyled mb-3">
+                            <li class="mb-2">Monitoreo 24/7 automatizado</li>
+                            <li class="mb-2">Alertas proactivas de fallas</li>
+                            <li class="mb-2">Reportes de rendimiento</li>
+                            <li class="mb-2">Dashboard en tiempo real</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="tech-stack primary">SNMP</span>
+                            <span class="tech-stack secondary">Nagios</span>
+                            <span class="tech-stack tertiary">Zabbix</span>
+                            <span class="tech-stack primary">PRTG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso de Mantenimiento</h2>
+            <p class="section-subtitle">
+                Metodología estructurada que garantiza el máximo rendimiento y vida útil de tus equipos
+            </p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <div class="process-title">Evaluación Inicial</div>
+                        <div class="process-description">
+                            Realizamos un diagnóstico completo del estado actual de tu infraestructura 
+                            tecnológica para identificar necesidades específicas de mantenimiento.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <div class="process-title">Plan de Mantenimiento</div>
+                        <div class="process-description">
+                            Creamos un cronograma personalizado de mantenimiento preventivo basado 
+                            en las características y uso de cada equipo en tu organización.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <div class="process-title">Ejecución Programada</div>
+                        <div class="process-description">
+                            Ejecutamos las tareas de mantenimiento según el cronograma establecido, 
+                            minimizando interrupciones y maximizando la disponibilidad de los sistemas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <div class="process-title">Monitoreo Continuo</div>
+                        <div class="process-description">
+                            Implementamos sistemas de monitoreo 24/7 y generamos reportes detallados 
+                            sobre el estado y rendimiento de toda tu infraestructura tecnológica.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Support Visual Section -->
+    <section class="team-support-section py-5">
+        <div class="container">
+            <h2 class="section-title">Equipo Técnico y Soporte Especializado</h2>
+            <p class="section-subtitle">Nuestro equipo certificado realiza mantenimientos preventivos y correctivos con protocolos probados.</p>
+
+            <div class="row g-4 align-items-center mt-4">
+                <div class="col-12">
+                    <div class="visual-card">
+                        <div class="visual-image">
+                            <img src="../../img/Man-1.png" alt="Técnico de mantenimiento" loading="lazy" class="visual-img" />
+                        </div>
+                        <div class="visual-body">
+                            <h3 class="visual-title">Técnicos Certificados</h3>
+                            <p class="visual-text">Nuestro personal cuenta con certificaciones y experiencia en diagnóstico, reparación y optimización de equipos. Protocolos estandarizados y documentación de cada intervención.</p>
+                            <a href="tel:+522761276329" class="btn btn-cta">Solicitar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="visual-card reverse">
+                        <div class="visual-image">
+                            <img src="../../img/Man-2.png" alt="Soporte técnico" loading="lazy" class="visual-img" />
+                        </div>
+                        <div class="visual-body">
+                            <h3 class="visual-title">Soporte Rápido y Planificado</h3>
+                            <p class="visual-text">Ofrecemos planes preventivos con revisiones periódicas y soporte reactivo con tiempos de respuesta controlados para minimizar interrupciones.</p>
+                            <a href="../Contacto.html" class="btn btn-cta">Contáctanos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Showcase -->
+    <section class="container">
+        <div class="tech-showcase">
+            <h2 class="section-title mb-4">Herramientas y Tecnologías</h2>
+            <p class="section-subtitle">
+                Utilizamos las mejores herramientas profesionales para el mantenimiento tecnológico
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🔧</span> Herramientas de Diagnóstico
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">CPU-Z</span>
+                            <span class="tech-badge featured">GPU-Z</span>
+                            <span class="tech-badge featured">CrystalDiskInfo</span>
+                            <span class="tech-badge">HWiNFO</span>
+                            <span class="tech-badge">AIDA64</span>
+                            <span class="tech-badge">Memtest86</span>
+                            <span class="tech-badge">Prime95</span>
+                            <span class="tech-badge">FurMark</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🛡️</span> Seguridad y Antivirus
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">Kaspersky</span>
+                            <span class="tech-badge featured">Bitdefender</span>
+                            <span class="tech-badge featured">ESET</span>
+                            <span class="tech-badge">Malwarebytes</span>
+                            <span class="tech-badge">Windows Defender</span>
+                            <span class="tech-badge">Trend Micro</span>
+                            <span class="tech-badge">Sophos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>⚙️</span> Optimización de Sistema
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">CCleaner</span>
+                            <span class="tech-badge featured">Defraggler</span>
+                            <span class="tech-badge">IObit Advanced SystemCare</span>
+                            <span class="tech-badge">Wise Care 365</span>
+                            <span class="tech-badge">Glary Utilities</span>
+                            <span class="tech-badge">System Mechanic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>📊</span> Monitoreo y Gestión
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">PRTG</span>
+                            <span class="tech-badge featured">Nagios</span>
+                            <span class="tech-badge featured">Zabbix</span>
+                            <span class="tech-badge">SolarWinds</span>
+                            <span class="tech-badge">ManageEngine</span>
+                            <span class="tech-badge">Spiceworks</span>
+                            <span class="tech-badge">TeamViewer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>💾</span> Backup y Recuperación
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">Acronis</span>
+                            <span class="tech-badge featured">Veeam</span>
+                            <span class="tech-badge featured">Carbonite</span>
+                            <span class="tech-badge">Backup Exec</span>
+                            <span class="tech-badge">Windows Backup</span>
+                            <span class="tech-badge">Cobian Backup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="tech-category">
+                        <div class="tech-category-title">
+                            <span>🌐</span> Gestión de Red
+                        </div>
+                        <div>
+                            <span class="tech-badge featured">Wireshark</span>
+                            <span class="tech-badge featured">NetSpot</span>
+                            <span class="tech-badge">Advanced IP Scanner</span>
+                            <span class="tech-badge">Angry IP Scanner</span>
+                            <span class="tech-badge">LanSweeper</span>
+                            <span class="tech-badge">Network Monitor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <p class="section-subtitle">
+                Ventajas que nos convierten en tu mejor aliado para el mantenimiento tecnológico
+            </p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-title">Respuesta Rápida</div>
+                        <div class="benefit-text">
+                            Tiempo de respuesta garantizado en menos de 72 horas para emergencias críticas
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <div class="benefit-title">Ahorro de Costos</div>
+                        <div class="benefit-text">
+                            Reducción hasta del 40% en costos de reparación mediante mantenimiento preventivo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔧</div>
+                        <div class="benefit-title">Técnicos Certificados</div>
+                        <div class="benefit-text">
+                            Equipo de profesionales certificados con años de experiencia en mantenimiento IT
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📈</div>
+                        <div class="benefit-title">Mayor Vida Útil</div>
+                        <div class="benefit-text">
+                            Extendemos la vida útil de tus equipos hasta un 50% con mantenimiento adecuado
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🛡️</div>
+                        <div class="benefit-title">Seguridad Garantizada</div>
+                        <div class="benefit-text">
+                            Protección completa contra virus, malware y vulnerabilidades de seguridad
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <div class="benefit-title">Reportes Detallados</div>
+                        <div class="benefit-text">
+                            Informes completos sobre el estado y rendimiento de todos tus equipos
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-title">Planes Flexibles</div>
+                        <div class="benefit-text">
+                            Planes de mantenimiento adaptados a las necesidades específicas de tu empresa
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📞</div>
+                        <div class="benefit-title">Soporte 24/7</div>
+                        <div class="benefit-text">
+                            Disponibilidad completa para emergencias y consultas técnicas las 24 horas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="container">
+        <div class="industries-section">
+            <h2 class="section-title mb-4">Sectores que Atendemos</h2>
+            <p class="section-subtitle mb-4">
+                Experiencia comprobada en mantenimiento tecnológico para diversos sectores
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏢</div>
+                        <div class="industry-text">Oficinas Corporativas - Estaciones de trabajo y servidores</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏥</div>
+                        <div class="industry-text">Clínicas y Hospitales - Equipos médicos y sistemas informáticos</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🎓</div>
+                        <div class="industry-text">Instituciones Educativas - Laboratorios y aulas digitales</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏪</div>
+                        <div class="industry-text">Comercio y Retail - Sistemas POS y equipos de punto de venta</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏭</div>
+                        <div class="industry-text">Industria Manufacturera - Equipos de control y monitoreo</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏦</div>
+                        <div class="industry-text">Servicios Financieros - Infraestructura crítica y segura</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏨</div>
+                        <div class="industry-text">Hotelería y Turismo - Sistemas de gestión hotelera</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="industry-item">
+                        <div class="industry-icon">🚚</div>
+                        <div class="industry-text">Logística y Transporte - Sistemas de tracking y gestión</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="cta-section p-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="cta-title mb-4">¿Listo para Optimizar el Rendimiento de tu Tecnología?</h2>
+                        <p class="cta-subtitle mb-5">
+                            Mantén tu infraestructura tecnológica funcionando al máximo rendimiento con 
+                            nuestros servicios especializados de mantenimiento. Prevén fallas costosas, 
+                            extiende la vida útil de tus equipos y asegura la continuidad de tu negocio.
+                        </p>
+                        <a href="tel:+522761276329" class="btn-cta">
+                            Solicita una Evaluación Gratuita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="text-light pt-5 pb-4" style="background-color: #0a0f1c;">
@@ -202,7 +1499,6 @@
 
     <!-- Bootstrap Bundle con Popper -->
     <script src="../../js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
@@ -254,4 +1550,90 @@
             }
         });
     })();
+
+    // Animación de las tarjetas al hacer scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
+    });
+
+    // Efecto de parallax suave para el hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.hero-section');
+        if (parallax) {
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // Animación de números de estadísticas
+    const animateNumbers = () => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            const hasPlus = text.includes('+');
+            const hasPercent = text.includes('%');
+            const hasSlash = text.includes('/');
+            const hasH = text.includes('H');
+
+            if (hasSlash) return; // Skip 24/7
+
+            let number;
+            if (hasH) {
+                number = parseInt(text.replace(/[^0-9]/g, ''));
+            } else {
+                number = parseInt(text.replace(/[^0-9]/g, ''));
+            }
+
+            const duration = 2000;
+            const steps = 60;
+            const increment = number / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    current = number;
+                    clearInterval(timer);
+                }
+
+                let displayText = Math.floor(current).toString();
+                if (hasPlus) displayText += '+';
+                if (hasPercent) displayText += '%';
+                if (hasH) displayText += 'H';
+
+                stat.textContent = displayText;
+            }, duration / steps);
+        });
+    };
+
+    // Observar cuando las estadísticas entren en viewport
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
 </script>

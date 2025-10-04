@@ -15,6 +15,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+    <!-- Devicon (brand technology icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
     <!-- Tus estilos personalizados -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -402,6 +405,52 @@
             font-size: 0.95rem;
         }
 
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: #0d1529;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(42, 82, 152, 0.3) 100%);
+            border-radius: 20px;
+            padding: 30px 24px;
+            height: 100%;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all .3s ease;
+        }
+        .testimonial-card:hover{
+            transform: translateY(-6px);
+            border-color: rgba(33,150,243,.5);
+            box-shadow: 0 15px 40px rgba(33,150,243,.25);
+        }
+        .testimonial-avatar{
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #fff; font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .testimonial-title{ font-weight: 700; margin: 0; }
+        .testimonial-sub{ color: var(--text-light); font-size: .9rem; }
+        .testimonial-quote{ color: var(--text-light); font-size: 1rem; line-height: 1.7; }
+        .rating i{ color: #ffd54f; }
+        /* Carousel theming */
+    .testimonials-section .carousel, .testimonials-section .carousel-inner{ overflow: visible; }
+    .testimonials-section .carousel-inner{ padding-top: 6px; }
+        .testimonials-section .carousel-indicators{ position: static; margin-top: 1rem; }
+        .testimonials-section .carousel-indicators [data-bs-target]{
+            background-color: #2196F3;
+        }
+        .testimonials-section .carousel-control-prev,
+        .testimonials-section .carousel-control-next{
+            width: 8%;
+        }
+        .testimonials-section .carousel-control-prev-icon,
+        .testimonials-section .carousel-control-next-icon{
+            filter: invert(1) grayscale(100%);
+        }
+
         /* Tech Stack Section */
         .tech-section {
             padding: 100px 0;
@@ -460,6 +509,10 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
+        .tech-icon i { color: #fff; }
+        .tech-icon.duo, .tech-icon.trio { gap: 4px; padding: 0 2px; }
+        .tech-icon.duo i { font-size: 1.05rem; }
+        .tech-icon.trio i { font-size: 0.95rem; }
 
         .tech-name {
             color: var(--text-light);
@@ -638,7 +691,7 @@
                         </p>
 
                         <div class="hero-buttons">
-                            <a href="#" class="hero-btn">
+                            <a href="assets/pages/Contacto.html#contacto" class="hero-btn">
                                 Cotiza Ahora
                             </a>
                             <a href="#servicios" class="hero-btn-secondary">
@@ -696,6 +749,110 @@
                         <div class="stat-number">24/7</div>
                         <div class="stat-label">Soporte Técnico</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonios">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Testimonios</h2>
+                <p class="section-subtitle">Lo que nuestros clientes opinan sobre el trabajo que realizamos</p>
+            </div>
+            <div id="testimonialsCarousel" class="carousel slide fade-up" data-bs-ride="carousel" data-bs-interval="6500">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="testimonial-card">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="testimonial-avatar"><i class="bi bi-tools"></i></div>
+                                        <div>
+                                            <h5 class="testimonial-title">Transtools</h5>
+                                            <div class="testimonial-sub">Implementación de software y soporte continuo</div>
+                                        </div>
+                                    </div>
+                                    <div class="rating mb-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="testimonial-quote mb-0">“Key Solutions digitalizó nuestro flujo de trabajo y conectó inventario, ventas y facturación. En menos de 6 semanas redujimos tiempos de entrega en 35% y el soporte siempre responde en minutos. Es un equipo en el que podemos confiar.”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="testimonial-card">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="bi bi-music-note-beamed"></i></div>
+                                        <div>
+                                            <h5 class="testimonial-title">SounderDJ</h5>
+                                            <div class="testimonial-sub">Sitio web y automatización de reservas</div>
+                                        </div>
+                                    </div>
+                                    <div class="rating mb-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="testimonial-quote mb-0">“Pasamos de responder mensajes manualmente a tener reservas, pagos y recordatorios automáticos. El sitio carga rapidísimo, está optimizado para SEO y nos ayudó a duplicar las solicitudes en el primer mes.”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="testimonial-card">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"><i class="bi bi-person-check"></i></div>
+                                        <div>
+                                            <h5 class="testimonial-title">Nacho Castro</h5>
+                                            <div class="testimonial-sub">Consultoría tecnológica</div>
+                                        </div>
+                                    </div>
+                                    <div class="rating mb-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="testimonial-quote mb-0">“Desde la primera reunión hubo claridad en tiempos y alcances. Me ayudaron a elegir la arquitectura correcta, priorizar funcionalidades y lanzar en tiempo. La comunicación fue impecable.”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="testimonial-card">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);"><i class="bi bi-building"></i></div>
+                                        <div>
+                                            <h5 class="testimonial-title">Aceros MX</h5>
+                                            <div class="testimonial-sub">Migración a la nube y seguridad</div>
+                                        </div>
+                                    </div>
+                                    <div class="rating mb-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="testimonial-quote mb-0">“Migraron nuestra infraestructura a la nube con copias de seguridad automatizadas y monitoreo 24/7. Eliminamos caídas, mejoró el desempeño y ahora tenemos trazabilidad total. Profesionales y muy serios.”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+                <div class="carousel-indicators position-static mt-3">
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
             </div>
         </div>
@@ -911,35 +1068,35 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-window-desktop"></i> Frontend</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-filetype-jsx"></i></div>
+                            <div class="tech-icon"><i class="devicon-react-original"></i></div>
                             <span class="tech-name">React.js</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-arrow-repeat"></i></div>
+                            <div class="tech-icon"><i class="devicon-nextjs-plain"></i></div>
                             <span class="tech-name">Next.js</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-browser-chrome"></i></div>
+                            <div class="tech-icon"><i class="devicon-vuejs-plain"></i></div>
                             <span class="tech-name">Vue.js</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-triangle"></i></div>
+                            <div class="tech-icon"><i class="devicon-angularjs-plain"></i></div>
                             <span class="tech-name">Angular</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-filetype-html"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-html5-plain"></i><i class="devicon-css3-plain"></i></div>
                             <span class="tech-name">HTML5 / CSS3</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-filetype-js"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-javascript-plain"></i><i class="devicon-typescript-plain"></i></div>
                             <span class="tech-name">JavaScript / TypeScript</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-wind"></i></div>
+                            <div class="tech-icon"><i class="devicon-tailwindcss-original"></i></div>
                             <span class="tech-name">Tailwind CSS</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-bootstrap-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-bootstrap-plain"></i></div>
                             <span class="tech-name">Bootstrap</span>
                         </div>
                     </div>
@@ -950,35 +1107,35 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-server"></i> Backend</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-boxes"></i></div>
+                            <div class="tech-icon"><i class="devicon-nodejs-plain"></i></div>
                             <span class="tech-name">Node.js</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-filetype-py"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-python-plain"></i><i class="devicon-django-plain"></i></div>
                             <span class="tech-name">Python / Django</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-filetype-php"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-php-plain"></i><i class="devicon-laravel-plain"></i></div>
                             <span class="tech-name">PHP / Laravel</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-lightning-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-express-original"></i></div>
                             <span class="tech-name">Express.js</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-rocket-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-fastapi-plain"></i></div>
                             <span class="tech-name">FastAPI</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <div class="tech-icon"><i class="devicon-dotnet-plain"></i></div>
                             <span class="tech-name">ASP.NET Core</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-cup-hot-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-spring-plain"></i></div>
                             <span class="tech-name">Spring Boot</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-gem"></i></div>
+                            <div class="tech-icon"><i class="devicon-rails-plain"></i></div>
                             <span class="tech-name">Ruby on Rails</span>
                         </div>
                     </div>
@@ -989,35 +1146,35 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-database-fill"></i> Bases de Datos</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-database"></i></div>
+                            <div class="tech-icon"><i class="devicon-mysql-plain"></i></div>
                             <span class="tech-name">MySQL</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-database-fill-gear"></i></div>
+                            <div class="tech-icon"><i class="devicon-postgresql-plain"></i></div>
                             <span class="tech-name">PostgreSQL</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-file-earmark-code"></i></div>
+                            <div class="tech-icon"><i class="devicon-mongodb-plain"></i></div>
                             <span class="tech-name">MongoDB</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <div class="tech-icon"><i class="devicon-microsoftsqlserver-plain"></i></div>
                             <span class="tech-name">SQL Server</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-hdd-network"></i></div>
+                            <div class="tech-icon"><i class="devicon-mariadb-plain"></i></div>
                             <span class="tech-name">MariaDB</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-speedometer2"></i></div>
+                            <div class="tech-icon"><i class="devicon-redis-plain"></i></div>
                             <span class="tech-name">Redis</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-fire"></i></div>
+                            <div class="tech-icon"><i class="devicon-firebase-plain"></i></div>
                             <span class="tech-name">Firebase</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-building"></i></div>
+                            <div class="tech-icon"><i class="devicon-oracle-original"></i></div>
                             <span class="tech-name">Oracle Database</span>
                         </div>
                     </div>
@@ -1028,35 +1185,35 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-cloud-fill"></i> Cloud & DevOps</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <div class="tech-icon"><i class="devicon-amazonwebservices-original"></i></div>
                             <span class="tech-name">AWS</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-microsoft"></i></div>
+                            <div class="tech-icon"><i class="devicon-azure-plain"></i></div>
                             <span class="tech-name">Microsoft Azure</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-google"></i></div>
+                            <div class="tech-icon"><i class="devicon-googlecloud-original"></i></div>
                             <span class="tech-name">Google Cloud</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-box-seam"></i></div>
+                            <div class="tech-icon"><i class="devicon-docker-plain"></i></div>
                             <span class="tech-name">Docker</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-hexagon"></i></div>
+                            <div class="tech-icon"><i class="devicon-kubernetes-plain"></i></div>
                             <span class="tech-name">Kubernetes</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-git"></i></div>
+                            <div class="tech-icon trio"><i class="devicon-git-plain"></i><i class="devicon-github-original"></i><i class="devicon-gitlab-plain"></i></div>
                             <span class="tech-name">Git / GitHub / GitLab</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-arrow-repeat"></i></div>
+                            <div class="tech-icon"><i class="devicon-jenkins-plain"></i></div>
                             <span class="tech-name">CI/CD Pipelines</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-globe2"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-vercel-original"></i><i class="devicon-netlify-plain"></i></div>
                             <span class="tech-name">Vercel / Netlify</span>
                         </div>
                     </div>
@@ -1067,19 +1224,19 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-robot"></i> IA & Machine Learning</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-chat-dots-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-openai-original"></i></div>
                             <span class="tech-name">OpenAI API</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-tensorflow-original"></i></div>
                             <span class="tech-name">TensorFlow</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-fire"></i></div>
+                            <div class="tech-icon"><i class="devicon-pytorch-original"></i></div>
                             <span class="tech-name">PyTorch</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-graph-up"></i></div>
+                            <div class="tech-icon"><i class="devicon-scikitlearn-plain"></i></div>
                             <span class="tech-name">Scikit-learn</span>
                         </div>
                         <div class="tech-item">
@@ -1087,15 +1244,15 @@
                             <span class="tech-name">LangChain</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-table"></i></div>
+                            <div class="tech-icon duo"><i class="devicon-pandas-original"></i><i class="devicon-numpy-original"></i></div>
                             <span class="tech-name">Pandas / NumPy</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-emoji-smile"></i></div>
+                            <div class="tech-icon"><i class="devicon-huggingface-plain"></i></div>
                             <span class="tech-name">Hugging Face</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-eye-fill"></i></div>
+                            <div class="tech-icon"><i class="devicon-opencv-plain"></i></div>
                             <span class="tech-name">Computer Vision</span>
                         </div>
                     </div>
@@ -1106,23 +1263,23 @@
                     <div class="tech-card">
                         <h4><i class="bi bi-phone-fill"></i> Mobile</h4>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-phone"></i></div>
+                            <div class="tech-icon"><i class="devicon-react-original"></i></div>
                             <span class="tech-name">React Native</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-google"></i></div>
+                            <div class="tech-icon"><i class="devicon-flutter-plain"></i></div>
                             <span class="tech-name">Flutter</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-lightning-charge"></i></div>
+                            <div class="tech-icon"><i class="devicon-ionic-original"></i></div>
                             <span class="tech-name">Ionic</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-android2"></i></div>
+                            <div class="tech-icon"><i class="devicon-kotlin-plain"></i></div>
                             <span class="tech-name">Kotlin (Android)</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-apple"></i></div>
+                            <div class="tech-icon"><i class="devicon-swift-plain"></i></div>
                             <span class="tech-name">Swift (iOS)</span>
                         </div>
                         <div class="tech-item">
@@ -1130,11 +1287,11 @@
                             <span class="tech-name">PWA</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-android"></i></div>
+                            <div class="tech-icon"><i class="devicon-androidstudio-plain"></i></div>
                             <span class="tech-name">Android Studio</span>
                         </div>
                         <div class="tech-item">
-                            <div class="tech-icon"><i class="bi bi-apple"></i></div>
+                            <div class="tech-icon"><i class="devicon-xcode-plain"></i></div>
                             <span class="tech-name">Xcode</span>
                         </div>
                     </div>
@@ -1161,7 +1318,7 @@
                     empresa con tecnología de vanguardia. Sin compromiso, análisis personalizado incluido.
                 </p>
                 <div>
-                    <a href="#" class="hero-btn">
+                    <a href="assets/pages/Contacto.html#contacto" class="hero-btn">
                         Agendar Consulta Gratuita
                     </a>
                     <a href="https://wa.me/5212761276329" class="hero-btn"

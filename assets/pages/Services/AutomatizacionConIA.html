@@ -502,6 +502,110 @@
             }
         }
 
+        /* AI Feature Section */
+        .ai-feature {
+            padding: 4.5rem 0;
+        }
+
+        .ai-feature-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-feature-img img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.05));
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .ai-feature-body { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+        }
+
+        .ai-feature-title {
+            font-size: clamp(1.6rem, 2.2vw, 2rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .ai-feature-text {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 991px) {
+            .btn-row { justify-content: center; }
+        }
+
+        /* Liquid Glass Button */
+        .glass-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 999px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px) saturate(120%);
+            -webkit-backdrop-filter: blur(10px) saturate(120%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, background 220ms ease;
+        }
+
+        .glass-btn.primary {
+            background: linear-gradient(180deg, rgba(0,180,216,0.18), rgba(74,144,217,0.12));
+            border-color: rgba(0,180,216,0.35);
+            box-shadow: 0 10px 35px rgba(0,180,216,0.25);
+        }
+
+        .glass-btn::after {
+            content: '';
+            position: absolute;
+            left: -60%;
+            top: -10%;
+            width: 40%;
+            height: 130%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.25), rgba(255,255,255,0.02));
+            transform: rotate(20deg);
+            transition: left 420ms ease;
+            pointer-events: none;
+        }
+
+        .glass-btn:hover, .glass-btn:focus {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 55px rgba(0,0,0,0.45);
+        }
+
+        .glass-btn.primary:hover, .glass-btn.primary:focus {
+            box-shadow: 0 22px 60px rgba(0,180,216,0.35);
+            background: linear-gradient(180deg, rgba(0,180,216,0.24), rgba(74,144,217,0.18));
+        }
+
+        .glass-btn:hover::after, .glass-btn:focus::after {
+            left: 120%;
+        }
+
+        .glass-btn:focus { outline: 3px solid rgba(0,180,216,0.18); outline-offset: 3px; }
         
     </style>
 </head>
@@ -856,6 +960,26 @@
                             <span class="tech-badge">XGBoost</span>
                             <span class="tech-badge">Random Forest</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Feature Section -->
+    <section class="ai-feature">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 ai-feature-img">
+                    <img src="../../img/Automatizacion.png" alt="Automatización de procesos con IA" loading="lazy">
+                </div>
+                <div class="col-lg-6 ai-feature-body">
+                    <h3 class="ai-feature-title">Automatiza tu Operación con IA de Alto Impacto</h3>
+                    <p class="ai-feature-text">Diseñamos y desplegamos soluciones de automatización impulsadas por IA que eliminan cuellos de botella, reducen errores y aceleran la toma de decisiones. Desde chatbots transaccionales y RPA inteligente, hasta análisis predictivo y orquestación de workflows.</p>
+                    <p class="ai-feature-text mb-2">Integramos tu stack actual (ERP, CRM, correo, formularios, bases de datos) y medimos ROI desde el día uno con tableros claros y KPIs accionables.</p>
+                    <div class="btn-row">
+                        <a class="glass-btn primary" href="tel:+522761276329">Agendar Asesoría</a>
+                        <a class="glass-btn" href="../Contacto.html">Solicitar Diagnóstico</a>
                     </div>
                 </div>
             </div>
@@ -1536,9 +1660,9 @@
         });
     }, observerOptions);
 
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.style.opacity = '0';
-        observer.observe(card);
+    document.querySelectorAll('.service-card, .ai-feature .col-lg-6').forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
     });
 
     // Efecto de parallax suave para el hero
