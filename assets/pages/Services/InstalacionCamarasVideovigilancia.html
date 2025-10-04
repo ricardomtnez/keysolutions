@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,18 +63,20 @@
 
         .showcase-grid {
             display: grid;
-            grid-template-columns: 1fr; /* single column layout */
+            grid-template-columns: 1fr;
+            /* single column layout */
             gap: 1.75rem;
             align-items: stretch;
         }
 
         .showcase-card {
             display: flex;
-            flex-direction: column; /* always stack image + content */
+            flex-direction: column;
+            /* always stack image + content */
             gap: 1.25rem;
             align-items: stretch;
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(6,182,212,0.01));
-            border: 1px solid rgba(255,255,255,0.04);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(6, 182, 212, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 18px;
             padding: 1rem;
             overflow: hidden;
@@ -85,13 +88,14 @@
             border-radius: 12px;
             overflow: hidden;
             min-width: 0;
-            box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
         }
 
         .showcase-image img {
             display: block;
             width: 100%;
-            height: auto; /* show full image height */
+            height: auto;
+            /* show full image height */
             object-fit: contain;
         }
 
@@ -105,10 +109,19 @@
         }
 
         /* Imagen principal con overlay de texto sobre zona borrosa */
-    /* Allow images to display fully without cropping */
-    .image-hero { position: relative; width: 100%; height: auto; }
+        /* Allow images to display fully without cropping */
+        .image-hero {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
 
-    .image-hero img.main-img { display: block; width: 100%; height: auto; object-fit: contain; }
+        .image-hero img.main-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
 
         .overlay-content {
             position: absolute;
@@ -119,19 +132,31 @@
             color: #ffffff;
             padding: 1rem 1.2rem;
             /* darker, more opaque background for legibility */
-            background: linear-gradient(90deg, rgba(6,20,30,0.72), rgba(6,20,30,0.56));
+            background: linear-gradient(90deg, rgba(6, 20, 30, 0.72), rgba(6, 20, 30, 0.56));
             border-radius: 12px;
             backdrop-filter: blur(6px) saturate(120%);
-            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-            text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+            text-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
         }
 
-        .overlay-content h4 { margin: 0 0 0.45rem; font-size: 1.25rem; color: #ffffff; font-weight: 900; }
+        .overlay-content h4 {
+            margin: 0 0 0.45rem;
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 900;
+        }
 
-        .overlay-content p { margin: 0; font-size: 1rem; line-height: 1.35; color: rgba(255,255,255,0.95); }
+        .overlay-content p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.95);
+        }
 
         @media (min-width: 1200px) {
-            .overlay-content { max-width: 52%; }
+            .overlay-content {
+                max-width: 52%;
+            }
         }
 
         .showcase-title {
@@ -153,10 +178,10 @@
             padding-left: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.4rem 1rem;
             font-weight: 600;
-            color: rgba(241,245,249,0.9);
+            color: rgba(241, 245, 249, 0.9);
         }
 
         .showcase-features li::before {
@@ -166,12 +191,32 @@
         }
 
         @media (max-width: 768px) {
-            .showcase-card { flex-direction: column; }
-            .showcase-image, .showcase-content { width: 100%; }
-            .showcase-content { padding: 1rem 0; }
-            .showcase-features { grid-template-columns: 1fr; }
+            .showcase-card {
+                flex-direction: column;
+            }
+
+            .showcase-image,
+            .showcase-content {
+                width: 100%;
+            }
+
+            .showcase-content {
+                padding: 1rem 0;
+            }
+
+            .showcase-features {
+                grid-template-columns: 1fr;
+            }
+
             /* removed fixed height so images display fully */
-            .overlay-content { position: absolute; left: 0.75rem; right: 0.75rem; top: auto; bottom: 0.75rem; max-width: none; }
+            .overlay-content {
+                position: absolute;
+                left: 0.75rem;
+                right: 0.75rem;
+                top: auto;
+                bottom: 0.75rem;
+                max-width: none;
+            }
         }
 
         .security-badge {
@@ -188,8 +233,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .hero-title {
@@ -547,11 +599,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(2,6,23,0.72), rgba(2,6,23,0.6));
+            background: linear-gradient(180deg, rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.6));
             z-index: 0;
         }
 
-        .process-section > .container { position: relative; z-index: 1; }
+        .process-section>.container {
+            position: relative;
+            z-index: 1;
+        }
 
         .process-steps {
             display: grid;
@@ -652,24 +707,24 @@
             .hero-title {
                 font-size: 2.8rem;
             }
-            
+
             .security-certifications {
                 gap: 0.5rem;
             }
-            
+
             .cert-badge {
                 font-size: 0.75rem;
                 padding: 0.6rem 1.2rem;
             }
-            
+
             .stat-number {
                 font-size: 2.5rem;
             }
-            
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .camera-grid {
                 grid-template-columns: 1fr;
             }
@@ -678,56 +733,96 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
+        <div class="container-fluid">
+            <!-- LOGO -->
             <a class="navbar-brand" href="../../../index.html">
-                <img src="../../img/icono.svg" alt="Key Solutions" height="50">
+                <img src="../../img/icono.svg" alt="Icono Key Solutions" height="65">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html">Inicio</a>
-                    </li>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
-                            Servicios
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Servicios</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría Tecnológica</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo de Software</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="AutomatizacionConIA.html">Automatización con IA</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="SitiosWeb.html">Sitios Web</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación de Datos</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="SoporteTecnicoRemoto.html">Soporte Técnico</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura de Red</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item active" href="#">Videovigilancia</a></li>
+                            <li><a class="dropdown-item" href="ConsultoriaTecnologica.html">Consultoría
+                                    Tecnológica</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo
+                                    de
+                                    Software</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="AutomatizacionConIA.html">Automatización
+                                    de
+                                    Procesos
+                                    con
+                                    IA</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SitiosWeb.html">Páginas
+                                    y
+                                    Sitios
+                                    Web</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="RecuperacionDatos.html">Recuperación
+                                    de
+                                    datos</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="SoporteTecnicoRemoto.html">Soporte
+                                    Técnico Remoto</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="MantenimientoPreventivoCorrectivo.html">Mantenimiento
+                                    Preventivo
+                                    y
+                                    Correctivo</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="InfraestructuraRed.html">Infraestructura
+                                    de
+                                    Red</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="#">Instalación
+                                    de
+                                    Cámaras
+                                    de
+                                    Videovigilancia</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Productos.html">Productos</a>
+                    <li class="nav-item"><a class="nav-link" href="../Productos.html">Productos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../Contacto.html">Contacto</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../Nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../Contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -737,7 +832,7 @@
                     <div class="security-badge">🔴 EXPERTOS CERTIFICADOS EN VIDEOVIGILANCIA</div>
                     <h1 class="hero-title">Sistemas de Videovigilancia Profesional</h1>
                     <p class="hero-subtitle">
-                        Protegemos tu patrimonio con tecnología de vigilancia de última generación. 
+                        Protegemos tu patrimonio con tecnología de vigilancia de última generación.
                         Instalación, configuración y monitoreo 24/7 con equipos de alta definición.
                     </p>
                 </div>
@@ -754,13 +849,15 @@
                         <img class="main-img" src="../../img/Camara-1.png" alt="Instalación profesional de cámaras" />
                         <div class="overlay-content">
                             <h4>Instalación Profesional y Confiable</h4>
-                            <p>Instalaciones certificadas, pruebas exhaustivas y diseño de cobertura para continuidad operativa.</p>
+                            <p>Instalaciones certificadas, pruebas exhaustivas y diseño de cobertura para continuidad
+                                operativa.</p>
                         </div>
                     </div>
                     <div class="showcase-content">
                         <div class="showcase-text">
                             Nuestra prioridad es la operación continua y la seguridad de tus espacios. Implementamos
-                            soluciones con materiales de primera y técnicas aprobadas que garantizan rendimiento a largo plazo.
+                            soluciones con materiales de primera y técnicas aprobadas que garantizan rendimiento a largo
+                            plazo.
                         </div>
                         <ul class="showcase-features" style="margin-top:0.9rem;">
                             <li>Instalación en interiores y exteriores</li>
@@ -775,7 +872,8 @@
                     <div class="showcase-content">
                         <div class="showcase-title">Monitoreo y Soporte 24/7</div>
                         <div class="showcase-text">
-                            Monitoreo continuo y soporte técnico especializado para mantener tu sistema en óptimas condiciones.
+                            Monitoreo continuo y soporte técnico especializado para mantener tu sistema en óptimas
+                            condiciones.
                         </div>
                         <ul class="showcase-features" style="margin-top:0.9rem;">
                             <li>Alertas y notificaciones inteligentes</li>
@@ -812,7 +910,7 @@
                     <span class="cert-badge">🚨 Detección IA</span>
                 </div>
             </div>
-            
+
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">🏢</div>
@@ -851,7 +949,7 @@
                     <div class="camera-icon">📹</div>
                     <h3 class="camera-title">Cámaras Domo</h3>
                     <p class="camera-description">
-                        Ideales para interiores con diseño discreto y ángulo de visión de 360°. 
+                        Ideales para interiores con diseño discreto y ángulo de visión de 360°.
                         Perfectas para oficinas, tiendas y recepción.
                     </p>
                     <ul class="camera-specs">
@@ -867,7 +965,7 @@
                     <div class="camera-icon">🔍</div>
                     <h3 class="camera-title">Cámaras Bullet</h3>
                     <p class="camera-description">
-                        Diseño tubular para exteriores con largo alcance. Excelentes para 
+                        Diseño tubular para exteriores con largo alcance. Excelentes para
                         perímetros, estacionamientos y áreas amplias.
                     </p>
                     <ul class="camera-specs">
@@ -883,7 +981,7 @@
                     <div class="camera-icon">🎯</div>
                     <h3 class="camera-title">Cámaras PTZ</h3>
                     <p class="camera-description">
-                        Control remoto total con Pan-Tilt-Zoom. Ideales para grandes áreas 
+                        Control remoto total con Pan-Tilt-Zoom. Ideales para grandes áreas
                         que requieren seguimiento activo.
                     </p>
                     <ul class="camera-specs">
@@ -899,7 +997,7 @@
                     <div class="camera-icon">👁️</div>
                     <h3 class="camera-title">Cámaras Fisheye</h3>
                     <p class="camera-description">
-                        Visión panorámica 360° con un solo dispositivo. Perfectas para 
+                        Visión panorámica 360° con un solo dispositivo. Perfectas para
                         vigilancia completa de espacios amplios.
                     </p>
                     <ul class="camera-specs">
@@ -915,7 +1013,7 @@
                     <div class="camera-icon">🌡️</div>
                     <h3 class="camera-title">Cámaras Térmicas</h3>
                     <p class="camera-description">
-                        Detección por calor para vigilancia en total oscuridad. Ideales para 
+                        Detección por calor para vigilancia en total oscuridad. Ideales para
                         perímetros críticos y detección temprana.
                     </p>
                     <ul class="camera-specs">
@@ -931,7 +1029,7 @@
                     <div class="camera-icon">🕵️</div>
                     <h3 class="camera-title">Cámaras Ocultas</h3>
                     <p class="camera-description">
-                        Vigilancia discreta para investigaciones internas. Diseños 
+                        Vigilancia discreta para investigaciones internas. Diseños
                         camuflados para máxima efectividad.
                     </p>
                     <ul class="camera-specs">
@@ -1007,7 +1105,7 @@
                     <div class="step-number">1</div>
                     <h4 class="step-title">Evaluación y Diseño</h4>
                     <p class="step-description">
-                        Análisis detallado de tu propiedad, identificación de puntos críticos, 
+                        Análisis detallado de tu propiedad, identificación de puntos críticos,
                         diseño de cobertura óptima y selección de equipos especializados.
                     </p>
                 </div>
@@ -1016,7 +1114,7 @@
                     <div class="step-number">2</div>
                     <h4 class="step-title">Planificación Técnica</h4>
                     <p class="step-description">
-                        Cálculo de cableado, ubicación del DVR/NVR, configuración de red, 
+                        Cálculo de cableado, ubicación del DVR/NVR, configuración de red,
                         planificación de energía y backup, cronograma de instalación.
                     </p>
                 </div>
@@ -1025,7 +1123,7 @@
                     <div class="step-number">3</div>
                     <h4 class="step-title">Instalación y Cableado</h4>
                     <p class="step-description">
-                        Montaje profesional de cámaras, cableado estructurado oculto, 
+                        Montaje profesional de cámaras, cableado estructurado oculto,
                         instalación de equipos centrales y conexiones de red seguras.
                     </p>
                 </div>
@@ -1034,7 +1132,7 @@
                     <div class="step-number">4</div>
                     <h4 class="step-title">Configuración Avanzada</h4>
                     <p class="step-description">
-                        Configuración de grabación, detección de movimiento, alertas, 
+                        Configuración de grabación, detección de movimiento, alertas,
                         acceso remoto, apps móviles y integración con sistemas existentes.
                     </p>
                 </div>
@@ -1043,7 +1141,7 @@
                     <div class="step-number">5</div>
                     <h4 class="step-title">Pruebas y Capacitación</h4>
                     <p class="step-description">
-                        Pruebas exhaustivas de funcionamiento, calibración de detectores, 
+                        Pruebas exhaustivas de funcionamiento, calibración de detectores,
                         capacitación del personal y entrega de manuales técnicos.
                     </p>
                 </div>
@@ -1052,7 +1150,7 @@
                     <div class="step-number">6</div>
                     <h4 class="step-title">Soporte Continuo</h4>
                     <p class="step-description">
-                        Mantenimiento preventivo, actualizaciones de firmware, 
+                        Mantenimiento preventivo, actualizaciones de firmware,
                         soporte técnico 24/7 y garantía extendida de equipos.
                     </p>
                 </div>
@@ -1065,10 +1163,10 @@
         <div class="container">
             <h2 class="cta-title">¿Listo para Proteger tu Negocio?</h2>
             <p class="cta-description">
-                Obtén una evaluación gratuita de seguridad y un presupuesto personalizado. 
+                Obtén una evaluación gratuita de seguridad y un presupuesto personalizado.
                 Nuestros expertos diseñarán el sistema perfecto para tus necesidades específicas.
             </p>
-            <a href="tel:+522761276329" class="btn-cta">Solicitar Evaluación Gratuita</a>
+            <a href="https://wa.me/5212761276329" class="btn-cta">Solicitar Evaluación Gratuita</a>
         </div>
     </section>
 
@@ -1081,7 +1179,7 @@
                         <img src="../../img/logotipo.svg" alt="Key Solutions" height="80">
                     </a>
                     <p class="mt-3">
-                        La clave de tus soluciones de seguridad. Protección profesional 
+                        La clave de tus soluciones de seguridad. Protección profesional
                         con tecnología de vanguardia para tu tranquilidad.
                     </p>
                 </div>
@@ -1123,7 +1221,7 @@
             <div class="row align-items-center">
                 <div class="col-md-7 col-lg-8">
                     <p class="text-center text-md-start">
-                        © 2025 <strong class="text-info">Key Solutions</strong>. 
+                        © 2025 <strong class="text-info">Key Solutions</strong>.
                         Todos los derechos reservados.
                     </p>
                 </div>

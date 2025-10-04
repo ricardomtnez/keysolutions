@@ -181,10 +181,11 @@
 
         .visual-card {
             display: flex;
-            flex-direction: column; /* stacked by default for mobile */
+            flex-direction: column;
+            /* stacked by default for mobile */
             gap: 1rem;
             align-items: stretch;
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(102,126,234,0.02));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(102, 126, 234, 0.02));
             border: 1px solid var(--glass-border);
             border-radius: 1rem;
             padding: 1rem;
@@ -192,13 +193,27 @@
             text-align: center;
         }
 
-        
 
-        .visual-image { width: 100%; display:block; }
 
-        .visual-img { display: block; width: auto; max-width: 70%; height: auto; object-fit: contain; border-radius: 0.75rem; margin: 0 auto; }
+        .visual-image {
+            width: 100%;
+            display: block;
+        }
 
-        .visual-body { width: 100%; padding: 0.75rem 0; }
+        .visual-img {
+            display: block;
+            width: auto;
+            max-width: 70%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            margin: 0 auto;
+        }
+
+        .visual-body {
+            width: 100%;
+            padding: 0.75rem 0;
+        }
 
         /* Desktop: alternate layout with image/text side-by-side */
         @media (min-width: 992px) {
@@ -213,24 +228,61 @@
                 flex-direction: row-reverse;
             }
 
-            .visual-image { flex: 0 0 45%; max-width: 45%; }
+            .visual-image {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
 
-            .visual-body { flex: 1; padding: 0 1rem; }
+            .visual-body {
+                flex: 1;
+                padding: 0 1rem;
+            }
 
-            .visual-img { max-width: 100%; margin: 0; }
+            .visual-img {
+                max-width: 100%;
+                margin: 0;
+            }
         }
 
-        .visual-title { font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; }
+        .visual-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
 
-        .visual-text { color: var(--text-light); margin-bottom: 1rem; line-height: 1.6; }
+        .visual-text {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
 
-        .btn-cta { background: linear-gradient(45deg, #f093fb, #764ba2); border: none; color: white; padding: 0.75rem 1.25rem; border-radius: 40px; font-weight: 700; }
+        .btn-cta {
+            background: linear-gradient(45deg, #f093fb, #764ba2);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 40px;
+            font-weight: 700;
+        }
 
         @media (max-width: 992px) {
-            .visual-card { flex-direction: column; }
-            .visual-card.reverse { flex-direction: column; }
-            .visual-image { width: 100%; flex: none; }
-            .visual-body { padding: 1rem 0; }
+            .visual-card {
+                flex-direction: column;
+            }
+
+            .visual-card.reverse {
+                flex-direction: column;
+            }
+
+            .visual-image {
+                width: 100%;
+                flex: none;
+            }
+
+            .visual-body {
+                padding: 1rem 0;
+            }
         }
 
         .service-icon {
@@ -663,7 +715,7 @@
         }
 
         @media (min-width: 992px) and (max-width: 1199px) {
-          
+
 
             .main-title {
                 font-size: 2.8rem;
@@ -700,7 +752,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item active" href="DesarrolloSoftware.html">Desarrollo
+                            <li><a class="dropdown-item" href="DesarrolloSoftware.html">Desarrollo
                                     de
                                     Software</a></li>
                             <li>
@@ -762,11 +814,12 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="hero-section mt-5">
         <div class="container mb-3 mt-4 text-center">
-            <a href="tel:+522761276329" class="contact-banner">
+            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner"
+                target="_blank">
                 ¡Cotiza ahora! 📱 276 127 6329
             </a>
         </div>
@@ -775,8 +828,8 @@
                 <div class="col-lg-10">
                     <h1 class="main-title mb-4">Mantenimiento Preventivo y Correctivo</h1>
                     <p class="hero-subtitle mb-5">
-                        Servicios especializados de mantenimiento tecnológico que garantizan el funcionamiento 
-                        óptimo de tu infraestructura informática. Prolongamos la vida útil de tus equipos, 
+                        Servicios especializados de mantenimiento tecnológico que garantizan el funcionamiento
+                        óptimo de tu infraestructura informática. Prolongamos la vida útil de tus equipos,
                         maximizamos su rendimiento y aseguramos la continuidad operativa de tu negocio.
                     </p>
                 </div>
@@ -831,7 +884,7 @@
                         <div class="service-icon icon-1 mb-3">🖥️</div>
                         <h3 class="service-title mb-3">Mantenimiento de Computadoras</h3>
                         <p class="service-description mb-3">
-                            Limpieza interna, optimización de software, actualización de drivers y verificación 
+                            Limpieza interna, optimización de software, actualización de drivers y verificación
                             de hardware para un rendimiento óptimo.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -855,7 +908,7 @@
                         <div class="service-icon icon-2 mb-3">🖨️</div>
                         <h3 class="service-title mb-3">Mantenimiento de Impresoras</h3>
                         <p class="service-description mb-3">
-                            Limpieza de cabezales, calibración, cambio de consumibles y reparación 
+                            Limpieza de cabezales, calibración, cambio de consumibles y reparación
                             de atascos para imprimir con calidad profesional.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -879,7 +932,7 @@
                         <div class="service-icon icon-3 mb-3">🌐</div>
                         <h3 class="service-title mb-3">Mantenimiento de Servidores</h3>
                         <p class="service-description mb-3">
-                            Monitoreo 24/7, actualizaciones de seguridad, optimización de bases de datos 
+                            Monitoreo 24/7, actualizaciones de seguridad, optimización de bases de datos
                             y gestión proactiva de recursos del servidor.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -903,7 +956,7 @@
                         <div class="service-icon icon-4 mb-3">🌐</div>
                         <h3 class="service-title mb-3">Mantenimiento de Redes</h3>
                         <p class="service-description mb-3">
-                            Verificación de conectividad, actualización de firmware, optimización 
+                            Verificación de conectividad, actualización de firmware, optimización
                             de configuraciones y monitoreo de tráfico de red.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -927,7 +980,7 @@
                         <div class="service-icon icon-5 mb-3">🔒</div>
                         <h3 class="service-title mb-3">Seguridad y Antivirus</h3>
                         <p class="service-description mb-3">
-                            Actualización de antivirus, escaneo profundo del sistema, eliminación 
+                            Actualización de antivirus, escaneo profundo del sistema, eliminación
                             de malware y configuración de políticas de seguridad.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -951,7 +1004,7 @@
                         <div class="service-icon icon-6 mb-3">💾</div>
                         <h3 class="service-title mb-3">Gestión de Backups</h3>
                         <p class="service-description mb-3">
-                            Configuración, verificación y pruebas de respaldos automáticos para 
+                            Configuración, verificación y pruebas de respaldos automáticos para
                             garantizar la integridad y disponibilidad de los datos críticos.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -975,7 +1028,7 @@
                         <div class="service-icon icon-7 mb-3">🔧</div>
                         <h3 class="service-title mb-3">Mantenimiento Correctivo</h3>
                         <p class="service-description mb-3">
-                            Diagnóstico y reparación de fallas, reemplazo de componentes dañados 
+                            Diagnóstico y reparación de fallas, reemplazo de componentes dañados
                             y restauración completa del funcionamiento normal de los equipos.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -999,7 +1052,7 @@
                         <div class="service-icon icon-8 mb-3">📊</div>
                         <h3 class="service-title mb-3">Monitoreo y Reportes</h3>
                         <p class="service-description mb-3">
-                            Monitoreo continuo del estado de los equipos, generación de reportes 
+                            Monitoreo continuo del estado de los equipos, generación de reportes
                             detallados y alertas proactivas para prevenir fallas.
                         </p>
                         <ul class="service-features list-unstyled mb-3">
@@ -1034,7 +1087,7 @@
                         <div class="process-number">1</div>
                         <div class="process-title">Evaluación Inicial</div>
                         <div class="process-description">
-                            Realizamos un diagnóstico completo del estado actual de tu infraestructura 
+                            Realizamos un diagnóstico completo del estado actual de tu infraestructura
                             tecnológica para identificar necesidades específicas de mantenimiento.
                         </div>
                     </div>
@@ -1045,7 +1098,7 @@
                         <div class="process-number">2</div>
                         <div class="process-title">Plan de Mantenimiento</div>
                         <div class="process-description">
-                            Creamos un cronograma personalizado de mantenimiento preventivo basado 
+                            Creamos un cronograma personalizado de mantenimiento preventivo basado
                             en las características y uso de cada equipo en tu organización.
                         </div>
                     </div>
@@ -1056,7 +1109,7 @@
                         <div class="process-number">3</div>
                         <div class="process-title">Ejecución Programada</div>
                         <div class="process-description">
-                            Ejecutamos las tareas de mantenimiento según el cronograma establecido, 
+                            Ejecutamos las tareas de mantenimiento según el cronograma establecido,
                             minimizando interrupciones y maximizando la disponibilidad de los sistemas.
                         </div>
                     </div>
@@ -1067,7 +1120,7 @@
                         <div class="process-number">4</div>
                         <div class="process-title">Monitoreo Continuo</div>
                         <div class="process-description">
-                            Implementamos sistemas de monitoreo 24/7 y generamos reportes detallados 
+                            Implementamos sistemas de monitoreo 24/7 y generamos reportes detallados
                             sobre el estado y rendimiento de toda tu infraestructura tecnológica.
                         </div>
                     </div>
@@ -1080,17 +1133,21 @@
     <section class="team-support-section py-5">
         <div class="container">
             <h2 class="section-title">Equipo Técnico y Soporte Especializado</h2>
-            <p class="section-subtitle">Nuestro equipo certificado realiza mantenimientos preventivos y correctivos con protocolos probados.</p>
+            <p class="section-subtitle">Nuestro equipo certificado realiza mantenimientos preventivos y correctivos con
+                protocolos probados.</p>
 
             <div class="row g-4 align-items-center mt-4">
                 <div class="col-12">
                     <div class="visual-card">
                         <div class="visual-image">
-                            <img src="../../img/Man-1.png" alt="Técnico de mantenimiento" loading="lazy" class="visual-img" />
+                            <img src="../../img/Man-1.png" alt="Técnico de mantenimiento" loading="lazy"
+                                class="visual-img" />
                         </div>
                         <div class="visual-body">
                             <h3 class="visual-title">Técnicos Certificados</h3>
-                            <p class="visual-text">Nuestro personal cuenta con certificaciones y experiencia en diagnóstico, reparación y optimización de equipos. Protocolos estandarizados y documentación de cada intervención.</p>
+                            <p class="visual-text">Nuestro personal cuenta con certificaciones y experiencia en
+                                diagnóstico, reparación y optimización de equipos. Protocolos estandarizados y
+                                documentación de cada intervención.</p>
                             <a href="tel:+522761276329" class="btn btn-cta">Solicitar Servicio</a>
                         </div>
                     </div>
@@ -1103,7 +1160,8 @@
                         </div>
                         <div class="visual-body">
                             <h3 class="visual-title">Soporte Rápido y Planificado</h3>
-                            <p class="visual-text">Ofrecemos planes preventivos con revisiones periódicas y soporte reactivo con tiempos de respuesta controlados para minimizar interrupciones.</p>
+                            <p class="visual-text">Ofrecemos planes preventivos con revisiones periódicas y soporte
+                                reactivo con tiempos de respuesta controlados para minimizar interrupciones.</p>
                             <a href="../Contacto.html" class="btn btn-cta">Contáctanos</a>
                         </div>
                     </div>
@@ -1392,8 +1450,8 @@
                     <div class="col-lg-8">
                         <h2 class="cta-title mb-4">¿Listo para Optimizar el Rendimiento de tu Tecnología?</h2>
                         <p class="cta-subtitle mb-5">
-                            Mantén tu infraestructura tecnológica funcionando al máximo rendimiento con 
-                            nuestros servicios especializados de mantenimiento. Prevén fallas costosas, 
+                            Mantén tu infraestructura tecnológica funcionando al máximo rendimiento con
+                            nuestros servicios especializados de mantenimiento. Prevén fallas costosas,
                             extiende la vida útil de tus equipos y asegura la continuidad de tu negocio.
                         </p>
                         <a href="tel:+522761276329" class="btn-cta">
