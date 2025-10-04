@@ -602,7 +602,7 @@
         }
 
         @media (min-width: 992px) and (max-width: 1199px) {
-          
+
 
             .main-title {
                 font-size: 2.8rem;
@@ -610,21 +610,71 @@
         }
 
         /* Feature pairs (image + text) */
-        .feature-pair { padding: 80px 0; }
-        .feature-image { display: flex; align-items: center; justify-content: center; }
+        .feature-pair {
+            padding: 80px 0;
+        }
+
+        .feature-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .feature-image img {
             width: 100%;
             max-height: 360px;
             object-fit: contain;
             border-radius: 14px;
-            box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.05));
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.05));
         }
-        .feature-body { display: flex; flex-direction: column; justify-content: center; padding: 10px 20px; }
-        .feature-title { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-        .feature-text { color: var(--text-light); line-height: 1.7; margin-bottom: 14px; font-size: 1rem; }
-        .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
-        @media (max-width: 991px) { .btn-row { justify-content: center; } .feature-pair { padding: 48px 0; } .feature-image img { max-height: 240px; } .feature-title { font-size: 1.5rem; } }
+
+        .feature-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 20px;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 991px) {
+            .btn-row {
+                justify-content: center;
+            }
+
+            .feature-pair {
+                padding: 48px 0;
+            }
+
+            .feature-image img {
+                max-height: 240px;
+            }
+
+            .feature-title {
+                font-size: 1.5rem;
+            }
+        }
 
         /* Liquid Glass Button */
         .glass-btn {
@@ -638,17 +688,52 @@
             overflow: hidden;
             backdrop-filter: blur(10px) saturate(120%);
             -webkit-backdrop-filter: blur(10px) saturate(120%);
-            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.18);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, background 220ms ease;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: transform 220ms cubic-bezier(.2, .9, .2, 1), box-shadow 220ms ease, background 220ms ease;
         }
-        .glass-btn.primary { background: linear-gradient(180deg, rgba(102,126,234,0.20), rgba(118,75,162,0.16)); border-color: rgba(102,126,234,0.35); box-shadow: 0 10px 35px rgba(102,126,234,0.25); }
-        .glass-btn::after { content: ''; position: absolute; left: -60%; top: -10%; width: 40%; height: 130%; background: linear-gradient(120deg, rgba(255,255,255,0.25), rgba(255,255,255,0.02)); transform: rotate(20deg); transition: left 420ms ease; pointer-events: none; }
-        .glass-btn:hover, .glass-btn:focus { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 55px rgba(0,0,0,0.45); }
-        .glass-btn.primary:hover, .glass-btn.primary:focus { box-shadow: 0 22px 60px rgba(102,126,234,0.35); background: linear-gradient(180deg, rgba(102,126,234,0.26), rgba(118,75,162,0.22)); }
-        .glass-btn:hover::after, .glass-btn:focus::after { left: 120%; }
-        .glass-btn:focus { outline: 3px solid rgba(102,126,234,0.2); outline-offset: 3px; }
+
+        .glass-btn.primary {
+            background: linear-gradient(180deg, rgba(102, 126, 234, 0.20), rgba(118, 75, 162, 0.16));
+            border-color: rgba(102, 126, 234, 0.35);
+            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25);
+        }
+
+        .glass-btn::after {
+            content: '';
+            position: absolute;
+            left: -60%;
+            top: -10%;
+            width: 40%;
+            height: 130%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.02));
+            transform: rotate(20deg);
+            transition: left 420ms ease;
+            pointer-events: none;
+        }
+
+        .glass-btn:hover,
+        .glass-btn:focus {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+        }
+
+        .glass-btn.primary:hover,
+        .glass-btn.primary:focus {
+            box-shadow: 0 22px 60px rgba(102, 126, 234, 0.35);
+            background: linear-gradient(180deg, rgba(102, 126, 234, 0.26), rgba(118, 75, 162, 0.22));
+        }
+
+        .glass-btn:hover::after,
+        .glass-btn:focus::after {
+            left: 120%;
+        }
+
+        .glass-btn:focus {
+            outline: 3px solid rgba(102, 126, 234, 0.2);
+            outline-offset: 3px;
+        }
     </style>
 </head>
 
@@ -745,7 +830,8 @@
     <!-- Hero Section -->
     <section class="hero-section mt-5">
         <div class="container mb-3 mt-4 text-center">
-            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner" target="_blank">
+            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner"
+                target="_blank">
                 ¡Cotiza ahora! 📱 276 127 6329
             </a>
         </div>
@@ -1013,8 +1099,11 @@
             </div>
             <div class="col-lg-6 feature-body">
                 <h3 class="feature-title">Arquitecturas Escalables y Seguras</h3>
-                <p class="feature-text">Diseñamos arquitectura moderna basada en microservicios, mensajería y APIs bien definidas. Seguridad, observabilidad y rendimiento están embebidos desde el diseño para que tu plataforma escale sin fricciones.</p>
-                <p class="feature-text">Orquestamos despliegues con CI/CD, integraciones sólidas y monitoreo proactivo para mantener tu operación estable y veloz.</p>
+                <p class="feature-text">Diseñamos arquitectura moderna basada en microservicios, mensajería y APIs bien
+                    definidas. Seguridad, observabilidad y rendimiento están embebidos desde el diseño para que tu
+                    plataforma escale sin fricciones.</p>
+                <p class="feature-text">Orquestamos despliegues con CI/CD, integraciones sólidas y monitoreo proactivo
+                    para mantener tu operación estable y veloz.</p>
                 <div class="btn-row">
                     <a href="tel:+522761276329" class="glass-btn primary">Cotizar Arquitectura</a>
                     <a href="../Contacto.html" class="glass-btn">Ver Casos</a>
@@ -1028,11 +1117,14 @@
         <div class="row align-items-center g-4">
             <div class="col-lg-6 feature-body">
                 <h3 class="feature-title">Calidad de Código y Entregas Continuas</h3>
-                <p class="feature-text">Aplicamos buenas prácticas: pruebas automatizadas, code review, estándares de calidad y cobertura; todo integrado a pipelines de CI/CD para entregas frecuentes y confiables.</p>
-                <p class="feature-text">Medimos KPIs de desarrollo (lead time, deployment frequency, change failure rate, MTTR) para mejorar continuamente.</p>
+                <p class="feature-text">Aplicamos buenas prácticas: pruebas automatizadas, code review, estándares de
+                    calidad y cobertura; todo integrado a pipelines de CI/CD para entregas frecuentes y confiables.</p>
+                <p class="feature-text">Medimos KPIs de desarrollo (lead time, deployment frequency, change failure
+                    rate, MTTR) para mejorar continuamente.</p>
                 <div class="btn-row">
                     <a href="../Contacto.html" class="glass-btn primary">Agenda una Demo</a>
-                    <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="glass-btn" target="_blank">Hablar con un Experto</a>
+                    <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="glass-btn"
+                        target="_blank">Hablar con un Experto</a>
                 </div>
             </div>
             <div class="col-lg-6 feature-image">
@@ -1449,34 +1541,38 @@
                         class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="tiktok.com/@key.solutions3" class="btn btn-outline-light btn-floating m-1"
+                        style="border-radius:50%;" target="_blank">
                         <i class="bi bi-tiktok"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="https://www.instagram.com/keysolutionstechnology?igsh=dW5ubW1sank2ZGs="
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="hhttps://www.linkedin.com/in/key-solutions-technology-21973a388/"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
             </div>
+        </div>
 
-            <hr class="my-4 text-light">
+        <hr class="my-4 text-light">
 
-            <!-- Derechos reservados -->
-            <div class="row align-items-center">
-                <div class="col-md-7 col-lg-8">
-                    <p class="text-center text-md-start">
-                        © 2026 <strong class="text-info">Key
-                            Solutions</strong>.
-                        Todos los
-                        derechos reservados.
-                    </p>
-                </div>
-                <div class="col-md-5 col-lg-4 text-center text-md-end">
-                    <p>Diseñado by Key Solutions</p>
-                </div>
+        <!-- Derechos reservados -->
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+                <p class="text-center text-md-start">
+                    © 2026 <strong class="text-info">Key
+                        Solutions</strong>.
+                    Todos los
+                    derechos reservados.
+                </p>
             </div>
+            <div class="col-md-5 col-lg-4 text-center text-md-end">
+                <p>Diseñado by Key Solutions</p>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- Contenedor de botones flotantes -->

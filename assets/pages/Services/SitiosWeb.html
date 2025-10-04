@@ -379,6 +379,7 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         /* Feature pairs (image + text) */
         .feature-pair {
             padding: 80px 0;
@@ -397,7 +398,7 @@
             object-fit: contain;
             border-radius: 12px;
             box-shadow: 0 15px 40px rgba(2, 6, 23, 0.6);
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.04));
         }
 
         .feature-body {
@@ -422,24 +423,26 @@
         }
 
         .feature-cta {
-            display: block; /* make margin auto centerable */
+            display: block;
+            /* make margin auto centerable */
             max-width: 320px;
             width: auto;
             padding: 12px 26px;
-            margin: 10px auto 0; /* center horizontally */
+            margin: 10px auto 0;
+            /* center horizontally */
             color: #fff;
             text-decoration: none;
             font-weight: 700;
             border-radius: 999px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.12);
-            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.55), inset 0 1px 0 rgba(255,255,255,0.03);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(8px) saturate(120%);
             -webkit-backdrop-filter: blur(8px) saturate(120%);
             text-align: center;
-            transition: transform 240ms cubic-bezier(.2,.9,.2,1), box-shadow 240ms ease, background 240ms ease;
+            transition: transform 240ms cubic-bezier(.2, .9, .2, 1), box-shadow 240ms ease, background 240ms ease;
         }
 
         /* sheen effect */
@@ -450,7 +453,7 @@
             top: -10%;
             width: 40%;
             height: 120%;
-            background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.02));
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.02));
             transform: rotate(18deg);
             transition: left 450ms ease;
             pointer-events: none;
@@ -459,8 +462,8 @@
         .feature-cta:hover,
         .feature-cta:focus {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255,255,255,0.03);
-            background: linear-gradient(180deg, rgba(33,150,243,0.12), rgba(25,118,210,0.08));
+            box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            background: linear-gradient(180deg, rgba(33, 150, 243, 0.12), rgba(25, 118, 210, 0.08));
         }
 
         .feature-cta:hover::after,
@@ -469,14 +472,22 @@
         }
 
         .feature-cta:focus {
-            outline: 3px solid rgba(33,150,243,0.14);
+            outline: 3px solid rgba(33, 150, 243, 0.14);
             outline-offset: 4px;
         }
 
         @media (max-width: 768px) {
-            .feature-pair { padding: 40px 0; }
-            .feature-image img { max-height: 240px; }
-            .feature-title { font-size: 1.4rem; }
+            .feature-pair {
+                padding: 40px 0;
+            }
+
+            .feature-image img {
+                max-height: 240px;
+            }
+
+            .feature-title {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -602,7 +613,8 @@
             </div>
             <div class="col-lg-6 feature-body fade-up">
                 <h3 class="feature-title">Diseños Web que Convierten</h3>
-                <p class="feature-text">Diseñamos experiencias digitales centradas en la conversión: navegación clara, jerarquía visual y llamadas a la acción optimizadas para transformar visitantes en clientes.</p>
+                <p class="feature-text">Diseñamos experiencias digitales centradas en la conversión: navegación clara,
+                    jerarquía visual y llamadas a la acción optimizadas para transformar visitantes en clientes.</p>
                 <a href="../Contacto.html" class="feature-cta">Cotiza tu Sitio</a>
             </div>
         </div>
@@ -613,7 +625,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 feature-body fade-up">
                 <h3 class="feature-title">Velocidad y SEO desde el Primer Día</h3>
-                <p class="feature-text">Implementamos prácticas de rendimiento y arquitectura SEO técnico para que tus páginas carguen rápido y sean fácilmente indexadas por buscadores, mejorando visibilidad y experiencia de usuario.</p>
+                <p class="feature-text">Implementamos prácticas de rendimiento y arquitectura SEO técnico para que tus
+                    páginas carguen rápido y sean fácilmente indexadas por buscadores, mejorando visibilidad y
+                    experiencia de usuario.</p>
                 <a href="#contacto" class="feature-cta">Hablemos de SEO</a>
             </div>
             <div class="col-lg-6 feature-image fade-up">
@@ -884,34 +898,38 @@
                         class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="tiktok.com/@key.solutions3" class="btn btn-outline-light btn-floating m-1"
+                        style="border-radius:50%;" target="_blank">
                         <i class="bi bi-tiktok"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="https://www.instagram.com/keysolutionstechnology?igsh=dW5ubW1sank2ZGs="
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="hhttps://www.linkedin.com/in/key-solutions-technology-21973a388/"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
             </div>
+        </div>
 
-            <hr class="my-4 text-light">
+        <hr class="my-4 text-light">
 
-            <!-- Derechos reservados -->
-            <div class="row align-items-center">
-                <div class="col-md-7 col-lg-8">
-                    <p class="text-center text-md-start">
-                        © 2026 <strong class="text-info">Key
-                            Solutions</strong>.
-                        Todos los
-                        derechos reservados.
-                    </p>
-                </div>
-                <div class="col-md-5 col-lg-4 text-center text-md-end">
-                    <p>Diseñado by Key Solutions</p>
-                </div>
+        <!-- Derechos reservados -->
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+                <p class="text-center text-md-start">
+                    © 2026 <strong class="text-info">Key
+                        Solutions</strong>.
+                    Todos los
+                    derechos reservados.
+                </p>
             </div>
+            <div class="col-md-5 col-lg-4 text-center text-md-end">
+                <p>Diseñado by Key Solutions</p>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- Contenedor de botones flotantes -->
@@ -980,7 +998,7 @@
             }
         });
     })();
-    
+
     // Intersection Observer para animaciones
     const observerOptions = {
         threshold: 0.1,

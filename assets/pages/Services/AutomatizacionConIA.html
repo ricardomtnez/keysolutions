@@ -518,14 +518,14 @@
             max-height: 380px;
             object-fit: contain;
             border-radius: 1rem;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.05));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.05));
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
         }
 
-        .ai-feature-body { 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
+        .ai-feature-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .ai-feature-title {
@@ -551,7 +551,9 @@
         }
 
         @media (max-width: 991px) {
-            .btn-row { justify-content: center; }
+            .btn-row {
+                justify-content: center;
+            }
         }
 
         /* Liquid Glass Button */
@@ -566,16 +568,16 @@
             overflow: hidden;
             backdrop-filter: blur(10px) saturate(120%);
             -webkit-backdrop-filter: blur(10px) saturate(120%);
-            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.18);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, background 220ms ease;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: transform 220ms cubic-bezier(.2, .9, .2, 1), box-shadow 220ms ease, background 220ms ease;
         }
 
         .glass-btn.primary {
-            background: linear-gradient(180deg, rgba(0,180,216,0.18), rgba(74,144,217,0.12));
-            border-color: rgba(0,180,216,0.35);
-            box-shadow: 0 10px 35px rgba(0,180,216,0.25);
+            background: linear-gradient(180deg, rgba(0, 180, 216, 0.18), rgba(74, 144, 217, 0.12));
+            border-color: rgba(0, 180, 216, 0.35);
+            box-shadow: 0 10px 35px rgba(0, 180, 216, 0.25);
         }
 
         .glass-btn::after {
@@ -585,28 +587,33 @@
             top: -10%;
             width: 40%;
             height: 130%;
-            background: linear-gradient(120deg, rgba(255,255,255,0.25), rgba(255,255,255,0.02));
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.02));
             transform: rotate(20deg);
             transition: left 420ms ease;
             pointer-events: none;
         }
 
-        .glass-btn:hover, .glass-btn:focus {
+        .glass-btn:hover,
+        .glass-btn:focus {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 18px 55px rgba(0,0,0,0.45);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
         }
 
-        .glass-btn.primary:hover, .glass-btn.primary:focus {
-            box-shadow: 0 22px 60px rgba(0,180,216,0.35);
-            background: linear-gradient(180deg, rgba(0,180,216,0.24), rgba(74,144,217,0.18));
+        .glass-btn.primary:hover,
+        .glass-btn.primary:focus {
+            box-shadow: 0 22px 60px rgba(0, 180, 216, 0.35);
+            background: linear-gradient(180deg, rgba(0, 180, 216, 0.24), rgba(74, 144, 217, 0.18));
         }
 
-        .glass-btn:hover::after, .glass-btn:focus::after {
+        .glass-btn:hover::after,
+        .glass-btn:focus::after {
             left: 120%;
         }
 
-        .glass-btn:focus { outline: 3px solid rgba(0,180,216,0.18); outline-offset: 3px; }
-        
+        .glass-btn:focus {
+            outline: 3px solid rgba(0, 180, 216, 0.18);
+            outline-offset: 3px;
+        }
     </style>
 </head>
 
@@ -703,7 +710,8 @@
     <!-- Hero Section -->
     <section class="hero-section mt-5">
         <div class="container mb-3 mt-4 text-center">
-            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner" target="_blank">
+            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner"
+                target="_blank">
                 ¡Cotiza ahora! 📱 276 127 6329
             </a>
         </div>
@@ -975,8 +983,12 @@
                 </div>
                 <div class="col-lg-6 ai-feature-body">
                     <h3 class="ai-feature-title">Automatiza tu Operación con IA de Alto Impacto</h3>
-                    <p class="ai-feature-text">Diseñamos y desplegamos soluciones de automatización impulsadas por IA que eliminan cuellos de botella, reducen errores y aceleran la toma de decisiones. Desde chatbots transaccionales y RPA inteligente, hasta análisis predictivo y orquestación de workflows.</p>
-                    <p class="ai-feature-text mb-2">Integramos tu stack actual (ERP, CRM, correo, formularios, bases de datos) y medimos ROI desde el día uno con tableros claros y KPIs accionables.</p>
+                    <p class="ai-feature-text">Diseñamos y desplegamos soluciones de automatización impulsadas por IA
+                        que eliminan cuellos de botella, reducen errores y aceleran la toma de decisiones. Desde
+                        chatbots transaccionales y RPA inteligente, hasta análisis predictivo y orquestación de
+                        workflows.</p>
+                    <p class="ai-feature-text mb-2">Integramos tu stack actual (ERP, CRM, correo, formularios, bases de
+                        datos) y medimos ROI desde el día uno con tableros claros y KPIs accionables.</p>
                     <div class="btn-row">
                         <a class="glass-btn primary" href="tel:+522761276329">Agendar Asesoría</a>
                         <a class="glass-btn" href="../Contacto.html">Solicitar Diagnóstico</a>
@@ -1490,7 +1502,8 @@
                             puede transformar tus procesos, reducir costos hasta en 60% y llevar tu
                             negocio al siguiente nivel de eficiencia y productividad.
                         </p>
-                        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="btn-cta mb-3" target="_blank">
+                        <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información"
+                            class="btn-cta mb-3" target="_blank">
                             Consulta Gratuita Ahora
                         </a>
                         <p class="text-white-50 mt-3">
@@ -1550,34 +1563,38 @@
                         class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="tiktok.com/@key.solutions3" class="btn btn-outline-light btn-floating m-1"
+                        style="border-radius:50%;" target="_blank">
                         <i class="bi bi-tiktok"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="https://www.instagram.com/keysolutionstechnology?igsh=dW5ubW1sank2ZGs="
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="hhttps://www.linkedin.com/in/key-solutions-technology-21973a388/"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
             </div>
+        </div>
 
-            <hr class="my-4 text-light">
+        <hr class="my-4 text-light">
 
-            <!-- Derechos reservados -->
-            <div class="row align-items-center">
-                <div class="col-md-7 col-lg-8">
-                    <p class="text-center text-md-start">
-                        © 2026 <strong class="text-info">Key
-                            Solutions</strong>.
-                        Todos los
-                        derechos reservados.
-                    </p>
-                </div>
-                <div class="col-md-5 col-lg-4 text-center text-md-end">
-                    <p>Diseñado by Key Solutions</p>
-                </div>
+        <!-- Derechos reservados -->
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+                <p class="text-center text-md-start">
+                    © 2026 <strong class="text-info">Key
+                        Solutions</strong>.
+                    Todos los
+                    derechos reservados.
+                </p>
             </div>
+            <div class="col-md-5 col-lg-4 text-center text-md-end">
+                <p>Diseñado by Key Solutions</p>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- Contenedor de botones flotantes -->

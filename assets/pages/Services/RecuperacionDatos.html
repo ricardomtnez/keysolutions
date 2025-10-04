@@ -58,7 +58,7 @@
         }
 
         .contact-banner {
-             background: linear-gradient(45deg, #25d366, #128c7e);
+            background: linear-gradient(45deg, #25d366, #128c7e);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -512,33 +512,85 @@
         }
 
         /* Data visuals: imágenes y texto profesional */
-        .data-visual-section { padding: 3.5rem 0; }
+        .data-visual-section {
+            padding: 3.5rem 0;
+        }
 
         .data-card {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1rem;
             padding: 1.25rem;
             margin-bottom: 1.5rem;
             align-items: center;
         }
 
-        .data-image { width: 100%; display:block; }
-        .data-image img { width: 100%; height: auto; object-fit: contain; border-radius: 0.75rem; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+        .data-image {
+            width: 100%;
+            display: block;
+        }
 
-        .data-body { width: 100%; text-align: center; padding: 0.5rem 0; }
-        .data-title { font-size: 1.4rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; }
-        .data-text { color: var(--text-light); line-height: 1.6; margin-bottom: 0.75rem; }
-        .data-cta { display: inline-block; padding: 0.65rem 1.25rem; border-radius: 999px; background: linear-gradient(45deg,var(--accent-cyan),var(--light-blue)); color: #002233; font-weight:800; box-shadow: 0 10px 30px rgba(0,180,216,0.12); text-decoration:none; }
+        .data-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .data-body {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        .data-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-text {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .data-cta {
+            display: inline-block;
+            padding: 0.65rem 1.25rem;
+            border-radius: 999px;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--light-blue));
+            color: #002233;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.12);
+            text-decoration: none;
+        }
 
         @media (min-width: 992px) {
-            .data-card { flex-direction: row; align-items: center; }
-            .data-image { flex: 0 0 45%; max-width: 45%; }
-            .data-body { flex: 1; text-align: left; padding-left: 1.25rem; }
-            .data-title { font-size: 1.6rem; }
+            .data-card {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .data-image {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+
+            .data-body {
+                flex: 1;
+                text-align: left;
+                padding-left: 1.25rem;
+            }
+
+            .data-title {
+                font-size: 1.6rem;
+            }
         }
 
         /* Responsive */
@@ -566,7 +618,6 @@
                 font-size: 2.2rem;
             }
         }
-
     </style>
 </head>
 
@@ -663,7 +714,8 @@
     <!-- Hero Section -->
     <section class="hero-section mt-5">
         <div class="container mb-3 mt-4 text-center">
-             <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner" target="_blank">
+            <a href="https://wa.me/5212761276329?text=Hola!%20Quiero%20más%20información" class="contact-banner"
+                target="_blank">
                 ¡Cotiza ahora! 📱 276 127 6329
             </a>
         </div>
@@ -853,7 +905,8 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="section-title">Recuperación Avanzada — Casos de Éxito</h2>
-                <p class="section-subtitle">Tecnología de laboratorio y protocolos especializados que aseguran máxima tasa de recuperación.</p>
+                <p class="section-subtitle">Tecnología de laboratorio y protocolos especializados que aseguran máxima
+                    tasa de recuperación.</p>
             </div>
 
             <div class="col-lg-6">
@@ -863,7 +916,9 @@
                     </div>
                     <div class="data-body">
                         <div class="data-title">Análisis Forense y Recuperación Física</div>
-                        <div class="data-text">Nuestros ingenieros realizan diagnósticos forenses y procesos de recuperación física en sala limpia, recuperando datos de unidades gravemente dañadas o con fallas mecánicas.</div>
+                        <div class="data-text">Nuestros ingenieros realizan diagnósticos forenses y procesos de
+                            recuperación física en sala limpia, recuperando datos de unidades gravemente dañadas o con
+                            fallas mecánicas.</div>
                         <a href="tel:+522761276329" class="data-cta">Solicita Evaluación</a>
                     </div>
                 </div>
@@ -876,7 +931,8 @@
                     </div>
                     <div class="data-body">
                         <div class="data-title">Recuperación Lógica y Software</div>
-                        <div class="data-text">Especialistas en reconstrucción de estructuras de archivos, reparación de particiones y extracción de datos en casos de corrupción lógica o fallos de firmware.</div>
+                        <div class="data-text">Especialistas en reconstrucción de estructuras de archivos, reparación de
+                            particiones y extracción de datos en casos de corrupción lógica o fallos de firmware.</div>
                         <a href="../Contacto.html" class="data-cta">Contáctanos</a>
                     </div>
                 </div>
@@ -1403,13 +1459,16 @@
                         class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="tiktok.com/@key.solutions3" class="btn btn-outline-light btn-floating m-1"
+                        style="border-radius:50%;" target="_blank">
                         <i class="bi bi-tiktok"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="https://www.instagram.com/keysolutionstechnology?igsh=dW5ubW1sank2ZGs="
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;">
+                    <a href="hhttps://www.linkedin.com/in/key-solutions-technology-21973a388/"
+                        class="btn btn-outline-light btn-floating m-1" style="border-radius:50%;" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
