@@ -117,6 +117,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 })();
 
 
+// Preloader hide on full load
+window.addEventListener('load', () => {
+  // Add a small delay to avoid flash if load is too fast
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      // Remove from DOM after transition ends
+      preloader.addEventListener('transitionend', () => preloader.remove());
+      // Safety removal in case transitionend doesn't fire
+      setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 1200);
+    }
+  }, 200);
+});
+
+
 
 
 
