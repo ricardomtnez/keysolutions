@@ -677,10 +677,12 @@
             display: grid;
             place-items: center;
             background: #ffffff; /* fondo blanco */
-            z-index: 9999;
+            z-index: 10000; /* por encima de floating buttons */
             opacity: 1;
             visibility: visible;
             transition: opacity .4s ease, visibility 0s linear .4s;
+            /* Auto-ocultar en 1s aunque JS falle */
+            animation: preloader-hide .4s ease 1s forwards;
         }
 
         .preloader-logo {
@@ -695,6 +697,13 @@
             to { transform: rotate(360deg); }
         }
 
+        @keyframes preloader-hide {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
         /* Al terminar la carga, ocultar suavemente */
         body.loaded #preloader {
             opacity: 0;
@@ -706,6 +715,12 @@
             .preloader-logo { animation: none; }
         }
     </style>
+    <noscript>
+        <style>
+            /* Si JS está deshabilitado, nunca bloquear */
+            #preloader { display: none !important; }
+        </style>
+    </noscript>
     <!-- Agregar antes de cerrar </head> -->
     <script type="application/ld+json">
 {
@@ -781,6 +796,26 @@
     <div id="preloader" role="status" aria-busy="true" aria-live="polite">
         <img src="assets/img/icono.svg" alt="Cargando Key Solutions" class="preloader-logo">
     </div>
+        <script>
+            (function(){
+                function kill(){
+                    var el = document.getElementById('preloader');
+                    if(!el) return;
+                    el.style.transition = 'opacity .3s ease';
+                    el.style.opacity = '0';
+                    el.style.visibility = 'hidden';
+                    setTimeout(function(){ if(el && el.parentNode) el.parentNode.removeChild(el); }, 400);
+                }
+                // Forzar ocultar a 1s como máximo
+                setTimeout(kill, 1000);
+                // También al load (por si la carga acaba antes/después)
+                if (document.readyState === 'complete') {
+                    setTimeout(kill, 1000);
+                } else {
+                    window.addEventListener('load', function(){ setTimeout(kill, 1000); }, { once: true });
+                }
+            })();
+        </script>
     <nav class="navbar navbar-expand-lg  navbar-dark bg-transparent fixed-top">
         <div class="container-fluid">
             <!-- LOGO -->
@@ -1656,7 +1691,7 @@
     <!-- Bootstrap Bundle con Popper -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Tu JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=20251006-1"></script>
 
 </body>
 

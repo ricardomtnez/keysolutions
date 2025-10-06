@@ -117,20 +117,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 })();
 
 
-// Preloader hide on full load
-window.addEventListener('load', () => {
-  // Add a small delay to avoid flash if load is too fast
-  setTimeout(() => {
+// Preloader: robust hide logic with fallbacks
+// Preloader: ocúltalo siempre a 1s, sin depender de eventos externos
+(function () {
+  function hide() {
     document.body.classList.add('loaded');
     const preloader = document.getElementById('preloader');
     if (preloader) {
-      // Remove from DOM after transition ends
-      preloader.addEventListener('transitionend', () => preloader.remove());
-      // Safety removal in case transitionend doesn't fire
-      setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 1200);
+      const remove = () => preloader && preloader.parentNode && preloader.parentNode.removeChild(preloader);
+      preloader.addEventListener('transitionend', remove, { once: true });
+      setTimeout(remove, 1200); // seguridad
     }
-  }, 200);
-});
+  }
+
+  // Espera fijo de 1 segundo desde que el script corre
+  setTimeout(hide, 1000);
+})();
 
 
 
