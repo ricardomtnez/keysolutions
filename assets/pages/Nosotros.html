@@ -307,10 +307,28 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 3rem;
-                        color: white;
                         border: 4px solid rgba(255, 255, 255, 0.1);
+                        overflow: hidden;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
                 }
+
+                .team-avatar img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        transition: transform 0.3s ease;
+                }
+
+                .team-avatar:hover img {
+                        transform: scale(1.1);
+                        /* 🔹 zoom suave */
+                }
+
+                .team-avatar:hover {
+                        box-shadow: 0 0 15px rgba(33, 150, 243, 0.6);
+                }
+
 
                 .team-name {
                         font-size: 1.5rem;
@@ -564,7 +582,8 @@
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/AutomatizacionConIA.html">Automatización
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/AutomatizacionConIA.html">Automatización
                                                                         de
                                                                         Procesos
                                                                         con
@@ -572,38 +591,44 @@
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/SitiosWeb.html">Páginas
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/SitiosWeb.html">Páginas
                                                                         y
                                                                         Sitios
                                                                         Web</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/RecuperacionDatos.html">Recuperación
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/RecuperacionDatos.html">Recuperación
                                                                         de
                                                                         datos</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/SoporteTecnicoRemoto.html">Soporte
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/SoporteTecnicoRemoto.html">Soporte
                                                                         Técnico</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/MantenimientoPreventivoCorrectivo.html">Mantenimiento
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/MantenimientoPreventivoCorrectivo.html">Mantenimiento
                                                                         Preventivo
                                                                         y
                                                                         Correctivo</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/InfraestructuraRed.html">Infraestructura
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/InfraestructuraRed.html">Infraestructura
                                                                         de
                                                                         Red</a></li>
                                                         <li>
                                                                 <hr class="dropdown-divider">
                                                         </li>
-                                                        <li><a class="dropdown-item" href="Services/InstalacionCamarasVideovigilancia.html">Instalación
+                                                        <li><a class="dropdown-item"
+                                                                        href="Services/InstalacionCamarasVideovigilancia.html">Instalación
                                                                         de
                                                                         Cámaras
                                                                         de
@@ -662,7 +687,7 @@
                                 <div class="col-lg-3 col-md-6 fade-up">
                                         <div class="stat-card">
                                                 <i class="bi bi-people-fill stat-icon"></i>
-                                                <div class="stat-number">200+</div>
+                                                <div class="stat-number">20+</div>
                                                 <div class="stat-label">Clientes Satisfechos</div>
                                         </div>
                                 </div>
@@ -676,7 +701,7 @@
                                 <div class="col-lg-3 col-md-6 fade-up">
                                         <div class="stat-card">
                                                 <i class="bi bi-lightning-charge-fill stat-icon"></i>
-                                                <div class="stat-number">500+</div>
+                                                <div class="stat-number">30+</div>
                                                 <div class="stat-label">Proyectos Completados</div>
                                         </div>
                                 </div>
@@ -702,11 +727,11 @@
                                                 </div>
                                                 <h3 class="mission-title">Misión</h3>
                                                 <p class="mission-description">
-                                                        Proveer soluciones tecnológicas de calidad, desarrolladas con
-                                                        talento local,
-                                                        que hagan la vida y el trabajo más fácil, productivo y eficiente
-                                                        para empresas
-                                                        y personas mexicanas.
+                                                        Brindar soluciones tecnológicas innovadoras, funcionales y
+                                                        accesibles que mejoren la vida y los procesos de nuestros
+                                                        clientes,
+                                                        mediante un servicio cercano, profesional y enfocado en
+                                                        resultados.
                                                 </p>
                                         </div>
                                 </div>
@@ -846,7 +871,7 @@
                                 <div class="col-lg-4 col-md-6 fade-up">
                                         <div class="team-card">
                                                 <div class="team-avatar">
-                                                        <i class="bi bi-person-circle"></i>
+                                                        <img src="../img/Fundador.png" alt="Imagen Fundador">
                                                 </div>
                                                 <h3 class="team-name">Ing. Ricardo Martínez</h3>
                                                 <p class="team-role">Fundador & CEO</p>
@@ -863,7 +888,7 @@
                                 <div class="col-lg-4 col-md-6 fade-up">
                                         <div class="team-card">
                                                 <div class="team-avatar">
-                                                        <i class="bi bi-person-circle"></i>
+                                                        <img src="../img/Co-Fundador.jpg" alt="Imagen Co-Fundador">
                                                 </div>
                                                 <h3 class="team-name">Ing. Ezequiel Velez</h3>
                                                 <p class="team-role">Co-Fundador & Especialista en Tecnología</p>
@@ -939,7 +964,7 @@
                                 <div class="timeline-content">
                                         <h3 class="timeline-title">Crecimiento y Expansión</h3>
                                         <p class="timeline-description">
-                                                Superamos los 200 clientes satisfechos y 500 proyectos completados.
+                                                Superamos los 20 clientes satisfechos y 500 proyectos completados.
                                                 Implementación de nuevas tecnologías y servicios especializados.
                                         </p>
                                 </div>
@@ -974,7 +999,7 @@
                                 </a>
 
                                 <div class="contact-info">
-                                        <a href="mailto:ventas@keysolutions.com" class="contact-btn">
+                                        <a href="mailto:ventas@keysolutionstechnology.com.mx" class="contact-btn">
                                                 <i class="bi bi-envelope-fill"></i>
                                                 <span>Email</span>
                                         </a>
@@ -1013,11 +1038,12 @@
                                 <!-- Enlaces rápidos -->
                                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                                         <h5 class="mb-4 fw-bold text-info">Enlaces</h5>
-                                        <p><a href="../../index.html" class="text-light text-decoration-none">Inicio</a></p>
+                                        <p><a href="../../index.html" class="text-light text-decoration-none">Inicio</a>
+                                        </p>
                                         <p><a href="Productos.html"
                                                         class="text-light text-decoration-none">Productos</a></p>
-                                        <p><a href="Contacto.html"
-                                                        class="text-light text-decoration-none">Contacto</a></p>
+                                        <p><a href="Contacto.html" class="text-light text-decoration-none">Contacto</a>
+                                        </p>
                                 </div>
 
                                 <!-- Contacto -->
@@ -1027,7 +1053,7 @@
                                                 El Carmen Tequexquitla,
                                                 Tlaxcala</p>
                                         <p><i class="bi bi-envelope-fill text-info"></i>
-                                                ventas@keysolutions.com</p>
+                                                ventas@keysolutionstechnology.com.mx</p>
                                         <p><i class="bi bi-phone-fill text-info"></i>
                                                 +52 276 127 63 29</p>
                                 </div>
@@ -1040,7 +1066,7 @@
                                                 style="border-radius:50%;">
                                                 <i class="bi bi-facebook"></i>
                                         </a>
-                                        <a href="tiktok.com/@key.solutions3"
+                                        <a href="https://www.tiktok.com/@key.solutions3?is_from_webapp=1&sender_device=pc"
                                                 class="btn btn-outline-light btn-floating m-1"
                                                 style="border-radius:50%;" target="_blank">
                                                 <i class="bi bi-tiktok"></i>
@@ -1050,13 +1076,15 @@
                                                 style="border-radius:50%;" target="_blank">
                                                 <i class="bi bi-instagram"></i>
                                         </a>
-                                        <a href="hhttps://www.linkedin.com/in/key-solutions-technology-21973a388/"
+                                        <a href="https://www.linkedin.com/in/key-solutions-technology-21973a388"
                                                 class="btn btn-outline-light btn-floating m-1"
                                                 style="border-radius:50%;" target="_blank">
                                                 <i class="bi bi-linkedin"></i>
                                         </a>
                                 </div>
                         </div>
+
+                </div>
                 </div>
 
                 <hr class="my-4 text-light">
