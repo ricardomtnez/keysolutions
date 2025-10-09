@@ -255,6 +255,9 @@
                         border-radius: 20px;
                         padding: 40px 30px;
                         text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                         border: 1px solid var(--card-border);
                         transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
                         height: 100%;
@@ -314,6 +317,30 @@
                         font-weight: 600;
                         text-decoration: none;
                         transition: color .18s ease;
+                        display: inline-block;
+                        max-width: 100%;
+                        overflow-wrap: anywhere;
+                        /* modern */
+                        word-break: break-word;
+                        /* fallback */
+                        white-space: normal;
+                        line-height: 1.4;
+                }
+
+                .contact-link2 {
+                        color: #64b5f6;
+                        font-weight: 600;
+                        font-size: 15px;
+                        text-decoration: none;
+                        transition: color .18s ease;
+                        display: inline-block;
+                        max-width: 100%;
+                        overflow-wrap: anywhere;
+                        /* modern */
+                        word-break: break-word;
+                        /* fallback */
+                        white-space: normal;
+                        line-height: 1.4;
                 }
 
                 .contact-link:hover {
@@ -764,19 +791,24 @@
                                                                                 </option>
                                                                                 <option value="Chatbots">Chatbots
                                                                                         Inteligentes</option>
-                                                                                <option value="Clasificacion Automática">
+                                                                                <option
+                                                                                        value="Clasificacion Automática">
                                                                                         Clasificación Automática
                                                                                 </option>
-                                                                                <option value="Reportes de Reportes">Generación de
+                                                                                <option value="Reportes de Reportes">
+                                                                                        Generación de
                                                                                         Reportes</option>
-                                                                                <option value="Recuperacion de Información">
+                                                                                <option
+                                                                                        value="Recuperacion de Información">
                                                                                         Recuperación de Información
                                                                                 </option>
-                                                                                <option value="Sitio web-corporativo">Sitio
+                                                                                <option value="Sitio web-corporativo">
+                                                                                        Sitio
                                                                                         Web Corporativo</option>
                                                                                 <option value="web-onepage">Sitio One
                                                                                         Page</option>
-                                                                                <option value="landing Page">Landing Page
+                                                                                <option value="landing Page">Landing
+                                                                                        Page
                                                                                 </option>
                                                                                 <option value="ecommerce">Tienda en
                                                                                         Línea</option>
@@ -795,11 +827,14 @@
                                                                                         $5,000 MXN</option>
                                                                                 <option value="De 5000 a 10000">$5,000 -
                                                                                         $10,000 MXN</option>
-                                                                                <option value="De 10000 a 20000">$10,000 -
+                                                                                <option value="De 10000 a 20000">$10,000
+                                                                                        -
                                                                                         $20,000 MXN</option>
-                                                                                <option value="De 20000 a 50000">$20,000 -
+                                                                                <option value="De 20000 a 50000">$20,000
+                                                                                        -
                                                                                         $50,000 MXN</option>
-                                                                                <option value="Consultar con Ventas">Consultar con Ventas</option>
+                                                                                <option value="Consultar con Ventas">
+                                                                                        Consultar con Ventas</option>
                                                                         </select>
                                                                 </div>
                                                                 <div class="col-12">
@@ -846,7 +881,7 @@
                                                 <h3 class="contact-title">Email</h3>
                                                 <p class="contact-detail">Respuesta en 24 hrs</p>
                                                 <a href="mailto:info@keysolutions.tech"
-                                                        class="contact-link">ventas@keysolutionstechnology.com.mx</a>
+                                                        class="contact-link2">ventas@keysolutionstechnology.com.mx</a>
                                         </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 fade-up">
